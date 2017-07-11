@@ -1,0 +1,73 @@
+---------------------------------------------------------------------------------
+-- Univ. of Chicago  
+--    --KICP--
+--
+-- PROJECT:      phased-array trigger board
+-- FILE:         clocks.vhd
+-- AUTHOR:       e.oberla
+-- EMAIL         ejo@uchicago.edu
+-- DATE:         1/2016
+--
+-- DESCRIPTION:  clocks, top level
+--
+---------------------------------------------------------------------------------
+
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity Clocks is
+	Port(
+		Reset			:  in		std_logic;
+		INCLK0		:	in		std_logic;
+		INCLK1		:  in		std_logic;
+		PLL_reset	:  in		std_logic;
+		
+		CLK_125M		:  out	std_logic;
+		CLK_62p5M   :  out	std_logic;
+		CLK_1MHz		:  out	std_logic;
+		
+		SPI_CLK		:  out	std_logic;
+		CLK_1Hz		:  out	std_logic;
+		CLK_10Hz		:  out	std_logic;
+		CLK_1kHz		:	out	std_logic;
+		
+		fpgaPLLlock :	out	std_logic);
+
+end Clocks;
+
+architecture Behavioral of Clocks is
+
+	signal	xCLK_1MHz	:	std_logic;
+	signal	xCLK_1kHz	:	std_logic;
+	signal	xCLK_1Hz		:	std_logic;
+	signal	xCLK_10Hz	:	std_logic;
+
+begin
+
+	CLK_1MHz	<=	xCLK_1MHz;
+	CLK_1Hz	<=	xCLK_1Hz;
+	CLK_10Hz	<=	xCLK_10Hz;
+	CLK_1kHz	<=	xCLK_1kHz;
+
+	xPLL_BLOCK : entity work.pll_block(rtl)
+		port map(INCLK0, PLL_reset, CLK125M, CLK12p5M, xCLK_1MHz, fpgaPLLlock);
+		
+	xCLK_GEN_1kHz : entity work.Slow_Clocks(rtl)
+		generic map(clk_divide_by => 500)
+		port map(xCLK_1MHz, Reset, xCLK_1kHz);
+
+	xCLK_GEN_1Hz : entity work.Slow_Clocks(rtl)
+		generic map(clk_divide_by => 50000)
+		port map(xCLK_1MHz, Reset, xCLK_1Hz);
+
+	xCLK_GEN_10Hz : entity work.Slow_Clocks(rtl)
+		generic map(clk_divide_by => 500000)
+		port map(xCLK_1MHz, Reset, xCLK_10Hz);
+		
+end Behavioral;
+
+		
+	
+

@@ -1,0 +1,13 @@
+---------------------------------------------------------------------------------
+-- Univ. of Chicago  
+--    --KICP--
+--
+-- PROJECT:      phased-array trigger board
+-- FILE:         slowclocks.vhd
+-- AUTHOR:       e.oberla
+-- EMAIL         ejo@uchicago.edu
+-- DATE:         1/2016
+--
+-- DESCRIPTION:  slow clocking
+--
+---------------------------------------------------------------------------------

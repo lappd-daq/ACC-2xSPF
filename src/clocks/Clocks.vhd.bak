@@ -1,0 +1,20 @@
+---------------------------------------------------------------------------------
+-- Univ. of Chicago  
+--    --KICP--
+--
+-- PROJECT:      phased-array trigger board
+-- FILE:         top_level.vhd
+-- AUTHOR:       e.oberla
+-- EMAIL         ejo@uchicago.edu
+-- DATE:         1/2016
+--
+-- DESCRIPTION:  design top level vhdl
+--
+---------------------------------------------------------------------------------
+
+library IEEE;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_unsigned.all;
+
+entity Clocks is
