@@ -39,7 +39,7 @@
 set_global_assignment -name FAMILY "Arria V"
 set_global_assignment -name DEVICE 5AGXFB5H4F35C4
 set_global_assignment -name TOP_LEVEL_ENTITY ACC_top
-set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Standard Edition"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X1"
