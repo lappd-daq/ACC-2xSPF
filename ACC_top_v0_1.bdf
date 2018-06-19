@@ -392,7 +392,7 @@ agreement for further details.
 		(line (pt 117 12)(pt 121 8))
 	)
 	(text "VCC" (rect 136 7 160 18)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -1712 -280 -1648 -264))
+	(annotation_block (location)(rect -1912 -288 -1872 -272))
 )
 (pin
 	(input)
@@ -944,7 +944,7 @@ agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 28 18)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -2208 -496 -2144 -480))
+	(annotation_block (location)(rect -2440 -760 -2360 -736))
 )
 (pin
 	(bidir)
@@ -1020,7 +1020,7 @@ agreement for further details.
 )
 (pin
 	(bidir)
-	(rect -1904 -608 -1728 -592)
+	(rect -1768 -608 -1592 -592)
 	(text "BIDIR" (rect 1 0 42 11)(font "Arial" (font_size 6)))
 	(text "debug[19..2]" (rect 90 0 189 14)(font "Arial" ))
 	(pt 0 8)
@@ -1034,7 +1034,7 @@ agreement for further details.
 		(line (pt 52 8)(pt 56 12))
 	)
 	(text "VCC" (rect 4 7 28 18)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -1480 -344 -1424 -328))
+	(annotation_block (location)(rect -1344 -344 -1288 -328))
 )
 (pin
 	(bidir)
@@ -1506,7 +1506,7 @@ agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 376 448))
 	)
-	(annotation_block (parameter)(rect -2104 -608 -1760 -560))
+	(annotation_block (parameter)(rect -2128 -632 -1784 -584))
 )
 (symbol
 	(rect -1784 -24 -1752 8)
@@ -2649,11 +2649,6 @@ agreement for further details.
 	(bus)
 )
 (connector
-	(text "from_system[1]" (rect -2744 -192 -2629 -178)(font "Arial" ))
-	(pt -2560 -184)
-	(pt -2664 -184)
-)
-(connector
 	(pt -2664 -160)
 	(pt -2496 -160)
 )
@@ -2901,5 +2896,10 @@ agreement for further details.
 (connector
 	(pt -1128 -384)
 	(pt -1120 -384)
+)
+(connector
+	(text "from_system[1]" (rect -2832 -208 -2717 -194)(font "Arial" ))
+	(pt -2648 -200)
+	(pt -2752 -200)
 )
 (junction (pt -2552 -432))

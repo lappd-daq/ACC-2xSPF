@@ -235,7 +235,7 @@
 		n_cnt_odd_div_duty_en => "false",
 		number_of_clocks => 3,
 		operation_mode => "direct",
-		output_clock_frequency0 => "25.000000 MHz",
+		output_clock_frequency0 => "40.000000 MHz",
 		output_clock_frequency1 => "1.000000 MHz",
 		output_clock_frequency10 => "0 MHz",
 		output_clock_frequency11 => "0 MHz",
@@ -245,7 +245,7 @@
 		output_clock_frequency15 => "0 MHz",
 		output_clock_frequency16 => "0 MHz",
 		output_clock_frequency17 => "0 MHz",
-		output_clock_frequency2 => "125.000000 MHz",
+		output_clock_frequency2 => "160.000000 MHz",
 		output_clock_frequency3 => "0 MHz",
 		output_clock_frequency4 => "0 MHz",
 		output_clock_frequency5 => "0 MHz",
@@ -295,7 +295,7 @@
 		pll_vco_div => 1,
 		pll_vcoph_div => 1,
 		refclk1_frequency => "0 MHz",
-		reference_clock_frequency => "25.0 MHz",
+		reference_clock_frequency => "125.0 MHz",
 		sim_additional_refclk_cycles_to_lock => 0
 	  )
 	  PORT MAP ( 

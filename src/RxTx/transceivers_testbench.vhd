@@ -10,9 +10,11 @@ end entity testbench;
 architecture BENCH of testbench is
   signal reset_global               : STD_LOGIC;
   signal xalign_strobe, xalign_good : STD_LOGIC;
-  signal clock_sys, clocks_rx       : STD_LOGIC;
+  signal clock_sys                  : STD_LOGIC;
   signal rx_serdes                  : STD_LOGIC_VECTOR(1 downto 0);
+  signal rx_serdes_clk              : STD_LOGIC;
   signal tx_serdes                  : STD_LOGIC;
+  signal tx_serdes_clk              : STD_LOGIC;
   signal xInstruction               : STD_LOGIC_VECTOR(31 downto 0);
   signal xInstruct_Rdy              : STD_LOGIC;
   signal xtrig                      : STD_LOGIC;
@@ -88,10 +90,11 @@ port map(
   xALIGN_SUCCESS    => xalign_good,
 
   xCLK              => clock_sys,
-  xRX_CLK           => clocks_rx,
+  xRX_LVDS_CLK      => rx_serdes_clk,
 
   xRX_LVDS_DATA     => rx_serdes,
   xTX_LVDS_DATA     => tx_serdes,
+  xTX_LVDS_CLK      => tx_serdex_clk,
 
   xCC_INSTRUCTION   => xInstruction,
   xCC_INSTRUCT_RDY  => xInstruct_Rdy,

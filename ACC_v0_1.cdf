@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(5AGXFB5H4F35) Path("C:/Users/eric/Desktop/ACC-2xSFP-firmware/") File("ACC_v0_1.sof") MfrSpec(OpMask(1));
+		Device PartName(5AGXFB5H4) Path("E:/acc/firmware/ACC-2xSPF/") File("output_file.jic") MfrSpec(OpMask(1) SEC_Device(EPCQ256) Child_OpMask(1 1));
 
 ChainEnd;
 

@@ -41,7 +41,7 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:00:37  MARCH 09, 2016
 set_global_assignment -name FAMILY "Arria V"
 set_global_assignment -name DEVICE 5AGXFB5H4F35C4
 set_global_assignment -name TOP_LEVEL_ENTITY ACC_top_v0_1
-set_global_assignment -name LAST_QUARTUS_VERSION 15.1.0
+set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Standard Edition"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X1"
@@ -227,7 +227,6 @@ set_location_assignment PIN_D9 -to "DC4in[0](n)"
 set_location_assignment PIN_C7 -to "DC5in[2](n)"
 set_location_assignment PIN_B15 -to "DC5in[1](n)"
 set_location_assignment PIN_D16 -to "DC5in[0](n)"
-set_location_assignment PIN_B9 -to "DC6in[2](n)"
 set_location_assignment PIN_D5 -to "DC6in[1](n)"
 set_location_assignment PIN_B3 -to "DC6in[0](n)"
 set_location_assignment PIN_N11 -to "DC7in[2](n)"
@@ -522,7 +521,7 @@ set_instance_assignment -name IO_STANDARD LVDS -to DC4in[0]
 set_instance_assignment -name IO_STANDARD LVDS -to DC5in[2]
 set_instance_assignment -name IO_STANDARD LVDS -to DC5in[1]
 set_instance_assignment -name IO_STANDARD LVDS -to DC5in[0]
-set_instance_assignment -name IO_STANDARD LVDS -to DC6in[2]
+set_instance_assignment -name IO_STANDARD "DIFFERENTIAL 1.8-V HSTL CLASS II" -to DC6in[2]
 set_instance_assignment -name IO_STANDARD LVDS -to DC6in[1]
 set_instance_assignment -name IO_STANDARD LVDS -to DC6in[0]
 set_instance_assignment -name IO_STANDARD LVDS -to DC7in[2]
@@ -582,7 +581,6 @@ set_instance_assignment -name IO_STANDARD LVDS -to "DC4in[0](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to "DC5in[2](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to "DC5in[1](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to "DC5in[0](n)"
-set_instance_assignment -name IO_STANDARD LVDS -to "DC6in[2](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to "DC6in[1](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to "DC6in[0](n)"
 set_instance_assignment -name IO_STANDARD LVDS -to "DC7in[2](n)"
@@ -792,29 +790,6 @@ set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to "SFP2_gx_pll_refclkin
 set_instance_assignment -name IO_STANDARD "1.5-V PCML" -to "SFP1_gx_pll_refclkin(n)"
 set_global_assignment -name ENABLE_SIGNALTAP ON
 set_global_assignment -name USE_SIGNALTAP_FILE tapUSB.stp
-set_global_assignment -name VERILOG_FILE src/clocks/pll_block_transceivers/pll_block_transceivers_0002.v
-set_global_assignment -name VHDL_FILE src/clocks/pll_block_transceivers.vhd
-set_global_assignment -name VHDL_FILE src/usb/iobuf.vhd
-set_global_assignment -name VERILOG_FILE src/clocks/pll_block/pll_block_0002.v
-set_global_assignment -name VHDL_FILE src/clocks/Slow_Clocks.vhd
-set_global_assignment -name VHDL_FILE src/RxTx/rx_data_ram.vhd
-set_global_assignment -name VHDL_FILE src/RxTx/altlvds_tx0.vhd
-set_global_assignment -name VHDL_FILE src/RxTx/altlvds_rx0.vhd
-set_global_assignment -name VHDL_FILE src/clocks/pll_block.vhd
-set_global_assignment -name VHDL_FILE src/progreset.vhd
-set_global_assignment -name VHDL_FILE src/clocks/Clock_Manager.vhd
-set_global_assignment -name BDF_FILE ACC_top_v0_1.bdf
-set_global_assignment -name VHDL_FILE src/ACC_main.vhd
-set_global_assignment -name VHDL_FILE src/defs.vhd
-set_global_assignment -name BDF_FILE src/RxTx/rx_ram.bdf
-set_global_assignment -name VHDL_FILE src/RxTx/transceivers.vhd
-set_global_assignment -name VHDL_FILE src/usb/usb_32bit.vhd
-set_global_assignment -name VHDL_FILE src/packetUSB.vhd
-set_global_assignment -name VHDL_FILE src/triggerAndTime.vhd
-set_global_assignment -name SDC_FILE ACC.sdc
-set_global_assignment -name SIGNALTAP_FILE tapUSB.stp
-set_global_assignment -name VHDL_FILE src/usbWrapperACC.vhd
-set_global_assignment -name BDF_FILE src/RxTx/lvds_transceivers.bdf
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id auto_signaltap_0
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id auto_signaltap_0
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "usbWrapperACC:inst2|IFCLK" -section_id auto_signaltap_0
@@ -1276,5 +1251,37 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to auto_signaltap_0|vcc -section_id auto_signaltap_0
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to auto_signaltap_0|gnd -section_id auto_signaltap_0
+set_global_assignment -name ALLOW_REGISTER_MERGING OFF
+set_global_assignment -name ALLOW_REGISTER_DUPLICATION OFF
+set_global_assignment -name ALLOW_REGISTER_RETIMING OFF
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id auto_signaltap_0
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
+set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name VHDL_FILE src/RxTx/rx_ram.vhd
+set_global_assignment -name VHDL_FILE src/RxTx/lvds_transceivers.vhd
+set_global_assignment -name VERILOG_FILE src/clocks/pll_block_transceivers/pll_block_transceivers_0002.v
+set_global_assignment -name VHDL_FILE src/clocks/pll_block_transceivers.vhd
+set_global_assignment -name VHDL_FILE src/usb/iobuf.vhd
+set_global_assignment -name VERILOG_FILE src/clocks/pll_block/pll_block_0002.v
+set_global_assignment -name VHDL_FILE src/clocks/Slow_Clocks.vhd
+set_global_assignment -name VHDL_FILE src/RxTx/rx_data_ram.vhd
+set_global_assignment -name VHDL_FILE src/RxTx/altlvds_tx0.vhd
+set_global_assignment -name VHDL_FILE src/RxTx/altlvds_rx0.vhd
+set_global_assignment -name VHDL_FILE src/clocks/pll_block.vhd
+set_global_assignment -name VHDL_FILE src/progreset.vhd
+set_global_assignment -name VHDL_FILE src/clocks/Clock_Manager.vhd
+set_global_assignment -name BDF_FILE ACC_top_v0_1.bdf
+set_global_assignment -name VHDL_FILE src/ACC_main.vhd
+set_global_assignment -name VHDL_FILE src/defs.vhd
+set_global_assignment -name VHDL_FILE src/RxTx/transceivers.vhd
+set_global_assignment -name VHDL_FILE src/usb/usb_32bit.vhd
+set_global_assignment -name VHDL_FILE src/packetUSB.vhd
+set_global_assignment -name VHDL_FILE src/triggerAndTime.vhd
+set_global_assignment -name SDC_FILE ACC.sdc
+set_global_assignment -name SIGNALTAP_FILE tapUSB.stp
+set_global_assignment -name VHDL_FILE src/usbWrapperACC.vhd
+set_global_assignment -name CDF_FILE ACC_v0_1_active_serial_US5.cdf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp

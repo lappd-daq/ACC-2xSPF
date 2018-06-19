@@ -27,7 +27,9 @@ entity transceivers is
 		xRX_CLK				: in	std_logic;	--parallel data clock for rx transceiver 
 		
 		xRX_LVDS_DATA		: in	std_logic_vector(1 downto 0); --serdes data received (2x)
+		xRX_LVDS_CLK		: in	std_logic;  --bytealigned clk for serdes data received
 		xTX_LVDS_DATA		: out	std_logic;                    --serdes data transmitted
+		xTX_LVDS_CLK	 	: out		std_logic;                  --bytealigned clk for serdes data transmitted
 		
 		xCC_INSTRUCTION	: in	std_logic_vector(instruction_size-1 downto 0);	--front-end 
 		xCC_INSTRUCT_RDY	: in	std_logic;	--intruction ready to send to front-end
@@ -407,17 +409,18 @@ end process;
 
 xlvds_transceivers : lvds_transceivers
 port map(
+			RX_CLK			=>		xRX_LVDS_CLK,
+			TX_CLK			=>		xCLK,
 			TX_DATA			=>		TX_DATA,
-			TX_CLK			=>		xRX_CLK,
 			RX_ALIGN			=>		RX_ALIGN_BITSLIP,
 			RX_LVDS_DATA	=>		xRX_LVDS_DATA,
-			RX_CLK			=>		xRX_CLK, --parallel clock for Rx
+			
 			RX_DPAhold		=>		'1' & '1',
-			RX_DPAreset		=>		xCLR_ALL & xCLR_ALL,
+			RX_DPAreset		=>		xCLR_ALL & xCLR_ALL,  -- To simulate this line, compile with 1076-2008
 			TX_LVDS_DATA	=>		xTX_LVDS_DATA,
 			RX_DPAlock		=>    open,
 			RX_DATA			=>		RX_DATA,
-			TX_OUTCLK		=>		open,
+			TX_OUTCLK		=>		xTX_LVDS_CLK,
 			RX_OUTCLK		=>		RX_OUTCLK);	
 			
 xrx_RAM_0	:	rx_RAM

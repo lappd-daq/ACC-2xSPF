@@ -291,7 +291,7 @@
 		pll_vco_div => 1,
 		pll_vcoph_div => 1,
 		refclk1_frequency => "0 MHz",
-		reference_clock_frequency => "25.0 MHz",
+		reference_clock_frequency => "125.0 MHz",
 		sim_additional_refclk_cycles_to_lock => 0
 	  )
 	  PORT MAP ( 

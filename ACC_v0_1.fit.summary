@@ -1,12 +1,12 @@
-Fitter Status : Successful - Sat Mar 25 10:59:38 2017
+Fitter Status : Successful - Tue Sep 12 13:39:43 2017
 Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Standard Edition
 Revision Name : ACC_v0_1
 Top-level Entity Name : ACC_top_v0_1
 Family : Arria V
 Device : 5AGXFB5H4F35C4
 Timing Models : Final
-Logic utilization (in ALMs) : 2,265 / 158,500 ( 1 % )
-Total registers : 5004
+Logic utilization (in ALMs) : 2,267 / 158,500 ( 1 % )
+Total registers : 4980
 Total pins : 287 / 656 ( 44 % )
 Total virtual pins : 0
 Total block memory bits : 731,136 / 21,032,960 ( 3 % )
