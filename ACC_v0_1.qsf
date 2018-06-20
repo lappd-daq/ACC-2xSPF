@@ -1259,7 +1259,6 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id auto_signaltap_0
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE src/RxTx/encoder_8b10b.v
 set_global_assignment -name VERILOG_FILE src/RxTx/decoder_8b10b.v
 set_global_assignment -name VHDL_FILE src/RxTx/rx_ram.vhd
@@ -1287,3 +1286,4 @@ set_global_assignment -name SIGNALTAP_FILE tapUSB.stp
 set_global_assignment -name VHDL_FILE src/usbWrapperACC.vhd
 set_global_assignment -name CDF_FILE ACC_v0_1_active_serial_US5.cdf
 set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

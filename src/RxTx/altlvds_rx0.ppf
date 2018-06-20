@@ -8,7 +8,7 @@
 <pin name="rx_inclock" direction="input" scope="external"  />
 <pin name="rx_reset[1..0]" direction="input" scope="external"  />
 <pin name="rx_dpa_locked[1..0]" direction="output" scope="external"  />
-<pin name="rx_out[15..0]" direction="output" scope="external"  />
+<pin name="rx_out[19..0]" direction="output" scope="external"  />
 <pin name="rx_outclock" direction="output" scope="external"  />
 
 </global>

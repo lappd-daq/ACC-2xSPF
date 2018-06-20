@@ -68,8 +68,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 352 64)
 		(output)
-		(text "rx_out[15..0]" (rect 0 0 71 14)(font "Arial" (font_size 8)))
-		(text "rx_out[15..0]" (rect 288 50 347 63)(font "Arial" (font_size 8)))
+		(text "rx_out[19..0]" (rect 0 0 71 14)(font "Arial" (font_size 8)))
+		(text "rx_out[19..0]" (rect 288 50 347 63)(font "Arial" (font_size 8)))
 		(line (pt 352 64)(pt 208 64)(line_width 3))
 	)
 	(port

@@ -31,11 +31,11 @@ ENTITY lvds_transceivers IS
 		RX_DPAhold :  IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
 		RX_DPAreset :  IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
 		RX_LVDS_DATA :  IN  STD_LOGIC_VECTOR(1 DOWNTO 0);
-		TX_DATA :  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		TX_DATA :  IN  STD_LOGIC_VECTOR(9 DOWNTO 0);
 		RX_OUTCLK :  OUT  STD_LOGIC;
 		TX_OUTCLK :  OUT  STD_LOGIC;
 		TX_LVDS_DATA :  OUT  STD_LOGIC;
-		RX_DATA :  OUT  STD_LOGIC_VECTOR(15 DOWNTO 0);
+		RX_DATA :  OUT  STD_LOGIC_VECTOR(19 DOWNTO 0);
 		RX_DPAlock :  OUT  STD_LOGIC_VECTOR(1 DOWNTO 0)
 	);
 END lvds_transceivers;
@@ -50,13 +50,13 @@ COMPONENT altlvds_rx0
 		 rx_reset : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
 		 rx_outclock : OUT STD_LOGIC;
 		 rx_dpa_locked : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 rx_out : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
+		 rx_out : OUT STD_LOGIC_VECTOR(19 DOWNTO 0)
 	);
 END COMPONENT;
 
 COMPONENT altlvds_tx0
 	PORT(tx_inclock : IN STD_LOGIC;
-		 tx_in : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		 tx_in : IN STD_LOGIC_VECTOR(9 DOWNTO 0);
 		 tx_outclock : OUT STD_LOGIC;
 		 tx_out : OUT STD_LOGIC_VECTOR(0 TO 0)
 	);
@@ -67,8 +67,7 @@ END COMPONENT;
 BEGIN 
 
 
-
-b2v_inst : altlvds_rx0
+lvds_rx : altlvds_rx0
 PORT MAP(rx_inclock => RX_CLK,
 		 rx_channel_data_align => RX_ALIGN,
 		 rx_dpll_hold => RX_DPAhold,
@@ -78,8 +77,7 @@ PORT MAP(rx_inclock => RX_CLK,
 		 rx_dpa_locked => RX_DPAlock,
 		 rx_out => RX_DATA);
 
-
-b2v_inst1 : altlvds_tx0
+lvds_tx : altlvds_tx0
 PORT MAP(tx_inclock => TX_CLK,
 		 tx_in => TX_DATA,
 		 tx_outclock => TX_OUTCLK,
