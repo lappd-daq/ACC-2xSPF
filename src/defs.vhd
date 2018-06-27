@@ -46,5 +46,18 @@ type rx_ram_flag_type is array(num_front_end_boards-1 downto 0) of
 type rx_ram_data_type is array(num_front_end_boards-1 downto 0) of
 	std_logic_vector(transceiver_mem_width-1 downto 0);
 
+-- 8b10b K codes
+constant K28_0	: std_logic_vector(7 downto 0) := "00011100";
+constant K28_1	: std_logic_vector(7 downto 0) := "00111100";
+constant K28_2	: std_logic_vector(7 downto 0) := "01011100";
+constant K28_3	: std_logic_vector(7 downto 0) := "01111100";
+constant K28_4	: std_logic_vector(7 downto 0) := "10011100";
+constant K28_5	: std_logic_vector(7 downto 0) := "10111100"; -- (comma)
+constant K28_6	: std_logic_vector(7 downto 0) := "11011100";
+constant K28_7	: std_logic_vector(7 downto 0) := "11111100";
+constant K23_7	: std_logic_vector(7 downto 0) := "11110111";
+constant K27_7	: std_logic_vector(7 downto 0) := "11111011";
+constant K29_7	: std_logic_vector(7 downto 0) := "11111101";
+constant K30_7	: std_logic_vector(7 downto 0) := "11111110";
 		
 end defs;

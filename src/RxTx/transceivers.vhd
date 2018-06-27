@@ -20,7 +20,6 @@ use work.defs.all;
 entity transceivers is
 	port(
 		xCLR_ALL				: in	std_logic;	--global reset
-		xALIGN_ACTIVE		: in	std_logic;  --lvds alignment strobe
 		xALIGN_SUCCESS 	: out	std_logic;  --successfully aligned
 		
 		xCLK					: in	std_logic;	--system clock
@@ -57,12 +56,8 @@ end transceivers;
 
 architecture rtl of transceivers is
 
-type 	LVDS_ALIGN_TYPE_1 is (CHECK_1, DOUBLE_CHECK_1, INCREMENT_1,  
-								    ALIGN_DONE_1);
-type 	LVDS_ALIGN_TYPE_2 is (CHECK_2, DOUBLE_CHECK_2, INCREMENT_2,  
-								    ALIGN_DONE_2);
-signal LVDS_ALIGN_STATE_1			: LVDS_ALIGN_TYPE_1;
-signal LVDS_ALIGN_STATE_2			: LVDS_ALIGN_TYPE_2;
+type LINK_STATE_TYPE is (DOWN, CHECKING, UP);
+signal LINK_STATE : LINK_STATE_TYPE;
 
 type 	SEND_CC_INSTRUCT_TYPE is (IDLE, SEND_START_WORD, SEND_START_WORD_2, 
 											CATCH0, CATCH1, CATCH2, CATCH3, READY);
@@ -75,8 +70,15 @@ type RAM_DATA_TYPE is array (num_rx_rams-1 downto 0) of
 	std_logic_vector(transceiver_mem_width-1 downto 0); 
 signal temp_RAM_DATA		:	RAM_DATA_TYPE;
 
+
+signal kin_ena :	std_logic;		-- Data in is a special code, not all are legal.	
+signal ein_ena :	std_logic;		-- Data (or code) input enable
+signal din_ena :	std_logic;		-- Data (or code) input enable
+signal dout_val0 :	std_logic;		-- data out valid LSB
+signal dout_val1 :	std_logic;		-- data out valid MSB
+
 signal RX_ALIGN_BITSLIP			:	std_logic_vector(1 downto 0);
-signal RX_DATA						:	std_logic_vector(transceiver_mem_width-1 downto 0);
+signal RX_DATA						:	std_logic_vector(15 downto 0);
 signal RX_DATA10						:	std_logic_vector(19 downto 0);
 signal CHECK_WORD_1				:	std_logic_vector(7 downto 0);
 signal CHECK_WORD_2				:	std_logic_vector(7 downto 0);
@@ -185,121 +187,72 @@ xRAM_FULL_FLAG		<= RAM_FULL_FLAG;
 xCC_SEND_TRIGGER	<= xTRIGGER;
 xCATCH_PKT     	<= START_WRITE; 
 
-
---bitslip RX align process
-process(xCLK, xALIGN_ACTIVE, xCLR_ALL)
-variable i : integer range 5 downto 0;	
-variable j : integer range 5 downto 0;	
+--Check if Link is disconnected
+process(xCLK)
+variable i : integer range 5 downto 0;
 begin
 	if xCLR_ALL = '1' then
-		ALIGN_SUCCESS <= "00";
-		TX_DATA <= (others=>'0');
-		LVDS_ALIGN_STATE_1 <= CHECK_1;
-		LVDS_ALIGN_STATE_2 <= CHECK_2;
-		RX_ALIGN_BITSLIP <= "00";
+		LINK_STATE <= DOWN;
 		i := 0;
-		j := 0;
-	elsif falling_edge(xCLK) and xALIGN_ACTIVE = '1' and xPLL_LOCKED = '1' then
-		TX_DATA <= ALIGN_WORD_8;
-		--LVDS_ALIGN_STATE_1 <= CHECK_1;
-		--LVDS_ALIGN_STATE_2 <= CHECK_2;
-		
-		case LVDS_ALIGN_STATE_1 is
-				
-				when CHECK_1 =>
-					RX_ALIGN_BITSLIP(0) <= '0';
-					CHECK_WORD_1 <= RX_DATA(7 downto 0);
-					if CHECK_WORD_1 = ALIGN_WORD_8 then
-						i := 0;
-						LVDS_ALIGN_STATE_1 <= DOUBLE_CHECK_1;
-
-					else
-						ALIGN_SUCCESS(0) <= '0';
-						i := i + 1;
-						if i > 3 then
-							i := 0;
-							LVDS_ALIGN_STATE_1 <= INCREMENT_1;
-						end if;
-					end if;
-				
-				when  DOUBLE_CHECK_1 =>
-					CHECK_WORD_1 <= RX_DATA(7 downto 0);
-					if CHECK_WORD_1 = ALIGN_WORD_8 then
-						LVDS_ALIGN_STATE_1 <= ALIGN_DONE_1;
-
-					else
-						i := i + 1;
-						if i > 3 then
-							i := 0;
-							LVDS_ALIGN_STATE_1 <= CHECK_1;
-						end if;
-					end if;
-				
-				when INCREMENT_1 =>
-					i := i+1;
-					RX_ALIGN_BITSLIP(0) <= '1';
-					if i > 1 then
-						i := 0;
-						RX_ALIGN_BITSLIP(0) <= '0';
-						LVDS_ALIGN_STATE_1 <= CHECK_1;
-					end if;
-										
-				when ALIGN_DONE_1 =>
-					ALIGN_SUCCESS(0) <= '1';
-					LVDS_ALIGN_STATE_1 <= CHECK_1;
-		end case;
-
-		case LVDS_ALIGN_STATE_2 is
-				
-				when CHECK_2 =>
-					RX_ALIGN_BITSLIP(1) <= '0';
-					CHECK_WORD_2 <= RX_DATA(15 downto 8);
-					if CHECK_WORD_2 = ALIGN_WORD_8 then
-						LVDS_ALIGN_STATE_2 <= DOUBLE_CHECK_2;
-
-					else
-						ALIGN_SUCCESS(1) <= '0';
-						j := j + 1;
-						if j > 3 then
-							j := 0;
-							LVDS_ALIGN_STATE_2 <= INCREMENT_2;
-						end if;
-					end if;
-				
-				when  DOUBLE_CHECK_2 =>
-					CHECK_WORD_2 <= RX_DATA(15 downto 8);
-					if CHECK_WORD_2 = ALIGN_WORD_8 then
-						LVDS_ALIGN_STATE_2 <= ALIGN_DONE_2;
-
-					else
-						j := j + 1;
-						if j > 3 then
-							j := 0;
-							LVDS_ALIGN_STATE_2 <= CHECK_2;
-						end if;
-					end if;
-				
-				when INCREMENT_2 =>
-					j := j+1;
-					RX_ALIGN_BITSLIP(1) <= '1';
-					if j > 1 then
-						j := 0;
-						RX_ALIGN_BITSLIP(1) <= '0';
-						LVDS_ALIGN_STATE_2 <= CHECK_2;
-					end if;
-										
-				when ALIGN_DONE_2=>
-					ALIGN_SUCCESS(1) <= '1';
-					LVDS_ALIGN_STATE_2 <= CHECK_2;
-		end case;
-				
-	elsif falling_edge(xCLK) and ALIGN_SUCCESS(0) = '1' 
-			and ALIGN_SUCCESS(1) = '1' and xALIGN_ACTIVE = '0' then
-		TX_DATA <= GOOD_DATA;
-		--LVDS_ALIGN_STATE_1 <= CHECK_1;
-		--LVDS_ALIGN_STATE_2 <= CHECK_2;
+	elsif rising_edge(xCLK) then
+		if (RX_DATA10(19 downto 10) = x"2FF") or (RX_DATA10(9 downto 0) = x"2FF") then
+			LINK_STATE <= DOWN;
+			i := 0;
+		else
+			if i < 5 then
+				LINK_STATE <= CHECKING;
+				i := i + 1;
+			else
+				LINK_STATE <= UP;
+			end if;
+		end if;
 	end if;
 end process;
+
+din_ena <= '1' when LINK_STATE = UP else '0';
+
+process(xCLK, xCLR_ALL)
+variable i : integer range 5 downto 0;	
+begin
+	if xCLR_ALL = '1' then
+		TX_DATA <= K28_1;
+		kin_ena <= '1';
+		ein_ena <= '0';
+		ALIGN_SUCCESS <= "00";
+		RX_ALIGN_BITSLIP <= "00";
+		i := 0;
+	elsif falling_edge(xCLK) and xPLL_LOCKED = '1' then
+		if (LINK_STATE /= UP) then
+			TX_DATA <= K28_1;
+			kin_ena <= '1';
+			ein_ena <= '0';
+			ALIGN_SUCCESS <= "00";
+			i := 0;
+		else
+			if dout_val0 = '0' or dout_val1 = '0' then  -- link is up, but decoder doesn't see valid data
+				TX_DATA <= K28_7;
+				kin_ena <= '1';
+				ein_ena <= '0';
+				ALIGN_SUCCESS <= "00";
+				i := 0;
+			else -- link is up and data is valid
+				if i < 5 then
+					i := i + 1;
+					TX_DATA <= K28_5;
+					kin_ena <= '1';
+					ein_ena <= '0';
+					ALIGN_SUCCESS <= "00";
+				else
+					TX_DATA <= GOOD_DATA;
+					kin_ena <= '0';
+					ein_ena <= '1';
+					ALIGN_SUCCESS <= "11";
+				end if;
+			end if;
+		end if;
+	end if;
+end process;
+
 
 process(xCLK, ALIGN_SUCCESSES, xDC_MASK, xCLR_ALL)
 variable i : integer range 50 downto 0;	
@@ -360,8 +313,7 @@ begin
 	if xCLR_ALL = '1' or xDONE = '1' or xSOFT_RESET = '1' then
 		START_WRITE <= '0';
 		STOP_WRITE	<= '0';
-	elsif falling_edge(WRITE_CLOCK) and ALIGN_SUCCESSES = '1' 
-		and xALIGN_ACTIVE = '0' then
+	elsif falling_edge(WRITE_CLOCK) and ALIGN_SUCCESSES = '1' then
 		CHECK_RX_DATA <= RX_DATA;
 		if CHECK_RX_DATA = STARTWORD then
 			START_WRITE <= '1';
@@ -456,8 +408,8 @@ tx_enc : encoder_8b10b
 	PORT MAP(
 		clk => xCLK,
 		rst => xCLR_ALL,
-		kin_ena => '0',		-- Data in is a special code, not all are legal.	
-		ein_ena => '1',		-- Data (or code) input enable
+		kin_ena => kin_ena,		-- Data in is a special code, not all are legal.	
+		ein_ena => ein_ena,		-- Data (or code) input enable
 		ein_dat => TX_DATA,		-- 8b data in
 		ein_rd => TX_RDreg,		-- running disparity input
 		eout_val => open,		-- data out is valid
@@ -465,6 +417,25 @@ tx_enc : encoder_8b10b
 		eout_rdcomb => open,		-- running disparity output (comb)
 		eout_rdreg => TX_RDreg);		-- running disparity output (reg)
 
+rx_dec0 : decoder_8b10b
+	GENERIC MAP(
+		RDERR =>1,
+		KERR => 1,
+		METHOD => 1)
+	PORT MAP(
+		clk => RX_OUTCLK,
+		rst => xCLR_ALL,
+		din_ena => din_ena,		-- 10b data ready
+		din_dat => RX_DATA10(9 downto 0),		-- 10b data input
+		din_rd => RX_RDreg,		-- running disparity input
+		dout_val => dout_val0,		-- data out valid
+		dout_dat => RX_DATA(7 downto 0),		-- data out
+		dout_k => open,		-- special code
+		dout_kerr => open,		-- coding mistake detected
+		dout_rderr => open,		-- running disparity mistake detected
+		dout_rdcomb => RX_RDcomb,		-- running disparity output (comb)
+		dout_rdreg => open);		-- running disparity output (reg)
+		
 rx_dec1 : decoder_8b10b
 	GENERIC MAP(
 		RDERR =>1,
@@ -473,29 +444,10 @@ rx_dec1 : decoder_8b10b
 	PORT MAP(
 		clk => RX_OUTCLK,
 		rst => xCLR_ALL,
-		din_ena => '1',		-- 10b data ready
-		din_dat => RX_DATA10(9 downto 0),		-- 10b data input
-		din_rd => RX_RDreg,		-- running disparity input
-		dout_val => open,		-- data out valid
-		dout_dat => RX_DATA(7 downto 0),		-- data out
-		dout_k => open,		-- special code
-		dout_kerr => open,		-- coding mistake detected
-		dout_rderr => open,		-- running disparity mistake detected
-		dout_rdcomb => RX_RDcomb,		-- running disparity output (comb)
-		dout_rdreg => open);		-- running disparity output (reg)
-		
-rx_dec2 : decoder_8b10b
-	GENERIC MAP(
-		RDERR =>1,
-		KERR => 1,
-		METHOD => 1)
-	PORT MAP(
-		clk => RX_OUTCLK,
-		rst => xCLR_ALL,
-		din_ena => '1',		-- 10b data ready
+		din_ena => din_ena,		-- 10b data ready
 		din_dat => RX_DATA10(19 downto 10),		-- 10b data input
 		din_rd => RX_RDcomb,		-- running disparity input
-		dout_val => open,		-- data out valid
+		dout_val => dout_val1,		-- data out valid
 		dout_dat => RX_DATA(15 downto 8),		-- data out
 		dout_k => open,		-- special code
 		dout_kerr => open,		-- coding mistake detected

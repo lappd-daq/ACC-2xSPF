@@ -1285,5 +1285,5 @@ set_global_assignment -name SDC_FILE ACC.sdc
 set_global_assignment -name SIGNALTAP_FILE tapUSB.stp
 set_global_assignment -name VHDL_FILE src/usbWrapperACC.vhd
 set_global_assignment -name CDF_FILE ACC_v0_1_active_serial_US5.cdf
-set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp
