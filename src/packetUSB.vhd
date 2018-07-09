@@ -176,7 +176,7 @@ variable i : integer range 50 downto 0;
 					STATE <= ADC;				
 				when ADC =>	
 
-					if  RADDR > 7800 then       --256
+					if  RADDR > 7820 then       --256
 					--if RADDR = 265 then       --256
 						RADDR <= (others=>'0');
 						RAM_READ_EN <= (others=>'0');
