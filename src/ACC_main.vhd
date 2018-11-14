@@ -91,23 +91,52 @@ end ACC_main;
 	
 architecture Behavioral of	ACC_main is
 
+component Clock_Manager
+	Port(
+		Reset			:  in		std_logic;
+		INCLK0		:	in		std_logic;
+		INCLK1		:  in		std_logic;
+		INCLK2		:	in		std_logic;
+		INCLK3		:  in		std_logic;
+		PLL_reset	:  in		std_logic;
+		
+		CLK_SYS_4x	: 	out	std_logic;
+		CLK_SYS		:  out	std_logic; 
+		
+		CLK_RX 		: 	out std_logic_vector(7 downto 0);
+		CLK_RX_LOCKED 			:  out	std_logic;
+		CLK_RX_PHASE_EN 		:  in		std_logic;
+		CLK_RX_PHASE_UPDN 	:  in 	std_logic;
+		CLK_RX_PHASE_SEL 		:  in  std_logic_vector(4 downto 0);
+		CLK_RX_PHASE_DONE 	:  out 	std_logic;
+		
+		CLK_1MHz		:  out	std_logic;
+		CLK_1Hz		:  out	std_logic;
+		CLK_10Hz		:  out	std_logic;
+		CLK_1kHz		:	out	std_logic;
+		
+		fpgaPLLlock :	out	std_logic;
+		fpgaPLL2lock :	out	std_logic;
+		fpgaPLL3lock :	out	std_logic);
+
+end component;
+
 	signal	reset_global			:	std_logic;
 	signal	clock_1MHz				:	std_logic;
 	signal	clock_sys				:	std_logic;
 	signal	clock_sys4x				:	std_logic;
 	signal   clock_rx_1				: 	std_logic;
 	signal   clock_rx_2				: 	std_logic;
-	signal   clocks_rx				:  std_logic_vector(num_front_end_boards-1 downto 0);
-	
 	signal 	clock_FPGA_PLLlock	:	std_logic;
 
 	type rx_serdes_type is array(num_front_end_boards-1 downto 0) of
 		std_logic_vector(1 downto 0); 
 	signal	rx_serdes				: 	rx_serdes_type;
-	signal 	tx_serdes				: 	std_logic_vector(num_front_end_boards-1 downto 0);
+	signal	rx_serdes_clk				:  std_logic_vector(num_front_end_boards-1 downto 0);
+	signal	tx_serdes				: 	std_logic_vector(num_front_end_boards-1 downto 0);
+	signal 	tx_serdes_clk			: 	std_logic_vector(num_front_end_boards-1 downto 0);
 	signal	trigger_to_fe			: 	std_logic_vector(num_front_end_boards-1 downto 0);
 	signal	packet_from_fe_rec	: 	std_logic_vector(num_front_end_boards-1 downto 0);
-	signal	lvds_aligned_tx		:	std_logic_vector(num_front_end_boards-1 downto 0);
 
 begin
 
@@ -140,14 +169,22 @@ xDigzFlagACDC(4)	<= xDCin_4(2);
 xDigzFlagACDC(5)	<= xDCin_5(2);
 xDigzFlagACDC(6)	<= xDCin_6(2);
 xDigzFlagACDC(7)	<= xDCin_7(2);
-lvds_aligned_tx(0)<= xDCin_0(3);
-lvds_aligned_tx(1)<= xDCin_1(3);
-lvds_aligned_tx(2)<= xDCin_2(3);
-lvds_aligned_tx(3)<= xDCin_3(3);
-lvds_aligned_tx(4)<= xDCin_4(3);
-lvds_aligned_tx(5)<= xDCin_5(3);
-lvds_aligned_tx(6)<= xDCin_6(3);
-lvds_aligned_tx(7)<= xDCin_7(3);
+--rx_serdes_clk(0)<= xDCin_0(3);
+--rx_serdes_clk(1)<= xDCin_1(3);
+--rx_serdes_clk(2)<= xDCin_2(3);
+--rx_serdes_clk(3)<= xDCin_3(3);
+--rx_serdes_clk(4)<= xDCin_4(3);
+--rx_serdes_clk(5)<= xDCin_5(3);
+--rx_serdes_clk(6)<= xDCin_6(3);
+--rx_serdes_clk(7)<= xDCin_7(3);
+rx_serdes_clk(0)<= clock_sys;
+rx_serdes_clk(1)<= clock_sys;
+rx_serdes_clk(2)<= clock_sys;
+rx_serdes_clk(3)<= clock_sys;
+rx_serdes_clk(4)<= clock_sys;
+rx_serdes_clk(5)<= clock_sys;
+rx_serdes_clk(6)<= clock_sys;
+rx_serdes_clk(7)<= clock_sys;
 --TX:
 xDCout_0(0)			<=	tx_serdes(0);
 xDCout_1(0)			<=	tx_serdes(1);
@@ -165,14 +202,14 @@ xDCout_4(1)			<=	xtrig(4);
 xDCout_5(1)			<=	xtrig(5);
 xDCout_6(1)			<=	xtrig(6);
 xDCout_7(1)			<=	xtrig(7);
-xDCout_0(2)			<=	xalign_strobe(0);
-xDCout_1(2)			<=	xalign_strobe(1);
-xDCout_2(2)			<=	xalign_strobe(2);
-xDCout_3(2)			<=	xalign_strobe(3);
-xDCout_4(2)			<=	xalign_strobe(4);
-xDCout_5(2)			<=	xalign_strobe(5);
-xDCout_6(2)			<=	xalign_strobe(6);
-xDCout_7(2)			<=	xalign_strobe(7);
+xDCout_0(2)			<=	tx_serdes_clk(0);
+xDCout_1(2)			<=	tx_serdes_clk(1);
+xDCout_2(2)			<=	tx_serdes_clk(2);
+xDCout_3(2)			<=	tx_serdes_clk(3);
+xDCout_4(2)			<=	tx_serdes_clk(4);
+xDCout_5(2)			<=	tx_serdes_clk(5);
+xDCout_6(2)			<=	tx_serdes_clk(6);
+xDCout_7(2)			<=	tx_serdes_clk(7);
 -------------------------------------
 
 xclk_sys4X  <= clock_sys4x;
@@ -190,8 +227,12 @@ xCLOCKS : entity work.Clock_Manager(Structural)
 		PLL_reset	=>	'0',
 		CLK_SYS_4x	=> clock_sys4x, 		
 		CLK_SYS		=> clock_sys,
-		CLK_SYS_1rx	=> clock_rx_1,
-		CLK_SYS_2rx	=> clock_rx_2,
+		CLK_RX 					=> open,
+		CLK_RX_LOCKED 			=> open,
+		CLK_RX_PHASE_EN 		=> '0',
+		CLK_RX_PHASE_UPDN 	=> '0',
+		CLK_RX_PHASE_SEL 		=> "00000",
+		CLK_RX_PHASE_DONE 	=> open,
 		CLK_1MHz		=> clock_1MHz,		
 		CLK_1Hz		=> xclk_1Hz,
 		CLK_10Hz		=> xclk_10Hz,
@@ -210,30 +251,21 @@ xRESET_BLOCK : entity work.progreset(Behavioral)
 		Reset			=> reset_global,
 		Reset_b		=> open);
 
---clocks for transceiver channels come from 2 PLL's
---partitioned in 2 banks:
-clocks_rx(0)	<= clock_rx_1;
-clocks_rx(1)	<= clock_rx_1;
-clocks_rx(2)	<= clock_rx_1;
-clocks_rx(3)	<= clock_rx_1;
-clocks_rx(4)	<= clock_rx_2;
-clocks_rx(5)	<= clock_rx_2;
-clocks_rx(6)	<= clock_rx_2;
-clocks_rx(7)	<= clock_rx_2;
-
 ACDCintercom0	:	 for i in num_front_end_boards-1 downto 0 generate
+--ACDCintercom0	:	 for i in 3 downto 0 generate
+
 	xTRANSCEIVERS : entity work.transceivers(rtl)
 	
 	port map(
 		xCLR_ALL				=> reset_global,
-		xALIGN_ACTIVE		=> xalign_strobe(i),
 		xALIGN_SUCCESS 	=> xalign_good(i),
 		
 		xCLK					=> clock_sys,
-		xRX_CLK				=> clocks_rx(i),
 		
 		xRX_LVDS_DATA		=> rx_serdes(i),
-		xTX_LVDS_DATA		=>	tx_serdes(i),
+		xRX_LVDS_CLK		=> rx_serdes_clk(i),
+		xTX_LVDS_DATA		=> tx_serdes(i),
+		xTX_LVDS_CLK		=> tx_serdes_clk(i),
 		
 		xCC_INSTRUCTION	=>	xInstruction,
 		xCC_INSTRUCT_RDY	=> xInstruct_Rdy,
@@ -254,7 +286,6 @@ ACDCintercom0	:	 for i in num_front_end_boards-1 downto 0 generate
 		xDONE					=> xdone(i),
 		xDC_MASK				=> xfe_mask(i),
 		xPLL_LOCKED			=>	clock_FPGA_PLLlock,
-		xFE_ALIGN_SUCCESS	=> lvds_aligned_tx(i),
 		xSOFT_RESET			=> xready);
 	end generate;
 	

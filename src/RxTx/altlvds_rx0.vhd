@@ -43,7 +43,7 @@ ENTITY altlvds_rx0 IS
 	PORT
 	(
 		rx_channel_data_align		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
-		rx_dpll_hold		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		rx_fifo_reset		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 		rx_in		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 		rx_inclock		: IN STD_LOGIC ;
 		rx_reset		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
@@ -114,7 +114,7 @@ ARCHITECTURE SYN OF altlvds_rx0 IS
 	);
 	PORT (
 			rx_channel_data_align	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
-			rx_dpll_hold	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+			rx_fifo_reset	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 			rx_in	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
 			rx_inclock	: IN STD_LOGIC ;
 			rx_reset	: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
@@ -133,7 +133,7 @@ BEGIN
 	GENERIC MAP (
 		buffer_implementation => "RAM",
 		cds_mode => "UNUSED",
-		common_rx_tx_pll => "OFF",
+		common_rx_tx_pll => "ON",
 		data_align_rollover => 10,
 		data_rate => "400.0 Mbps",
 		deserialization_factor => 10,
@@ -144,7 +144,7 @@ BEGIN
 		enable_dpa_align_to_rising_edge_only => "OFF",
 		enable_dpa_calibration => "ON",
 		enable_dpa_fifo => "UNUSED",
-		enable_dpa_initial_phase_selection => "ON",
+		enable_dpa_initial_phase_selection => "OFF",
 		enable_dpa_mode => "ON",
 		enable_dpa_pll_calibration => "OFF",
 		enable_soft_cdr_mode => "OFF",
@@ -168,7 +168,7 @@ BEGIN
 		registered_data_align_input => "UNUSED",
 		registered_output => "ON",
 		reset_fifo_at_first_lock => "UNUSED",
-		rx_align_data_reg => "UNUSED",
+		rx_align_data_reg => "RISING_EDGE",
 		sim_dpa_is_negative_ppm_drift => "OFF",
 		sim_dpa_net_ppm_variation => 0,
 		sim_dpa_output_clock_phase_shift => 0,
@@ -181,7 +181,7 @@ BEGIN
 	)
 	PORT MAP (
 		rx_channel_data_align => rx_channel_data_align,
-		rx_dpll_hold => rx_dpll_hold,
+		rx_fifo_reset => rx_fifo_reset,
 		rx_in => rx_in,
 		rx_inclock => rx_inclock,
 		rx_reset => rx_reset,
@@ -221,7 +221,7 @@ END SYN;
 -- Retrieval info: PRIVATE: Reg_InOut NUMERIC "1"
 -- Retrieval info: PRIVATE: Use_Cda_Reset NUMERIC "0"
 -- Retrieval info: PRIVATE: Use_Clock_Resc STRING "AUTO"
--- Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "0"
+-- Retrieval info: PRIVATE: Use_Common_Rx_Tx_Plls NUMERIC "1"
 -- Retrieval info: PRIVATE: Use_Data_Align NUMERIC "1"
 -- Retrieval info: PRIVATE: Use_Lock NUMERIC "0"
 -- Retrieval info: PRIVATE: Use_Pll_Areset NUMERIC "0"
@@ -229,7 +229,7 @@ END SYN;
 -- Retrieval info: PRIVATE: Use_Tx_Out_Phase NUMERIC "0"
 -- Retrieval info: CONSTANT: BUFFER_IMPLEMENTATION STRING "RAM"
 -- Retrieval info: CONSTANT: CDS_MODE STRING "UNUSED"
--- Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "OFF"
+-- Retrieval info: CONSTANT: COMMON_RX_TX_PLL STRING "ON"
 -- Retrieval info: CONSTANT: clk_src_is_pll STRING "off"
 -- Retrieval info: CONSTANT: DATA_ALIGN_ROLLOVER NUMERIC "10"
 -- Retrieval info: CONSTANT: DATA_RATE STRING "400.0 Mbps"
@@ -241,7 +241,7 @@ END SYN;
 -- Retrieval info: CONSTANT: ENABLE_DPA_ALIGN_TO_RISING_EDGE_ONLY STRING "OFF"
 -- Retrieval info: CONSTANT: ENABLE_DPA_CALIBRATION STRING "ON"
 -- Retrieval info: CONSTANT: ENABLE_DPA_FIFO STRING "UNUSED"
--- Retrieval info: CONSTANT: ENABLE_DPA_INITIAL_PHASE_SELECTION STRING "ON"
+-- Retrieval info: CONSTANT: ENABLE_DPA_INITIAL_PHASE_SELECTION STRING "OFF"
 -- Retrieval info: CONSTANT: ENABLE_DPA_MODE STRING "ON"
 -- Retrieval info: CONSTANT: ENABLE_DPA_PLL_CALIBRATION STRING "OFF"
 -- Retrieval info: CONSTANT: ENABLE_SOFT_CDR_MODE STRING "OFF"
@@ -265,7 +265,7 @@ END SYN;
 -- Retrieval info: CONSTANT: REGISTERED_DATA_ALIGN_INPUT STRING "UNUSED"
 -- Retrieval info: CONSTANT: REGISTERED_OUTPUT STRING "ON"
 -- Retrieval info: CONSTANT: RESET_FIFO_AT_FIRST_LOCK STRING "UNUSED"
--- Retrieval info: CONSTANT: RX_ALIGN_DATA_REG STRING "UNUSED"
+-- Retrieval info: CONSTANT: RX_ALIGN_DATA_REG STRING "RISING_EDGE"
 -- Retrieval info: CONSTANT: SIM_DPA_IS_NEGATIVE_PPM_DRIFT STRING "OFF"
 -- Retrieval info: CONSTANT: SIM_DPA_NET_PPM_VARIATION NUMERIC "0"
 -- Retrieval info: CONSTANT: SIM_DPA_OUTPUT_CLOCK_PHASE_SHIFT NUMERIC "0"
@@ -278,8 +278,8 @@ END SYN;
 -- Retrieval info: CONNECT: @rx_channel_data_align 0 0 2 0 rx_channel_data_align 0 0 2 0
 -- Retrieval info: USED_PORT: rx_dpa_locked 0 0 2 0 OUTPUT NODEFVAL "rx_dpa_locked[1..0]"
 -- Retrieval info: CONNECT: rx_dpa_locked 0 0 2 0 @rx_dpa_locked 0 0 2 0
--- Retrieval info: USED_PORT: rx_dpll_hold 0 0 2 0 INPUT NODEFVAL "rx_dpll_hold[1..0]"
--- Retrieval info: CONNECT: @rx_dpll_hold 0 0 2 0 rx_dpll_hold 0 0 2 0
+-- Retrieval info: USED_PORT: rx_fifo_reset 0 0 2 0 INPUT NODEFVAL "rx_fifo_reset[1..0]"
+-- Retrieval info: CONNECT: @rx_fifo_reset 0 0 2 0 rx_fifo_reset 0 0 2 0
 -- Retrieval info: USED_PORT: rx_in 0 0 2 0 INPUT NODEFVAL "rx_in[1..0]"
 -- Retrieval info: CONNECT: @rx_in 0 0 2 0 rx_in 0 0 2 0
 -- Retrieval info: USED_PORT: rx_inclock 0 0 0 0 INPUT NODEFVAL "rx_inclock"
@@ -295,7 +295,7 @@ END SYN;
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altlvds_rx0.bsf TRUE TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altlvds_rx0_inst.vhd FALSE TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altlvds_rx0.inc FALSE TRUE
--- Retrieval info: GEN_FILE: TYPE_NORMAL altlvds_rx0.cmp FALSE TRUE
+-- Retrieval info: GEN_FILE: TYPE_NORMAL altlvds_rx0.cmp TRUE TRUE
 -- Retrieval info: GEN_FILE: TYPE_NORMAL altlvds_rx0.ppf TRUE FALSE
 -- Retrieval info: LIB_FILE: altera_mf
 -- Retrieval info: CBX_MODULE_PREFIX: ON

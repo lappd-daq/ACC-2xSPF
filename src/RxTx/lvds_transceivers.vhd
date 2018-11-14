@@ -42,17 +42,18 @@ END lvds_transceivers;
 
 ARCHITECTURE bdf_type OF lvds_transceivers IS 
 
-COMPONENT altlvds_rx0
-	PORT(rx_inclock : IN STD_LOGIC;
-		 rx_channel_data_align : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 rx_dpll_hold : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 rx_in : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 rx_reset : IN STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 rx_outclock : OUT STD_LOGIC;
-		 rx_dpa_locked : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
-		 rx_out : OUT STD_LOGIC_VECTOR(19 DOWNTO 0)
+component altlvds_rx0
+	PORT
+	(
+		rx_channel_data_align		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		rx_in		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		rx_inclock		: IN STD_LOGIC ;
+		rx_reset		: IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		rx_dpa_locked		: OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
+		rx_out		: OUT STD_LOGIC_VECTOR (19 DOWNTO 0);
+		rx_outclock		: OUT STD_LOGIC 
 	);
-END COMPONENT;
+end component;
 
 COMPONENT altlvds_tx0
 	PORT(tx_inclock : IN STD_LOGIC;
@@ -62,20 +63,33 @@ COMPONENT altlvds_tx0
 	);
 END COMPONENT;
 
+component lvds_rx_clockbuffer is
+	port (
+		inclk  : in  std_logic := 'X'; -- inclk
+		outclk : out std_logic         -- outclk
+	);
+end component lvds_rx_clockbuffer;
+
+--signal rx_clk_buf		:  std_logic;
 
 
 BEGIN 
 
+--rx_clk_buffer : lvds_rx_clockbuffer
+--port map(inclk => RX_CLK,
+--			outclk => rx_clk_buf);
+
+
 
 lvds_rx : altlvds_rx0
 PORT MAP(rx_inclock => RX_CLK,
-		 rx_channel_data_align => RX_ALIGN,
-		 rx_dpll_hold => RX_DPAhold,
-		 rx_in => RX_LVDS_DATA,
-		 rx_reset => RX_DPAreset,
+		 rx_channel_data_align => RX_ALIGN(1 downto 0),
+--		 rx_dpll_hold => RX_DPAhold(0 downto 0),
+		 rx_in => RX_LVDS_DATA(1 downto 0),
+		 rx_reset => RX_DPAreset(1 downto 0),
 		 rx_outclock => RX_OUTCLK,
-		 rx_dpa_locked => RX_DPAlock,
-		 rx_out => RX_DATA);
+		 rx_dpa_locked => RX_DPAlock(1 downto 0),
+		 rx_out => RX_DATA(19 downto 0));
 
 lvds_tx : altlvds_tx0
 PORT MAP(tx_inclock => TX_CLK,

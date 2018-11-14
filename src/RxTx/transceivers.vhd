@@ -23,7 +23,6 @@ entity transceivers is
 		xALIGN_SUCCESS 	: out	std_logic;  --successfully aligned
 		
 		xCLK					: in	std_logic;	--system clock
-		xRX_CLK				: in	std_logic;	--parallel data clock for rx transceiver 
 		
 		xRX_LVDS_DATA		: in	std_logic_vector(1 downto 0); --serdes data received (2x)
 		xRX_LVDS_CLK		: in	std_logic;  --bytealigned clk for serdes data received
@@ -49,7 +48,6 @@ entity transceivers is
 		xDONE					: in	std_logic;	--done reading from USB/etc (firmware done)
 		xDC_MASK				: in	std_logic;	--mask bit for address
 		xPLL_LOCKED			: in	std_logic;  --FPGA pll locked
-		xFE_ALIGN_SUCCESS	: in	std_logic;  --single bit front-end aligned success
 		xSOFT_RESET			: in	std_logic);	--software reset, done reading to cpu (software done)
 		
 end transceivers;
@@ -76,6 +74,15 @@ signal ein_ena :	std_logic;		-- Data (or code) input enable
 signal din_ena :	std_logic;		-- Data (or code) input enable
 signal dout_val0 :	std_logic;		-- data out valid LSB
 signal dout_val1 :	std_logic;		-- data out valid MSB
+signal dout_k0 :	std_logic;		-- special code
+signal dout_k1 :	std_logic;		-- special code
+signal dout_kerr0 	:	std_logic;		-- coding mistake detected
+signal dout_kerr1		:	std_logic;		-- coding mistake detected
+signal dout_rderr0	:	std_logic;		-- running disparity mistake detected
+signal dout_rderr1	:	std_logic;		-- running disparity mistake detected
+signal dout_kerr		:  std_logic;		-- coding mistake on either interface
+signal dout_rderr		:  std_logic; 		-- running dispairty mistake on either interface
+signal dout_error 	:  std_logic;		-- any decoding error on either interface
 
 signal RX_ALIGN_BITSLIP			:	std_logic_vector(1 downto 0);
 signal RX_DATA						:	std_logic_vector(15 downto 0);
@@ -86,11 +93,12 @@ signal TX_DATA						: 	std_logic_vector(7 downto 0);
 signal TX_DATA10						: 	std_logic_vector(9 downto 0);
 signal ALIGN_SUCCESS				:  std_logic_vector(1 downto 0) := "00";
 signal ALIGN_SUCCESSES			:  std_logic;
+signal FE_ALIGN_SUCCESS		:  std_logic;
 signal GOOD_DATA					:  std_logic_vector(7 downto 0);
 
 signal TX_RDreg							: std_logic;
-signal RX_RDcomb						: std_logic;
-signal RX_RDreg							: std_logic;
+signal RX_RDreg0						: std_logic;
+signal RX_RDreg1							: std_logic;
 
 signal INSTRUCT_READY			:	std_logic;
 
@@ -179,8 +187,8 @@ END COMPONENT;
 
 begin
 
-xALIGN_INFO       <= ALIGN_SUCCESS(0) & ALIGN_SUCCESS(1) & xFE_ALIGN_SUCCESS;
-ALIGN_SUCCESSES	<= ALIGN_SUCCESS(0) and ALIGN_SUCCESS(1) and xFE_ALIGN_SUCCESS;
+xALIGN_INFO       <= ALIGN_SUCCESS(0) & ALIGN_SUCCESS(1) & FE_ALIGN_SUCCESS;
+ALIGN_SUCCESSES	<= ALIGN_SUCCESS(0) and ALIGN_SUCCESS(1) and FE_ALIGN_SUCCESS;
 xALIGN_SUCCESS 	<= ALIGN_SUCCESSES;
 WRITE_CLOCK			<= RX_OUTCLK;
 xRAM_FULL_FLAG		<= RAM_FULL_FLAG;
@@ -220,6 +228,7 @@ begin
 		ein_ena <= '0';
 		ALIGN_SUCCESS <= "00";
 		RX_ALIGN_BITSLIP <= "00";
+		FE_ALIGN_SUCCESS <= '0';
 		i := 0;
 	elsif falling_edge(xCLK) and xPLL_LOCKED = '1' then
 		if (LINK_STATE /= UP) then
@@ -227,13 +236,15 @@ begin
 			kin_ena <= '1';
 			ein_ena <= '0';
 			ALIGN_SUCCESS <= "00";
+			FE_ALIGN_SUCCESS <= '0';
 			i := 0;
-		else
-			if dout_val0 = '0' or dout_val1 = '0' then  -- link is up, but decoder doesn't see valid data
+		else 		-- link is up
+			if dout_error = '1' then  -- but decoder doesn't see valid data
 				TX_DATA <= K28_7;
 				kin_ena <= '1';
 				ein_ena <= '0';
 				ALIGN_SUCCESS <= "00";
+				FE_ALIGN_SUCCESS <= '0';
 				i := 0;
 			else -- link is up and data is valid
 				if i < 5 then
@@ -242,11 +253,14 @@ begin
 					kin_ena <= '1';
 					ein_ena <= '0';
 					ALIGN_SUCCESS <= "00";
+					-- somewhere should check if we get a k-code indicating fe alignment success.  ignore for now.
+					FE_ALIGN_SUCCESS <= '0';
 				else
 					TX_DATA <= GOOD_DATA;
 					kin_ena <= '0';
 					ein_ena <= '1';
 					ALIGN_SUCCESS <= "11";
+					FE_ALIGN_SUCCESS <= '1';
 				end if;
 			end if;
 		end if;
@@ -296,7 +310,7 @@ begin
 				SEND_CC_INSTRUCT_STATE <= READY;
 				
 			when READY =>
-				GOOD_DATA <= (others=>'0');
+				GOOD_DATA <= K28_5;
 				INSTRUCT_READY <= '1';
 				--i := i + 1;
 				--if i = 10 then
@@ -430,9 +444,9 @@ rx_dec0 : decoder_8b10b
 		din_rd => RX_RDreg,		-- running disparity input
 		dout_val => dout_val0,		-- data out valid
 		dout_dat => RX_DATA(7 downto 0),		-- data out
-		dout_k => open,		-- special code
-		dout_kerr => open,		-- coding mistake detected
-		dout_rderr => open,		-- running disparity mistake detected
+		dout_k => dout_k0,		-- special code
+		dout_kerr => dout_kerr0,		-- coding mistake detected
+		dout_rderr => dout_rderr0,		-- running disparity mistake detected
 		dout_rdcomb => RX_RDcomb,		-- running disparity output (comb)
 		dout_rdreg => open);		-- running disparity output (reg)
 		
@@ -449,12 +463,15 @@ rx_dec1 : decoder_8b10b
 		din_rd => RX_RDcomb,		-- running disparity input
 		dout_val => dout_val1,		-- data out valid
 		dout_dat => RX_DATA(15 downto 8),		-- data out
-		dout_k => open,		-- special code
-		dout_kerr => open,		-- coding mistake detected
-		dout_rderr => open,		-- running disparity mistake detected
+		dout_k => dout_k1,		-- special code
+		dout_kerr => dout_kerr1,		-- coding mistake detected
+		dout_rderr => dout_rderr1,		-- running disparity mistake detected
 		dout_rdcomb => open,		-- running disparity output (comb)
 		dout_rdreg => RX_RDreg);		-- running disparity output (reg)
 
+dout_kerr <= dout_kerr0 or dout_kerr1;
+dout_rderr <= dout_rderr0 or dout_rderr1;
+dout_error <= dout_kerr or dout_rderr;
 
 xlvds_transceivers : lvds_transceivers
 port map(
@@ -464,7 +481,7 @@ port map(
 			RX_ALIGN			=>		RX_ALIGN_BITSLIP,
 			RX_LVDS_DATA	=>		xRX_LVDS_DATA,
 			
-			RX_DPAhold		=>		'1' & '1',
+			RX_DPAhold		=>		'0' & '0',
 			RX_DPAreset		=>		xCLR_ALL & xCLR_ALL,  -- To simulate this line, compile with 1076-2008
 			TX_LVDS_DATA	=>		xTX_LVDS_DATA,
 			RX_DPAlock		=>    open,

@@ -59,8 +59,8 @@ set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
 set_global_assignment -name ADV_NETLIST_OPT_SYNTH_WYSIWYG_REMAP ON
 set_global_assignment -name MUX_RESTRUCTURE OFF
 set_global_assignment -name ROUTER_CLOCKING_TOPOLOGY_ANALYSIS ON
-set_global_assignment -name TIMEQUEST_DO_REPORT_TIMING ON
-set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_global_assignment -name TIMING_ANALYZER_DO_REPORT_TIMING ON
+set_global_assignment -name TIMING_ANALYZER_DO_CCPP_REMOVAL ON
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
@@ -76,7 +76,7 @@ set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -
 set_global_assignment -name ACTIVE_SERIAL_CLOCK FREQ_25MHZ
 set_global_assignment -name ENABLE_CRC_ERROR_PIN ON
 set_global_assignment -name PHYSICAL_SYNTHESIS_EFFORT EXTRA
-set_global_assignment -name DEVICE_MIGRATION_LIST "5AGXFB5H4F35C4,5AGXFB3H4F35C4,5AGXFB1H4F35C4,5AGXFB7H4F35C4,5AGXFB3H6F35C6,5AGXFB1H4F35C5,5AGXFB1H4F35I5,5AGXFB1H6F35C6,5AGXFB7H4F35C5,5AGXFB7H4F35I5,5AGXFB7H6F35C6,5AGXFB5H4F35C5,5AGXFB5H4F35I5,5AGXFB5H6F35C6,5AGXFB3H4F35I5,5AGXFB3H4F35C5ES,5AGXFB3H4F35C5,5AGXFA7H4F35C4,5AGXFA7H4F35C5,5AGXFA7H4F35I5,5AGXFA7H6F35C6,5AGXFA5H4F35C4,5AGXFA5H4F35C5,5AGXFA5H4F35I5,5AGXFA5H6F35C6,5AGXFA7H4F35C4,5AGXFA7H4F35I5,5AGXFA5H4F35C4,5AGXFA5H4F35I5,5AGXFA7H4F35I5,5AGXFA5H4F35I5,5AGXFA5H4F35I5"
+set_global_assignment -name DEVICE_MIGRATION_LIST 5AGXFB5H4F35C4
 set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
 set_location_assignment PIN_AL11 -to enet_resetn
 set_location_assignment PIN_AH11 -to enet_mdio
@@ -1259,18 +1259,19 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id auto_signaltap_0
 set_global_assignment -name VHDL_INPUT_VERSION VHDL_2008
 set_global_assignment -name VHDL_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name QIP_FILE src/clocks/pll_block.qip
+set_global_assignment -name QIP_FILE src/clocks/pll_block_transceivers.qip
+set_global_assignment -name QIP_FILE src/RxTx/rx_data_ram.qip
+set_global_assignment -name QIP_FILE src/RxTx/altlvds_tx0.qip
+set_global_assignment -name QIP_FILE src/RxTx/altlvds_rx0.qip
+set_global_assignment -name QSYS_FILE lvds_rx_clockbuffer.qsys
 set_global_assignment -name VERILOG_FILE src/RxTx/encoder_8b10b.v
 set_global_assignment -name VERILOG_FILE src/RxTx/decoder_8b10b.v
 set_global_assignment -name VHDL_FILE src/RxTx/rx_ram.vhd
 set_global_assignment -name VHDL_FILE src/RxTx/lvds_transceivers.vhd
-set_global_assignment -name VERILOG_FILE src/clocks/pll_block_transceivers/pll_block_transceivers_0002.v
-set_global_assignment -name VHDL_FILE src/clocks/pll_block_transceivers.vhd
 set_global_assignment -name VHDL_FILE src/usb/iobuf.vhd
-set_global_assignment -name VERILOG_FILE src/clocks/pll_block/pll_block_0002.v
 set_global_assignment -name VHDL_FILE src/clocks/Slow_Clocks.vhd
 set_global_assignment -name VHDL_FILE src/RxTx/rx_data_ram.vhd
-set_global_assignment -name VHDL_FILE src/RxTx/altlvds_tx0.vhd
-set_global_assignment -name VHDL_FILE src/RxTx/altlvds_rx0.vhd
 set_global_assignment -name VHDL_FILE src/clocks/pll_block.vhd
 set_global_assignment -name VHDL_FILE src/progreset.vhd
 set_global_assignment -name VHDL_FILE src/clocks/Clock_Manager.vhd
@@ -1285,5 +1286,7 @@ set_global_assignment -name SDC_FILE ACC.sdc
 set_global_assignment -name SIGNALTAP_FILE tapUSB.stp
 set_global_assignment -name VHDL_FILE src/usbWrapperACC.vhd
 set_global_assignment -name CDF_FILE ACC_v0_1_active_serial_US5.cdf
+set_global_assignment -name VERILOG_FILE "c:/intelfpga/18.0/quartus/libraries/megafunctions/altera_arriav_pll.v"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE src/RxTx/autoshift8b10b.vhd
 set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp

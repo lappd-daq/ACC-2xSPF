@@ -1,269 +1,149 @@
 ------------------------------------------------------------
-TimeQuest Timing Analyzer Summary
+Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.257
-TNS   : -111.640
+Type  : Slow 1100mV 85C Model Setup 'USB_IFCLK'
+Slack : -6.055
+TNS   : -170.622
 
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.145
-TNS   : -109.179
+Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -4.189
+TNS   : -256.259
 
 Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -5.989
-TNS   : -1832.558
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.974
-TNS   : -106.488
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.925
-TNS   : -106.472
-
-Type  : Slow 1100mV 85C Model Setup 'USB_IFCLK'
-Slack : -3.437
-TNS   : -98.203
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -1.658
-TNS   : -6.293
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -1.407
-TNS   : -43.817
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.358
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.966
-TNS   : 0.000
+Slack : -3.849
+TNS   : -211.904
 
 Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.987
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.622
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.780
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.795
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.124
+Slack : 0.803
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'altera_reserved_tck'
-Slack : 10.378
+Slack : 10.679
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 17.380
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 17.557
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 19.581
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 996.475
+Slack : 996.126
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'USB_IFCLK'
 Slack : 0.190
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.191
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.264
+Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.277
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.282
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.282
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.290
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
 Slack : 0.296
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.303
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.305
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.307
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.307
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.309
+Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 0.352
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.356
+Slack : 0.360
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.362
+Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 4.091
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.412
+Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 4.123
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 3.904
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 4.194
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.379
-TNS   : -433.282
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.177
-TNS   : -429.894
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.697
-TNS   : -438.585
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.581
-TNS   : -356.741
+Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -4.333
+TNS   : -1073.658
 
 Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -4.102
-TNS   : -33.489
+Slack : -3.668
+TNS   : -43.685
 
 Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.912
-TNS   : -683.129
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.978
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.986
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.009
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.205
-TNS   : 0.000
+Slack : -3.491
+TNS   : -606.277
 
 Type  : Slow 1100mV 85C Model Recovery 'USB_IFCLK'
-Slack : 8.596
+Slack : 2.102
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 14.227
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 14.932
+Slack : 31.237
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 996.376
+Slack : 993.576
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.397
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.504
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.549
+Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.842
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.712
+Slack : 0.845
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.783
+Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.871
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'USB_IFCLK'
-Slack : 0.839
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.085
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.105
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.155
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.430
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.478
+Slack : 1.059
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 1.487
+Slack : 1.459
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 1.464
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 1.679
+Slack : 4.701
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.245
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.188
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.245
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.189
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.245
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.438
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.439
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.245
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -271,339 +151,179 @@ Slack : 1.562
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 2.293
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.953
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.954
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.958
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.961
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.269
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.274
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.274
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.278
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.309
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.312
+Slack : 2.297
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCKIN'
 Slack : 3.981
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCKIN1'
-Slack : 3.988
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCKIN2'
-Slack : 3.988
-TNS   : 0.000
-
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.548
+Slack : 9.543
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 11.502
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 11.661
+Slack : 11.651
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 11.818
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.523
+Slack : 15.306
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.310
+Slack : 499.304
 TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.063
-TNS   : -108.324
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.936
-TNS   : -105.696
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.905
-TNS   : -103.757
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.752
-TNS   : -102.596
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -5.689
-TNS   : -1753.083
 
 Type  : Slow 1100mV 0C Model Setup 'USB_IFCLK'
-Slack : -3.075
-TNS   : -87.699
+Slack : -5.777
+TNS   : -162.111
 
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -1.512
-TNS   : -5.732
+Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -3.762
+TNS   : -228.349
 
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -1.292
-TNS   : -40.033
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.661
-TNS   : 0.000
+Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : -3.512
+TNS   : -194.746
 
 Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.147
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 1.212
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.707
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.868
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.876
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.176
+Slack : 0.931
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'altera_reserved_tck'
-Slack : 10.727
+Slack : 11.004
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 17.575
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 17.788
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 19.673
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 996.404
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'USB_IFCLK'
-Slack : 0.231
+Slack : 996.140
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.233
+Slack : 0.220
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.229
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'USB_IFCLK'
+Slack : 0.229
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.252
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.257
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.258
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.264
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.272
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.276
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.276
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.278
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.282
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.283
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.325
+Slack : 0.273
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.330
+Slack : 0.340
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.357
+Slack : 0.346
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.445
+Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 4.017
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 3.686
+Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 4.048
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 3.891
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.262
-TNS   : -425.369
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -6.027
-TNS   : -419.879
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.567
-TNS   : -429.205
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -5.501
-TNS   : -350.090
+Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -3.924
+TNS   : -969.778
 
 Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -3.911
-TNS   : -32.379
+Slack : -3.315
+TNS   : -39.421
 
 Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.728
-TNS   : -655.958
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.287
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.331
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.400
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.578
-TNS   : 0.000
+Slack : -3.192
+TNS   : -550.442
 
 Type  : Slow 1100mV 0C Model Recovery 'USB_IFCLK'
-Slack : 8.877
+Slack : 2.498
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 14.768
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 15.095
+Slack : 31.357
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 996.590
+Slack : 993.980
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.490
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.600
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.636
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'USB_IFCLK'
-Slack : 0.638
+Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.771
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.646
+Slack : 0.780
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.875
+Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.800
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.994
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.995
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.090
+Type  : Slow 1100mV 0C Model Removal 'USB_IFCLK'
+Slack : 0.965
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.312
+Slack : 1.189
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 1.388
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 1.404
+Slack : 1.230
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 1.562
+Slack : 4.308
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.244
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.194
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.244
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.195
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.244
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.444
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.445
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.244
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -614,336 +334,176 @@ Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xC
 Slack : 2.330
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.928
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.930
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.930
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 2.932
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.211
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.219
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.220
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.221
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.267
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.268
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCKIN1'
-Slack : 3.987
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCKIN2'
-Slack : 3.987
-TNS   : 0.000
-
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCKIN'
 Slack : 3.989
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.542
+Slack : 9.538
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 11.506
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 11.693
+Slack : 11.677
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 11.797
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.530
+Slack : 15.340
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.292
+Slack : 499.273
 TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.826
-TNS   : -1138.704
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.510
-TNS   : -62.760
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.493
-TNS   : -62.037
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.484
-TNS   : -60.089
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.337
-TNS   : -59.998
 
 Type  : Fast 1100mV 85C Model Setup 'USB_IFCLK'
-Slack : -2.846
-TNS   : -81.219
+Slack : -4.617
+TNS   : -129.526
 
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -0.607
-TNS   : -2.209
+Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : -2.341
+TNS   : -117.760
 
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -0.463
-TNS   : -14.109
+Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -1.969
+TNS   : -115.200
 
 Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.767
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 2.896
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 3.178
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.582
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.660
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.670
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.963
+Slack : 1.566
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'altera_reserved_tck'
-Slack : 12.863
+Slack : 12.967
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 18.913
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 19.085
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 21.386
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.968
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.076
+Slack : 997.635
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.149
+Slack : 0.134
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'USB_IFCLK'
-Slack : 0.151
+Slack : 0.150
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.162
+Slack : 0.170
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.174
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.171
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.176
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.178
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.182
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.184
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.185
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.188
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.192
+Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.201
+Slack : 0.196
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.390
+Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 3.756
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.436
+Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 3.839
 TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 2.797
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 2.997
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.495
-TNS   : -234.957
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.349
-TNS   : -227.431
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.071
-TNS   : -232.813
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -2.903
-TNS   : -183.102
 
 Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -2.322
-TNS   : -18.238
+Slack : -2.346
+TNS   : -27.625
+
+Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -2.168
+TNS   : -500.336
 
 Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -2.224
-TNS   : -378.008
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.635
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.675
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.680
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.739
-TNS   : 0.000
+Slack : -1.976
+TNS   : -343.137
 
 Type  : Fast 1100mV 85C Model Recovery 'USB_IFCLK'
-Slack : 9.272
+Slack : 4.736
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 17.637
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 15.911
+Slack : 31.883
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.436
+Slack : 995.547
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.034
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.132
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.247
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.317
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.387
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'USB_IFCLK'
-Slack : 0.530
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.633
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.634
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.675
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.859
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.932
+Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.189
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.971
+Slack : 0.353
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 0.431
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.443
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.514
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'USB_IFCLK'
+Slack : 0.637
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 1.044
+Slack : 2.995
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.246
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.207
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.246
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.207
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.246
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.457
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.457
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.246
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -951,339 +511,179 @@ Slack : 1.562
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 2.646
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.059
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.060
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.063
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.064
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.518
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.524
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.524
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.530
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.537
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.538
+Slack : 2.649
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCKIN'
 Slack : 3.968
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCKIN1'
-Slack : 3.969
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCKIN2'
-Slack : 3.969
-TNS   : 0.000
-
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.369
+Slack : 9.375
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 11.585
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 12.015
+Slack : 12.009
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 12.049
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.230
+Slack : 15.066
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.548
+Slack : 499.537
 TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.536
-TNS   : -1058.329
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.328
-TNS   : -59.578
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.309
-TNS   : -57.242
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.308
-TNS   : -58.850
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.166
-TNS   : -56.941
 
 Type  : Fast 1100mV 0C Model Setup 'USB_IFCLK'
-Slack : -2.469
-TNS   : -70.582
+Slack : -4.448
+TNS   : -125.320
 
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -0.550
-TNS   : -2.001
+Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : -1.825
+TNS   : -92.813
 
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -0.433
-TNS   : -13.233
+Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -1.454
+TNS   : -84.447
 
 Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.924
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 3.230
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 3.465
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.791
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.880
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.888
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 5.141
+Slack : 1.725
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'altera_reserved_tck'
-Slack : 13.299
+Slack : 13.412
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 19.199
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 19.292
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 21.724
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 998.041
+Slack : 997.762
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.099
-TNS   : 0.000
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -0.088
+TNS   : -1.822
+
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : -0.070
+TNS   : -0.126
 
 Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.145
+Slack : 0.150
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'USB_IFCLK'
 Slack : 0.151
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.157
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.162
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.160
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.160
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.161
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.167
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.167
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
 Slack : 0.170
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.170
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.177
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.192
+Slack : 0.185
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.386
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 3.681
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.423
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 3.762
 TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 2.590
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 2.675
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.299
-TNS   : -221.971
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -3.161
-TNS   : -215.798
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -2.876
-TNS   : -218.856
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : -2.777
-TNS   : -175.428
 
 Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -2.166
-TNS   : -17.265
+Slack : -1.794
+TNS   : -21.092
+
+Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -1.651
+TNS   : -371.595
 
 Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -2.060
-TNS   : -354.056
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.011
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.046
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.055
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 4.115
-TNS   : 0.000
+Slack : -1.514
+TNS   : -261.696
 
 Type  : Fast 1100mV 0C Model Recovery 'USB_IFCLK'
-Slack : 9.521
+Slack : 5.166
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 18.323
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 16.029
+Slack : 32.034
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.769
+Slack : 996.056
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.016
-TNS   : 0.000
+Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : -0.116
+TNS   : -1.369
 
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.118
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.209
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.286
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.339
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'USB_IFCLK'
-Slack : 0.474
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.573
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.585
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.620
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 0.782
+Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 0.090
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.836
+Slack : 0.141
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.872
+Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.382
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'USB_IFCLK'
+Slack : 0.575
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.958
+Slack : 2.624
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.246
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.209
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.246
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_fclk_outclk'
+Slack : 1.209
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.246
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
-Slack : 0.333
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.459
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_fclk_outclk'
-Slack : 0.459
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|pll_sclk~FRACTIONAL_PLL_O_VCOPH0'
+Slack : 1.246
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -1294,72 +694,32 @@ Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xC
 Slack : 2.658
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:1:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.053
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:2:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.053
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.055
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:3:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.056
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:5:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.502
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:7:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.506
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.507
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:6:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:inst|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx:auto_generated|wire_pll_sclk_outclk'
-Slack : 3.509
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_3|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.530
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block_transceivers:xPLL_BLOCK_2|pll_block_transceivers_0002:pll_block_transceivers_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 3.532
-TNS   : 0.000
-
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCKIN'
 Slack : 3.968
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCKIN1'
-Slack : 3.969
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCKIN2'
-Slack : 3.969
-TNS   : 0.000
-
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.365
+Slack : 9.369
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 11.594
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 12.029
+Slack : 12.014
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|transceivers:\ACDCintercom0:4:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|altlvds_rx0:lvds_rx|altlvds_rx:ALTLVDS_RX_component|altlvds_rx0_lvds_rx1:auto_generated|wire_pll_sclk_outclk'
+Slack : 12.048
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.266
+Slack : 15.149
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.545
+Slack : 499.528
 TNS   : 0.000
 
 ------------------------------------------------------------
