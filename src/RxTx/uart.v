@@ -91,7 +91,7 @@ module uart_rx (clk,rst,rx_data,rx_data_fresh,rxd);
 parameter BITS = 8;
 
 input clk, rst, rxd;
-output [7:0] rx_data;
+output [BITS-1:0] rx_data;
 output rx_data_fresh;
 
 parameter BAUD_DIVISOR = 868;
@@ -191,7 +191,7 @@ module uart (clk,rst,
 			tx_data,tx_data_valid,tx_data_ack,txd,
 			rx_data,rx_data_fresh,rxd);
 
-parameter BITS = 8;
+parameter BITS = 10;
 parameter CLK_HZ = 50_000_000;
 parameter BAUD = 115200;
 parameter BAUD_DIVISOR = CLK_HZ / BAUD;
@@ -232,7 +232,7 @@ uart_rx urx (
 	.rx_data_fresh(rx_data_fresh),
 	.rxd(rxd));
 
-defparam url .BITS = BITS;
+defparam urx .BITS = BITS;
 defparam urx .BAUD_DIVISOR = BAUD_DIVISOR;
 
 endmodule

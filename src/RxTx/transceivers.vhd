@@ -75,8 +75,7 @@ signal RX_DATA						:	std_logic_vector(15 downto 0);
 signal CHECK_WORD_1				:	std_logic_vector(7 downto 0);
 signal CHECK_WORD_2				:	std_logic_vector(7 downto 0);
 signal TX_DATA						: 	std_logic_vector(7 downto 0);
-signal ALIGN_SUCCESS				:  std_logic_vector(1 downto 0) := "00";
-signal ALIGN_SUCCESSES			:  std_logic;
+signal ALIGN_SUCCESS				:  std_logic;
 signal FE_ALIGN_SUCCESS		:  std_logic;
 signal GOOD_DATA					:  std_logic_vector(7 downto 0);
 
@@ -101,26 +100,22 @@ signal STOP_WRITE					:	std_logic;
 
 component lvds_transceivers
 	port (
-			xCLK 				:  IN  STD_LOGIC;
-			XCLR_ALL 		:  IN  STD_LOGIC;
-			TX_DATA			: in	std_logic_vector(7 downto 0);
-			TX_CLK			: in	std_logic;
-			RX_ALIGN			: in	std_logic_vector(1 downto 0);
-			RX_LVDS_DATA	: in	std_logic_vector(1 downto 0);
-			RX_DPAhold		: in	std_logic_vector(1 downto 0);
-			RX_CLK			: in	std_logic;
-			RX_DPAreset		: in	std_logic_vector(1 downto 0);
-			TX_DATA_RDY 	: IN  STD_LOGIC;
-			REMOTE_UP 		: OUT  STD_LOGIC;
-			REMOTE_VALID 	: OUT STD_LOGIC;
-			TX_BUF_FULL 	: OUT STD_LOGIC;
-			RX_BUF_EMPTY 	: OUT STD_LOGIC;
-			RX_ERROR 		: OUT STD_LOGIC;	
-			TX_LVDS_DATA	: out	std_logic;
-			RX_DPAlock		: out	std_logic_vector(1 downto 0);
-			RX_DATA			: out	std_logic_vector(15 downto 0);
-			TX_OUTCLK		: out	std_logic;
-			RX_OUTCLK		: out std_logic);
+		xCLK 				:  IN  STD_LOGIC;
+		xCLR_ALL 		:  IN  STD_LOGIC;
+		RX_LVDS_DATA 	:  IN  STD_LOGIC;
+		TX_DATA 			:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
+		TX_DATA_RDY 	:  IN  STD_LOGIC;
+		TRIGGER_PREP	:  IN  STD_LOGIC;
+		ST_ENABLE_PREP	:  IN  STD_LOGIC;
+		TRIGGER			:  IN  STD_LOGIC;
+		REMOTE_UP 		:  OUT STD_LOGIC;
+		REMOTE_VALID 	:  OUT STD_LOGIC;
+		TX_BUF_FULL 	:  OUT STD_LOGIC;
+		RX_ERROR 		:  OUT STD_LOGIC;
+		TX_LVDS_DATA 	:  OUT STD_LOGIC;
+		RX_DATA_RDY		:  OUT STD_LOGIC;
+		TRIG_READY		:  OUT STD_LOGIC;
+		RX_DATA 			:  OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 end component;
 
 component rx_ram
@@ -138,9 +133,8 @@ end component;
 
 begin
 
-xALIGN_INFO       <= ALIGN_SUCCESS(0) & ALIGN_SUCCESS(1) & FE_ALIGN_SUCCESS;
-ALIGN_SUCCESSES	<= ALIGN_SUCCESS(0) and ALIGN_SUCCESS(1) and FE_ALIGN_SUCCESS;
-xALIGN_SUCCESS 	<= ALIGN_SUCCESSES;
+xALIGN_INFO       <= ALIGN_SUCCESS & ALIGN_SUCCESS & ALIGN_SUCCESS;
+xALIGN_SUCCESS 	<= ALIGN_SUCCESS;
 WRITE_CLOCK			<= RX_OUTCLK;
 xRAM_FULL_FLAG		<= RAM_FULL_FLAG;
 xCC_SEND_TRIGGER	<= xTRIGGER;
@@ -149,7 +143,7 @@ xCATCH_PKT     	<= START_WRITE;
 
 
 
-process(xCLK, ALIGN_SUCCESSES, xDC_MASK, xCLR_ALL)
+process(xCLK, ALIGN_SUCCESS, xDC_MASK, xCLR_ALL)
 variable i : integer range 50 downto 0;	
 begin
 	if xCLR_ALL = '1' or xCC_INSTRUCT_RDY = '0' then
@@ -159,7 +153,7 @@ begin
 		GOOD_DATA <= (others=>'0');
 		SEND_CC_INSTRUCT_STATE <= IDLE;
 		
-	elsif rising_edge(xCLK) and ALIGN_SUCCESSES = '1' and xCC_INSTRUCT_RDY = '1' and xDC_MASK = '1' then
+	elsif rising_edge(xCLK) and ALIGN_SUCCESS = '1' and xCC_INSTRUCT_RDY = '1' and xDC_MASK = '1' then
 		case SEND_CC_INSTRUCT_STATE is
 			
 			when IDLE =>
@@ -208,7 +202,7 @@ begin
 	if xCLR_ALL = '1' or xDONE = '1' or xSOFT_RESET = '1' then
 		START_WRITE <= '0';
 		STOP_WRITE	<= '0';
-	elsif falling_edge(WRITE_CLOCK) and ALIGN_SUCCESSES = '1' then
+	elsif falling_edge(WRITE_CLOCK) and ALIGN_SUCCESS = '1' then
 		CHECK_RX_DATA <= RX_DATA;
 		if CHECK_RX_DATA = STARTWORD then
 			START_WRITE <= '1';
@@ -220,7 +214,7 @@ end process;
 
 process(WRITE_CLOCK, xCLR_ALL, xDONE)
 begin
-	if xCLR_ALL ='1'  or ALIGN_SUCCESSES = '0' or 
+	if xCLR_ALL ='1'  or ALIGN_SUCCESS = '0' or 
 		xSOFT_RESET = '1' or xDONE = '1' then
 		
 		WRITE_ENABLE_TEMP <= '0';
@@ -300,31 +294,27 @@ end process;
 
 
 
+
+
 xlvds_transceivers : lvds_transceivers
 port map(
 			xCLK 				=>		xCLK,
 			xCLR_ALL			=>		xCLR_ALL,
-			RX_CLK			=>		xRX_LVDS_CLK,
-			TX_CLK			=>		xCLK,
+			RX_LVDS_DATA	=>		xRX_LVDS_DATA(0),
 			TX_DATA			=>		TX_DATA,
-			RX_ALIGN			=>		RX_ALIGN_BITSLIP,
-			RX_LVDS_DATA	=>		xRX_LVDS_DATA,
-			
-			RX_DPAhold		=>		'0' & '0',
-			RX_DPAreset		=>		xCLR_ALL & xCLR_ALL,  -- To simulate this line, compile with 1076-2008
-			-- incorporate from here:
-			TX_DATA_RDY 	=> 	'1',
+			TX_DATA_RDY 	=>		'0',
+			TRIGGER_PREP 	=>		'0',
+			ST_ENABLE_PREP =>		'0',
+			TRIGGER 			=>		xTRIGGER,
 			REMOTE_UP 		=>    open,
-			REMOTE_VALID 	=>    open,
+			REMOTE_VALID 	=>    ALIGN_SUCCESS,
 			TX_BUF_FULL 	=>    open,
-			RX_BUF_EMPTY 	=>    open,
 			RX_ERROR 		=>    open,
-			-- to here!
 			TX_LVDS_DATA	=>		xTX_LVDS_DATA,
-			RX_DPAlock		=>    open,
-			RX_DATA			=>		RX_DATA,
-			TX_OUTCLK		=>		xTX_LVDS_CLK,
-			RX_OUTCLK		=>		RX_OUTCLK);	
+			RX_DATA_RDY		=>    open,
+			TRIG_READY		=>		open,
+			RX_DATA			=>		RX_DATA
+);	
 			
 xrx_RAM_0	:	rx_RAM
 port map(

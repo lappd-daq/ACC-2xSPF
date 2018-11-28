@@ -58,28 +58,6 @@ architecture Structural of Clock_Manager is
 				outclk_0, outclk_1, outclk_2,
 				locked			: out	std_logic);
 	end component;
-
-
-	component pll_block_transceivers is
-		port (
-			refclk     : in  std_logic                    := 'X';             -- clk
-			rst        : in  std_logic                    := 'X';             -- reset
-			outclk_0   : out std_logic;                                       -- clk
-			outclk_1   : out std_logic;                                       -- clk
-			outclk_2   : out std_logic;                                       -- clk
-			outclk_3   : out std_logic;                                       -- clk
-			outclk_4   : out std_logic;                                       -- clk
-			outclk_5   : out std_logic;                                       -- clk
-			outclk_6   : out std_logic;                                       -- clk
-			outclk_7   : out std_logic;                                       -- clk
-			locked     : out std_logic;                                       -- export
-			phase_en   : in  std_logic                    := 'X';             -- phase_en
-			scanclk    : in  std_logic                    := 'X';             -- scanclk
-			updn       : in  std_logic                    := 'X';             -- updn
-			cntsel     : in  std_logic_vector(4 downto 0) := (others => 'X'); -- cntsel
-			phase_done : out std_logic                                        -- phase_done
-		);
-	end component pll_block_transceivers;
 	
 	component Slow_Clocks
 		generic(clk_divide_by   : integer := 500);
@@ -98,44 +76,7 @@ begin
 		port map(INCLK0, PLL_reset, CLK_SYS, 
 					xCLK_1MHz, CLK_SYS_4x, fpgaPLLlock);
 	
-	xPLL_BLOCK_2 : pll_block_transceivers
-		port map(
-			refclk => INCLK0,						-- clk
-			rst    => PLL_reset,					-- reset
-			outclk_0   => CLK_RX(0),
-			outclk_1   => CLK_RX(1),
-			outclk_2   => CLK_RX(2),
-			outclk_3   => CLK_RX(3),
-			outclk_4   => open,
-			outclk_5   => open,
-			outclk_6   => open,
-			outclk_7   => open,
-			locked     => CLK_RX_LOCKED,       -- export
-			phase_en   => CLK_RX_PHASE_EN,     -- phase_en
-			scanclk    => INCLK0,              -- scanclk  REPLACE THIS!!
-			updn       => CLK_RX_PHASE_UPDN,   -- updn
-			cntsel     => CLK_RX_PHASE_SEL,    -- cntsel
-			phase_done => CLK_RX_PHASE_DONE); 
-			
-	xPLL_BLOCK_3 : pll_block_transceivers
-		port map(
-			refclk => INCLK0,						-- clk
-			rst    => PLL_reset,					-- reset
-			outclk_0   => open,
-			outclk_1   => open,
-			outclk_2   => open,
-			outclk_3   => open,
-			outclk_4   => CLK_RX(4),
-			outclk_5   => CLK_RX(5),
-			outclk_6   => CLK_RX(6),
-			outclk_7   => CLK_RX(7),
-			locked     => open,       -- export
-			phase_en   => CLK_RX_PHASE_EN,     -- phase_en
-			scanclk    => INCLK0,              -- scanclk  REPLACE THIS!!
-			updn       => CLK_RX_PHASE_UPDN,   -- updn
-			cntsel     => CLK_RX_PHASE_SEL,    -- cntsel
-			phase_done => open); 
-			
+
 	xCLK_GEN_1kHz : Slow_Clocks
 		generic map(clk_divide_by => 500)
 		port map(xCLK_1MHz, Reset, xCLK_1kHz);

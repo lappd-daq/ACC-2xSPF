@@ -105,19 +105,19 @@ END COMPONENT;
 
 
 COMPONENT uart
-	GENERIC ( BITS	: INTEGER := 8;
+	GENERIC ( BITS	: INTEGER := 10;
 				 CLK_HZ : INTEGER := 50000000; 
-				 BAUD : INTEGER := 115200; 
-				 BAUD_DIVISOR : INTEGER);
+				 BAUD : INTEGER := 115200
+				 );
 	PORT
 	(
 		clk				:	 IN STD_LOGIC;
 		rst				:	 IN STD_LOGIC;
-		tx_data			:	 IN STD_LOGIC_VECTOR(7 DOWNTO 0);
+		tx_data			:	 IN STD_LOGIC_VECTOR(BITS-1 DOWNTO 0);
 		tx_data_valid	:	 IN STD_LOGIC;
 		tx_data_ack		:	 OUT STD_LOGIC;
 		txd				:	 OUT STD_LOGIC;
-		rx_data			:	 OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+		rx_data			:	 OUT STD_LOGIC_VECTOR(BITS-1 DOWNTO 0);
 		rx_data_fresh	:	 OUT STD_LOGIC;
 		rxd				:	 IN STD_LOGIC
 	);
@@ -129,20 +129,20 @@ type LINK_STATE_TYPE is (DOWN, CHECKING, UP, ERROR);
 signal LINK_STATE : LINK_STATE_TYPE;
 signal REMOTE_LINK_STATE : LINK_STATE_TYPE;
 
-signal ein_dat	:	std_logic;		-- Enconder input data or code
+signal ein_dat	:	std_logic_vector(7 downto 0);		-- Enconder input data or code
 signal kin_ena :	std_logic;		-- Data in is a special code, not all are legal.	
 signal ein_ena :	std_logic;		-- Data (or code) input enable
 signal eout_val :  std_logic;		-- Encoder data out is valid
 signal dout_val :	std_logic;		-- data out valid LSB
+signal dout_dat :  std_logic_vector(7 downto 0);	-- Decoder output
 signal dout_k :	std_logic;		-- special code
 signal dout_kerr		:  std_logic;		-- coding mistake detected
 signal dout_rderr		:  std_logic; 		-- running disparity mistake detected
 signal dout_error 	:  std_logic;		-- any decoding error on either interface
 
-
+signal TX_FIFO_rdreq					:  std_logic;
 signal TX_FIFO_EMPTY					:  std_logic;
-signal TX_FIFO_Q						:  std_logic;
-signal TX_FIFO_WRREQ					:  std_logic;
+signal TX_FIFO_Q						:  std_logic_vector(7 downto 0);
 
 signal OUT_DATA						:  std_logic_vector(7 downto 0);
 signal STATUS_CODE					:  std_logic_vector(7 downto 0);
@@ -153,10 +153,11 @@ signal RX_RDreg						: std_logic;
 
 signal uart_txd						: std_logic;
 
-TYPE TRIG_STATE_TYPE is (NONE, TRIG_PREP, ST_ENABLE_PREP);
+TYPE TRIG_STATE_TYPE is (NONE, TRIG, ST_ENABLE);
 signal TRIG_STATE 	: TRIG_STATE_TYPE;
+signal TRIG_STATE_ACK	:  std_logic;
 
-TYPE TX_STATE_TYPE is (RESET, READY, ST_PREP, ST_ENABLED, TRIG_PREP, TRIG_WAIT, WAITING);
+TYPE TX_STATE_TYPE is (RESET, READY, ST_PREP, TRIG_PREP, TRIG_WAIT, UART_BUSY);
 signal TX_STATE		: TX_STATE_TYPE;
 
 TYPE RX_STATE_TYPE is (RESET, WAITING, WAITING_LSB, ERROR);
@@ -176,15 +177,16 @@ tx_fifo0 : tx_fifo
 		aclr		=> xCLR_All,
 		data		=> TX_DATA,
 		rdclk		=> xCLK,
-		rdreq		=> TX_DATA_RDY,
+		rdreq		=> TX_FIFO_rdreq,
 		wrclk		=> xCLK,
-		wrreq		=> TX_FIFO_WRREQ,
+		wrreq		=> TX_DATA_RDY,
 		q			=> TX_FIFO_Q,
 		rdempty	=> TX_FIFO_EMPTY,
 		wrfull	=> TX_BUF_FULL
 	);
 
 
+-- Pick a default code based on link status
 process(xCLK, xCLR_ALL)
 variable i : integer range 5 downto 0;	
 begin
@@ -210,26 +212,24 @@ begin
 	end if;
 end process;
 
+-- Set TRIG_STATE depending on requested state from input lines.
+--   Reset when the command has been sent, or we time out.
 process(xCLK, xCLR_ALL)
-variable counter 	: integer range 200000000 downto 0;
 begin
-	if xCLR_ALL = '1' or TRIG_STATE_ACK = '1' then
+	if xCLR_ALL = '1' then
 		TRIG_STATE <= NONE;
-		counter := 0;
 	elsif rising_edge(xCLK) then
 		case TRIG_STATE is
 			when NONE =>
-				counter := 0;
 				if TRIGGER_PREP = '1' then
-					TRIG_STATE <= TRIG_PREP;
+					TRIG_STATE <= TRIG;
 				elsif ST_ENABLE_PREP = '1' then
 					TRIG_STATE <= ST_ENABLE;
 				else
 					TRIG_STATE <= NONE;
 				end if;
 			when others =>
-				counter := counter + 1;
-				if counter > 125000000 then -- timeout
+				if TRIG_STATE_ACK = '1' then
 					TRIG_STATE <= NONE;
 				end if;
 		end case;
@@ -242,56 +242,67 @@ begin
 		TX_STATE <= RESET;
 		TRIG_STATE_ACK <= '0';
 		TRIG_READY <= '0';
+		TX_FIFO_rdreq <= '0';
 	elsif rising_edge(xCLK) then
 		case TX_STATE is
 			when RESET =>
-				TX_STATE <= DATA_READY;
+				TX_STATE <= READY;
 				ein_dat <= (others => '0');
 				kin_ena <= '0';
 				ein_ena <= '0';
 				TRIG_STATE_ACK <= '0';
 				TRIG_READY <= '0';
+				TX_FIFO_rdreq <= '0';
 			when READY =>
 				if TX_FIFO_EMPTY = '0' then  -- clear FIFO is top priority
+					TX_STATE <= UART_BUSY;
 					ein_dat <= TX_FIFO_Q;
+					TX_FIFO_rdreq <= '1';
+					ein_ena <= '1';
 					kin_ena <= '0';
-				else
+				else -- check if a trigger state has been requested
 					case TRIG_STATE is
-						when TRIG_PREP =>
+						when TRIG =>
 							TX_STATE <= TRIG_PREP;
-							ein_DAT <= K29_7;
+							ein_dat <= K29_7;
+							ein_ena <= '1';
 							kin_ena <= '1';
 							TRIG_STATE_ACK <= '1';
 						when ST_ENABLE =>
 							TX_STATE <= ST_PREP;
 							ein_dat <= K30_7;
+							ein_ena <= '1';
 							kin_ena <= '1';
 							TRIG_STATE_ACK <= '1';
 						when others => -- just send the status code
+							TX_STATE <= UART_BUSY;
 							ein_dat <= STATUS_CODE;
+							ein_ena <= '1';
 							kin_ena <= '1';
 					end case;
 				end if;
-				ein_ena <= '1';
-				TX_STATE <= WAITING;
-				
 			-- ST_PREP, ST_ENABLED, TRIG_PREP, TRIG_WAIT
 			when TRIG_PREP =>
 				TRIG_STATE_ACK <= '0';
+				kin_ena <= '0';
+				ein_ena <= '0';
 				if tx_data_ack = '1' then
 					TX_STATE <= TRIG_WAIT;
 				end if;
 			when TRIG_WAIT =>
+				TRIG_READY <= '1';
 				-- wait for tigger
 			when ST_PREP =>
 				TRIG_STATE_ACK <= '0';
-				if tx_data_ack = '1' then
-					TX_STATE <= ST_ENABLED;
-				end if;
-			when ST_ENABLED =>
-				-- wait for trigger
-			when WAITNG =>
+				kin_ena <= '0';
 				ein_ena <= '0';
+				if tx_data_ack = '1' then
+					TX_STATE <= READY;
+				end if;
+			when UART_BUSY =>
+				TX_FIFO_rdreq <= '0';
+				ein_ena <= '0';
+				kin_ena <= '0';
 				if tx_data_ack = '1' then
 					TX_STATE <= READY;
 				end if;
@@ -304,14 +315,7 @@ end process;
 
 with TX_STATE select
 	TX_LVDS_DATA 	<= TRIGGER when TRIG_WAIT,
-							TRIGGER when ST_ENABLED,
 							uart_txd when others;
-
-with TX_STATE select
-	TRIG_READY 		<= '1' when TRIG_WAIT,
-							'1' when ST_ENABLED,
-							'0' when others;
-
 
 
 tx_enc : encoder_8b10b
@@ -362,7 +366,7 @@ rx_dec0 : decoder_8b10b
 		din_dat => RX_DATA10(9 downto 0),		-- 10b data input
 		din_rd => RX_RDreg,		-- running disparity input
 		dout_val => dout_val,		-- data out valid
-		dout_dat => RX_DATA(7 downto 0),		-- data out
+		dout_dat => dout_dat,		-- data out
 		dout_k => dout_k,		-- special code
 		dout_kerr => dout_kerr,		-- coding mistake detected
 		dout_rderr => dout_rderr,		-- running disparity mistake detected
@@ -451,7 +455,7 @@ begin
 			when WAITING =>
 				RX_ERROR <= '0';
 				RX_DATA_RDY <= '0';
-				RX_DATA <= '0';
+				RX_DATA <= (others => '0');
 				if dout_kerr = '1' then
 					RX_STATE <= ERROR;
 				elsif dout_val = '1' then
