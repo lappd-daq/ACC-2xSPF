@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
-<instance entity-name="altera_pll" version="15.1" >
+<instance entity-name="altera_pll" version="18.0" >
 <generic name="debug_print_output" value="false" />
 <generic name="debug_use_rbc_taf_method" value="false" />
 <generic name="device_family" value="Arria V" />
 <generic name="device" value="5AGTFC7H3F35I3" />
-<generic name="gui_device_speed_grade" value="1" />
+<generic name="gui_device_speed_grade" value="2" />
 <generic name="gui_pll_mode" value="Integer-N PLL" />
 <generic name="gui_reference_clock_frequency" value="125.0" />
 <generic name="gui_channel_spacing" value="0.0" />
