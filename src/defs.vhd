@@ -57,7 +57,7 @@ constant K28_6	: std_logic_vector(7 downto 0) := "11011100";
 constant K28_7	: std_logic_vector(7 downto 0) := "11111100"; -- Link up, data not valid
 constant K23_7	: std_logic_vector(7 downto 0) := "11110111";
 constant K27_7	: std_logic_vector(7 downto 0) := "11111011";
-constant K29_7	: std_logic_vector(7 downto 0) := "11111101"; -- Next edge is Trigger
-constant K30_7	: std_logic_vector(7 downto 0) := "11111110"; -- Next edge is Self-trigger enable
+constant K29_7	: std_logic_vector(7 downto 0) := "11111101";
+constant K30_7	: std_logic_vector(7 downto 0) := "11111110";
 		
 end defs;
