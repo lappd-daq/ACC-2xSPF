@@ -366,7 +366,7 @@ process(xCLK, xCLR_ALL)
 begin
 	if xCLR_ALL = '1' then
 		RX_STATE 		<= RESET;
-		RX_ERROR 		<= '1';
+		RX_ERROR 		<= '0';
 		RX_DATA_RDY		<= '0';
 		RX_DATA 			<= (others => '0');
 		temp_data		:= (others => '0');

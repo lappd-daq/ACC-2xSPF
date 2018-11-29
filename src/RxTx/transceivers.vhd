@@ -81,8 +81,6 @@ signal GOOD_DATA					:  std_logic_vector(7 downto 0);
 
 signal INSTRUCT_READY			:	std_logic;
 
-signal RX_OUTCLK					: 	std_logic;
-
 signal WRITE_CLOCK				:	std_logic;
 signal WRITE_ENABLE				:	std_logic;
 signal WRITE_ENABLE_TEMP		:	std_logic;
@@ -97,6 +95,8 @@ signal LAST_WRITE_ADDRESS		:	std_logic_vector(transceiver_mem_depth-1 downto 0);
 signal START_WRITE				:	std_logic;
 signal STOP_WRITE					:	std_logic;
 
+signal TX_BUF_FULL				:  std_logic;
+signal RX_DATA_RDY				:  std_logic;
 
 component lvds_transceivers
 	port (
@@ -131,7 +131,7 @@ begin
 
 xALIGN_INFO       <= ALIGN_SUCCESS & ALIGN_SUCCESS & ALIGN_SUCCESS;
 xALIGN_SUCCESS 	<= ALIGN_SUCCESS;
-WRITE_CLOCK			<= RX_OUTCLK;
+WRITE_CLOCK			<= xCLK;
 xRAM_FULL_FLAG		<= RAM_FULL_FLAG;
 xCC_SEND_TRIGGER	<= xTRIGGER;
 xCATCH_PKT     	<= START_WRITE; 
@@ -150,7 +150,8 @@ begin
 		SEND_CC_INSTRUCT_STATE <= IDLE;
 		
 	elsif rising_edge(xCLK) then
-		if ALIGN_SUCCESS = '1' and xCC_INSTRUCT_RDY = '1' and xDC_MASK = '1' then
+		if ALIGN_SUCCESS = '1' and xCC_INSTRUCT_RDY = '1' 
+			and xDC_MASK = '1' and TX_BUF_FULL = '0' then
 			case SEND_CC_INSTRUCT_STATE is			
 				when IDLE =>
 					i := 0;
@@ -200,7 +201,7 @@ begin
 		START_WRITE <= '0';
 		STOP_WRITE	<= '0';
 	elsif falling_edge(WRITE_CLOCK) then
-		if ALIGN_SUCCESS = '1' then
+		if ALIGN_SUCCESS = '1' and RX_DATA_RDY = '1' then -- this is all very strange.
 			CHECK_RX_DATA <= RX_DATA;
 			if CHECK_RX_DATA = STARTWORD then
 				START_WRITE <= '1';
@@ -238,7 +239,7 @@ begin
 --		LVDS_GET_DATA_STATE <= MESS_IDLE;
 	
 	elsif rising_edge(WRITE_CLOCK) then
-		if START_WRITE = '1' then
+		if START_WRITE = '1' and RX_DATA_RDY = '1' then
 			case LVDS_GET_DATA_STATE is
 				
 				when MESS_IDLE =>
@@ -266,7 +267,7 @@ begin
 					WRITE_ADDRESS_TEMP <= (others=>'0');
 			end case;
 		end if;				
-	elsif falling_edge(WRITE_CLOCK) then
+	elsif falling_edge(WRITE_CLOCK) then -- No idea why this is being done.
 		if START_WRITE = '1' and STOP_WRITE = '0' then
 			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
 			WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;
@@ -306,10 +307,10 @@ port map(
 			TX_DATA_RDY 	=>		'0',
 			REMOTE_UP 		=>    open,
 			REMOTE_VALID 	=>    ALIGN_SUCCESS,
-			TX_BUF_FULL 	=>    open,
+			TX_BUF_FULL 	=>    TX_BUF_FULL,
 			RX_ERROR 		=>    open,
 			TX_LVDS_DATA	=>		xTX_LVDS_DATA,
-			RX_DATA_RDY		=>    open,
+			RX_DATA_RDY		=>    RX_DATA_RDY,
 			RX_DATA			=>		RX_DATA
 );	
 			
