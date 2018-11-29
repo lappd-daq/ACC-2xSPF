@@ -138,8 +138,8 @@ xCATCH_PKT     	<= START_WRITE;
 
 
 
-
-process(xCLK, ALIGN_SUCCESS, xDC_MASK, xCLR_ALL)
+-- process to send data to ACDC
+process(xCLK, xCC_INSTRUCT_RDY, xCLR_ALL)
 variable i : integer range 50 downto 0;	
 begin
 	if xCLR_ALL = '1' or xCC_INSTRUCT_RDY = '0' then
@@ -149,66 +149,69 @@ begin
 		GOOD_DATA <= (others=>'0');
 		SEND_CC_INSTRUCT_STATE <= IDLE;
 		
-	elsif rising_edge(xCLK) and ALIGN_SUCCESS = '1' and xCC_INSTRUCT_RDY = '1' and xDC_MASK = '1' then
-		case SEND_CC_INSTRUCT_STATE is
-			
-			when IDLE =>
-				i := 0;
-				INSTRUCT_READY <= '0';
-				--if xCC_INSTRUCT_RDY = '1' then
-				SEND_CC_INSTRUCT_STATE <= SEND_START_WORD;       
-				--end if;
-			
-			--send 32 bit word 8 bits at a time	
-			when SEND_START_WORD =>
-				GOOD_DATA <= STARTWORD_8a;
-				--SEND_CC_INSTRUCT_STATE <= CATCH0;
-				SEND_CC_INSTRUCT_STATE <= SEND_START_WORD_2;
-			when SEND_START_WORD_2 =>
-				GOOD_DATA <= STARTWORD_8b;
-				SEND_CC_INSTRUCT_STATE <= CATCH0;
-			when CATCH0 =>
-				GOOD_DATA <= xCC_INSTRUCTION(31 downto 24);
-				SEND_CC_INSTRUCT_STATE <= CATCH1;
-			when CATCH1 =>
-				GOOD_DATA <= xCC_INSTRUCTION(23 downto 16);
-				SEND_CC_INSTRUCT_STATE <= CATCH2;
-			when CATCH2 =>
-				GOOD_DATA <= xCC_INSTRUCTION(15 downto 8);  
-				SEND_CC_INSTRUCT_STATE <= CATCH3;
-			when CATCH3 =>
-				GOOD_DATA <= xCC_INSTRUCTION(7 downto 0);
-				SEND_CC_INSTRUCT_STATE <= READY;
+	elsif rising_edge(xCLK) then
+		if ALIGN_SUCCESS = '1' and xCC_INSTRUCT_RDY = '1' and xDC_MASK = '1' then
+			case SEND_CC_INSTRUCT_STATE is			
+				when IDLE =>
+					i := 0;
+					INSTRUCT_READY <= '0';
+					--if xCC_INSTRUCT_RDY = '1' then
+					SEND_CC_INSTRUCT_STATE <= SEND_START_WORD;       
+					--end if;
 				
-			when READY =>
-				GOOD_DATA <= K28_5;
-				INSTRUCT_READY <= '1';
-				--i := i + 1;
-				--if i = 10 then
-				--	i := 0;
-				--	SEND_CC_INSTRUCT_STATE <= IDLE;
-				--end if;
-		end case;
-	end if;
-end process;
-
---look for start/stop word to write lvds data to CC ram.
-process(WRITE_CLOCK, xCLR_ALL, RX_DATA)
-begin
-	if xCLR_ALL = '1' or xDONE = '1' or xSOFT_RESET = '1' then
-		START_WRITE <= '0';
-		STOP_WRITE	<= '0';
-	elsif falling_edge(WRITE_CLOCK) and ALIGN_SUCCESS = '1' then
-		CHECK_RX_DATA <= RX_DATA;
-		if CHECK_RX_DATA = STARTWORD then
-			START_WRITE <= '1';
-		elsif CHECK_RX_DATA = ENDWORD then
-			STOP_WRITE <= '1';
+				--send 32 bit word 8 bits at a time	
+				when SEND_START_WORD =>
+					GOOD_DATA <= STARTWORD_8a;
+					--SEND_CC_INSTRUCT_STATE <= CATCH0;
+					SEND_CC_INSTRUCT_STATE <= SEND_START_WORD_2;
+				when SEND_START_WORD_2 =>
+					GOOD_DATA <= STARTWORD_8b;
+					SEND_CC_INSTRUCT_STATE <= CATCH0;
+				when CATCH0 =>
+					GOOD_DATA <= xCC_INSTRUCTION(31 downto 24);
+					SEND_CC_INSTRUCT_STATE <= CATCH1;
+				when CATCH1 =>
+					GOOD_DATA <= xCC_INSTRUCTION(23 downto 16);
+					SEND_CC_INSTRUCT_STATE <= CATCH2;
+				when CATCH2 =>
+					GOOD_DATA <= xCC_INSTRUCTION(15 downto 8);  
+					SEND_CC_INSTRUCT_STATE <= CATCH3;
+				when CATCH3 =>
+					GOOD_DATA <= xCC_INSTRUCTION(7 downto 0);
+					SEND_CC_INSTRUCT_STATE <= READY;
+					
+				when READY =>
+					GOOD_DATA <= K28_5;
+					INSTRUCT_READY <= '1';
+					--i := i + 1;
+					--if i = 10 then
+					--	i := 0;
+					--	SEND_CC_INSTRUCT_STATE <= IDLE;
+					--end if;
+			end case;
 		end if;
 	end if;
 end process;
 
-process(WRITE_CLOCK, xCLR_ALL, xDONE)
+--look for start/stop word to write lvds data to CC ram.
+process(WRITE_CLOCK, xCLR_ALL, xDONE, xSOFT_RESET)
+begin
+	if xCLR_ALL = '1' or xDONE = '1' or xSOFT_RESET = '1' then
+		START_WRITE <= '0';
+		STOP_WRITE	<= '0';
+	elsif falling_edge(WRITE_CLOCK) then
+		if ALIGN_SUCCESS = '1' then
+			CHECK_RX_DATA <= RX_DATA;
+			if CHECK_RX_DATA = STARTWORD then
+				START_WRITE <= '1';
+			elsif CHECK_RX_DATA = ENDWORD then
+				STOP_WRITE <= '1';
+			end if;
+		end if;
+	end if;
+end process;
+
+process(WRITE_CLOCK, xCLR_ALL, ALIGN_SUCCESS, xSOFT_RESET, xDONE)
 begin
 	if xCLR_ALL ='1'  or ALIGN_SUCCESS = '0' or 
 		xSOFT_RESET = '1' or xDONE = '1' then
@@ -234,38 +237,40 @@ begin
 --		RAM_FULL_FLAG		<=	RAM_FULL_FLAG;
 --		LVDS_GET_DATA_STATE <= MESS_IDLE;
 	
-	elsif rising_edge(WRITE_CLOCK) and START_WRITE = '1' then
-		case LVDS_GET_DATA_STATE is
-			
-			when MESS_IDLE =>
-				WRITE_ENABLE_TEMP <= '1';
-				LVDS_GET_DATA_STATE <= GET_DATA;
+	elsif rising_edge(WRITE_CLOCK) then
+		if START_WRITE = '1' then
+			case LVDS_GET_DATA_STATE is
 				
-			when GET_DATA =>
-				RX_DATA_TO_RAM <= RX_DATA;
-				WRITE_COUNT		<= WRITE_COUNT + 1;
-				WRITE_ADDRESS_TEMP <= WRITE_ADDRESS_TEMP + 1;
-				--if STOP_WRITE = '1' or WRITE_COUNT > 4094 then
-				if WRITE_COUNT > 7998 then
-					WRITE_ENABLE_TEMP <= '0';
-					LAST_WRITE_ADDRESS <= WRITE_ADDRESS_TEMP;
-					LVDS_GET_DATA_STATE<= MESS_END;
-				end if;
-			
-			when MESS_END =>
-				for i in num_rx_rams-1 downto 0 loop
-					RAM_FULL_FLAG(i) <= RAM_FULL_FLAG(i) or xRAM_SELECT_WR(i);
-				end loop;
-				LVDS_GET_DATA_STATE<= GND_STATE;
-				
-			when GND_STATE =>
-				WRITE_ADDRESS_TEMP <= (others=>'0');
-		end case;
+				when MESS_IDLE =>
+					WRITE_ENABLE_TEMP <= '1';
+					LVDS_GET_DATA_STATE <= GET_DATA;
 					
-	elsif falling_edge(WRITE_CLOCK) and START_WRITE = '1' 
-						and STOP_WRITE = '0' then
-		WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
-		WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;	
+				when GET_DATA =>
+					RX_DATA_TO_RAM <= RX_DATA;
+					WRITE_COUNT		<= WRITE_COUNT + 1;
+					WRITE_ADDRESS_TEMP <= WRITE_ADDRESS_TEMP + 1;
+					--if STOP_WRITE = '1' or WRITE_COUNT > 4094 then
+					if WRITE_COUNT > 7998 then
+						WRITE_ENABLE_TEMP <= '0';
+						LAST_WRITE_ADDRESS <= WRITE_ADDRESS_TEMP;
+						LVDS_GET_DATA_STATE<= MESS_END;
+					end if;
+				
+				when MESS_END =>
+					for i in num_rx_rams-1 downto 0 loop
+						RAM_FULL_FLAG(i) <= RAM_FULL_FLAG(i) or xRAM_SELECT_WR(i);
+					end loop;
+					LVDS_GET_DATA_STATE<= GND_STATE;
+					
+				when GND_STATE =>
+					WRITE_ADDRESS_TEMP <= (others=>'0');
+			end case;
+		end if;				
+	elsif falling_edge(WRITE_CLOCK) then
+		if START_WRITE = '1' and STOP_WRITE = '0' then
+			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
+			WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;
+		end if;
 	end if;
 end process;
 
