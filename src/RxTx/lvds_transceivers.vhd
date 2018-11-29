@@ -129,7 +129,7 @@ signal ein_dat	:	std_logic_vector(7 downto 0);		-- Enconder input data or code
 signal kin_ena :	std_logic;		-- Data in is a special code, not all are legal.	
 signal ein_ena :	std_logic;		-- Data (or code) input enable
 signal eout_val :  std_logic;		-- Encoder data out is valid
-signal dout_val :	std_logic;		-- data out valid LSB
+signal dout_val :	std_logic;		-- data out valid 
 signal dout_dat :  std_logic_vector(7 downto 0);	-- Decoder output
 signal dout_k :	std_logic;		-- special code
 signal dout_kerr		:  std_logic;		-- coding mistake detected
@@ -152,7 +152,7 @@ signal uart_txd						: std_logic;
 TYPE TX_STATE_TYPE is (RESET, READY, UART_BUSY);
 signal TX_STATE		: TX_STATE_TYPE;
 
-TYPE RX_STATE_TYPE is (RESET, WAITING, WAITING_LSB, ERROR);
+TYPE RX_STATE_TYPE is (RESET, WAITING, WAITING_MSB, ERROR);
 signal RX_STATE		: RX_STATE_TYPE;
 
 signal tx_data_ack	:  std_logic;		-- data acknowledge from the UART
@@ -266,7 +266,7 @@ tx_enc : encoder_8b10b
 uart0 : uart
 	GENERIC map 
 	(	BITS => 10,
-		CLK_HZ	=> 125000000,
+		CLK_HZ	=> 40000000,
 		BAUD => 10000000)
 	PORT map
 	(
@@ -357,7 +357,7 @@ end process;
 REMOTE_UP <= '1' when LINK_STATE /= DOWN else '0';
 REMOTE_VALID <= '1' when LINK_STATE = UP else '0';
 
---TYPE RX_STATE_TYPE is (RESET, WAITING, CODE_READY, WAITING_LSB, ERROR, DATA_READY);
+--TYPE RX_STATE_TYPE is (RESET, WAITING, CODE_READY, WAITING_MSB, ERROR, DATA_READY);
 --signal RX_STATE		: RX_STATE_TYPE;
 
 -- pick output  RESET, DATA_READY, WAITING
@@ -397,16 +397,16 @@ begin
 						RX_STATE <= WAITING;
 					else
 						temp_data := dout_dat;
-						RX_STATE <= WAITING_LSB;
+						RX_STATE <= WAITING_MSB;
 					end if;
 				else
 					RX_STATE <= WAITING;
 				end if;
-			when WAITING_LSB =>
+			when WAITING_MSB =>
 				if dout_kerr = '1' then
 					RX_STATE <= ERROR;
 				elsif dout_val = '1' then
-					RX_DATA <= temp_data & dout_dat;
+					RX_DATA <= dout_dat & temp_data;
 					RX_DATA_RDY <= '1';
 					RX_STATE <= WAITING;
 				end if;
