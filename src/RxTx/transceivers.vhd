@@ -105,16 +105,12 @@ component lvds_transceivers
 		RX_LVDS_DATA 	:  IN  STD_LOGIC;
 		TX_DATA 			:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		TX_DATA_RDY 	:  IN  STD_LOGIC;
-		TRIGGER_PREP	:  IN  STD_LOGIC;
-		ST_ENABLE_PREP	:  IN  STD_LOGIC;
-		TRIGGER			:  IN  STD_LOGIC;
 		REMOTE_UP 		:  OUT STD_LOGIC;
 		REMOTE_VALID 	:  OUT STD_LOGIC;
 		TX_BUF_FULL 	:  OUT STD_LOGIC;
 		RX_ERROR 		:  OUT STD_LOGIC;
 		TX_LVDS_DATA 	:  OUT STD_LOGIC;
 		RX_DATA_RDY		:  OUT STD_LOGIC;
-		TRIG_READY		:  OUT STD_LOGIC;
 		RX_DATA 			:  OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
 end component;
 
@@ -303,16 +299,12 @@ port map(
 			RX_LVDS_DATA	=>		xRX_LVDS_DATA(0),
 			TX_DATA			=>		TX_DATA,
 			TX_DATA_RDY 	=>		'0',
-			TRIGGER_PREP 	=>		'0',
-			ST_ENABLE_PREP =>		'0',
-			TRIGGER 			=>		xTRIGGER,
 			REMOTE_UP 		=>    open,
 			REMOTE_VALID 	=>    ALIGN_SUCCESS,
 			TX_BUF_FULL 	=>    open,
 			RX_ERROR 		=>    open,
 			TX_LVDS_DATA	=>		xTX_LVDS_DATA,
 			RX_DATA_RDY		=>    open,
-			TRIG_READY		=>		open,
 			RX_DATA			=>		RX_DATA
 );	
 			

@@ -32,16 +32,12 @@ ENTITY lvds_transceivers IS
 		RX_LVDS_DATA 	:  IN  STD_LOGIC;
 		TX_DATA 			:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
 		TX_DATA_RDY 	:  IN  STD_LOGIC;
-		TRIGGER_PREP	:  IN  STD_LOGIC;
-		ST_ENABLE_PREP	:  IN  STD_LOGIC;
-		TRIGGER			:  IN  STD_LOGIC;
 		REMOTE_UP 		:  OUT STD_LOGIC;
 		REMOTE_VALID 	:  OUT STD_LOGIC;
 		TX_BUF_FULL 	:  OUT STD_LOGIC;
 		RX_ERROR 		:  OUT STD_LOGIC;
 		TX_LVDS_DATA 	:  OUT STD_LOGIC;
 		RX_DATA_RDY		:  OUT STD_LOGIC;
-		TRIG_READY		:  OUT STD_LOGIC;
 		RX_DATA 			:  OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 		
 	);
@@ -153,11 +149,7 @@ signal RX_RDreg						: std_logic;
 
 signal uart_txd						: std_logic;
 
-TYPE TRIG_STATE_TYPE is (NONE, TRIG, ST_ENABLE);
-signal TRIG_STATE 	: TRIG_STATE_TYPE;
-signal TRIG_STATE_ACK	:  std_logic;
-
-TYPE TX_STATE_TYPE is (RESET, READY, ST_PREP, TRIG_PREP, TRIG_WAIT, UART_BUSY);
+TYPE TX_STATE_TYPE is (RESET, READY, UART_BUSY);
 signal TX_STATE		: TX_STATE_TYPE;
 
 TYPE RX_STATE_TYPE is (RESET, WAITING, WAITING_LSB, ERROR);
@@ -212,36 +204,12 @@ begin
 	end if;
 end process;
 
--- Set TRIG_STATE depending on requested state from input lines.
---   Reset when the command has been sent, or we time out.
-process(xCLK, xCLR_ALL)
-begin
-	if xCLR_ALL = '1' then
-		TRIG_STATE <= NONE;
-	elsif rising_edge(xCLK) then
-		case TRIG_STATE is
-			when NONE =>
-				if TRIGGER_PREP = '1' then
-					TRIG_STATE <= TRIG;
-				elsif ST_ENABLE_PREP = '1' then
-					TRIG_STATE <= ST_ENABLE;
-				else
-					TRIG_STATE <= NONE;
-				end if;
-			when others =>
-				if TRIG_STATE_ACK = '1' then
-					TRIG_STATE <= NONE;
-				end if;
-		end case;
-	end if;
-end process;
+
 
 process(xCLK, xCLR_ALL)
 begin
 	if xCLR_ALL = '1' then
 		TX_STATE <= RESET;
-		TRIG_STATE_ACK <= '0';
-		TRIG_READY <= '0';
 		TX_FIFO_rdreq <= '0';
 	elsif rising_edge(xCLK) then
 		case TX_STATE is
@@ -250,8 +218,6 @@ begin
 				ein_dat <= (others => '0');
 				kin_ena <= '0';
 				ein_ena <= '0';
-				TRIG_STATE_ACK <= '0';
-				TRIG_READY <= '0';
 				TX_FIFO_rdreq <= '0';
 			when READY =>
 				if TX_FIFO_EMPTY = '0' then  -- clear FIFO is top priority
@@ -260,44 +226,11 @@ begin
 					TX_FIFO_rdreq <= '1';
 					ein_ena <= '1';
 					kin_ena <= '0';
-				else -- check if a trigger state has been requested
-					case TRIG_STATE is
-						when TRIG =>
-							TX_STATE <= TRIG_PREP;
-							ein_dat <= K29_7;
-							ein_ena <= '1';
-							kin_ena <= '1';
-							TRIG_STATE_ACK <= '1';
-						when ST_ENABLE =>
-							TX_STATE <= ST_PREP;
-							ein_dat <= K30_7;
-							ein_ena <= '1';
-							kin_ena <= '1';
-							TRIG_STATE_ACK <= '1';
-						when others => -- just send the status code
-							TX_STATE <= UART_BUSY;
-							ein_dat <= STATUS_CODE;
-							ein_ena <= '1';
-							kin_ena <= '1';
-					end case;
-				end if;
-			-- ST_PREP, ST_ENABLED, TRIG_PREP, TRIG_WAIT
-			when TRIG_PREP =>
-				TRIG_STATE_ACK <= '0';
-				kin_ena <= '0';
-				ein_ena <= '0';
-				if tx_data_ack = '1' then
-					TX_STATE <= TRIG_WAIT;
-				end if;
-			when TRIG_WAIT =>
-				TRIG_READY <= '1';
-				-- wait for tigger
-			when ST_PREP =>
-				TRIG_STATE_ACK <= '0';
-				kin_ena <= '0';
-				ein_ena <= '0';
-				if tx_data_ack = '1' then
-					TX_STATE <= READY;
+				else  -- just send the status code
+					TX_STATE <= UART_BUSY;
+					ein_dat <= STATUS_CODE;
+					ein_ena <= '1';
+					kin_ena <= '1';
 				end if;
 			when UART_BUSY =>
 				TX_FIFO_rdreq <= '0';
@@ -311,12 +244,6 @@ begin
 		end case;
 	end if;
 end process;
-
-
-with TX_STATE select
-	TX_LVDS_DATA 	<= TRIGGER when TRIG_WAIT,
-							uart_txd when others;
-
 
 tx_enc : encoder_8b10b
 	GENERIC MAP( METHOD => 1 )
