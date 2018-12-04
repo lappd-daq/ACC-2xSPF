@@ -1269,7 +1269,6 @@ set_global_assignment -name VHDL_FILE src/RxTx/rx_ram.vhd
 set_global_assignment -name VHDL_FILE src/RxTx/lvds_transceivers.vhd
 set_global_assignment -name VHDL_FILE src/usb/iobuf.vhd
 set_global_assignment -name VHDL_FILE src/clocks/Slow_Clocks.vhd
-set_global_assignment -name VHDL_FILE src/clocks/pll_block.vhd -library pll_block
 set_global_assignment -name VHDL_FILE src/progreset.vhd
 set_global_assignment -name VHDL_FILE src/clocks/Clock_Manager.vhd
 set_global_assignment -name BDF_FILE ACC_top_v0_1.bdf
@@ -1285,5 +1284,6 @@ set_global_assignment -name VHDL_FILE src/usbWrapperACC.vhd
 set_global_assignment -name CDF_FILE ACC_v0_1_active_serial_US5.cdf
 set_global_assignment -name VERILOG_FILE "c:/intelfpga/18.0/quartus/libraries/megafunctions/altera_arriav_pll.v"
 set_global_assignment -name QIP_FILE src/RxTx/tx_fifo.qip
+set_global_assignment -name QIP_FILE src/RxTx/rx_fifo.qip
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp

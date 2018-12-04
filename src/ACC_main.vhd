@@ -261,7 +261,7 @@ ACDCintercom0	:	 for i in num_front_end_boards-1 downto 0 generate
 		xALIGN_SUCCESS 	=> xalign_good(i),
 		
 		xCLK					=> clock_sys,
-		
+		xCLK_COMs			=> clock_sys4x,
 		xRX_LVDS_DATA		=> rx_serdes(i),
 		xRX_LVDS_CLK		=> rx_serdes_clk(i),
 		xTX_LVDS_DATA		=> tx_serdes(i),

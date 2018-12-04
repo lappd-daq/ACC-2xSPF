@@ -28,6 +28,7 @@ ENTITY lvds_transceivers IS
 	PORT
 	(
 		xCLK 				:  IN  STD_LOGIC;
+		xCLK_COMs		:	IN  STD_LOGIC;
 		xCLR_ALL 		:  IN  STD_LOGIC;
 		RX_LVDS_DATA 	:  IN  STD_LOGIC;
 		TX_DATA 			:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -120,6 +121,21 @@ COMPONENT uart
 END COMPONENT;
 
 
+component rx_fifo
+	PORT
+	(
+		aclr		: IN STD_LOGIC  := '0';
+		data		: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+		rdclk		: IN STD_LOGIC ;
+		rdreq		: IN STD_LOGIC ;
+		wrclk		: IN STD_LOGIC ;
+		wrreq		: IN STD_LOGIC ;
+		q		: OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+		rdempty		: OUT STD_LOGIC ;
+		wrfull		: OUT STD_LOGIC 
+	);
+end component;
+
 
 type LINK_STATE_TYPE is (DOWN, CHECKING, UP, ERROR);
 signal LINK_STATE : LINK_STATE_TYPE;
@@ -160,6 +176,10 @@ signal rx_data_fresh :  std_logic;		-- new data from the UART
 
 --signal rx_clk_buf		:  std_logic;
 
+-- rx fifo signals
+signal data_out_rdy		:	STD_LOGIC;
+signal data_out16			:	STD_LOGIC_VECTOR(15 downto 0);
+signal rx_fifo_empty		:	STD_LOGIC;
 
 BEGIN 
 
@@ -170,7 +190,7 @@ tx_fifo0 : tx_fifo
 		data		=> TX_DATA,
 		rdclk		=> xCLK,
 		rdreq		=> TX_FIFO_rdreq,
-		wrclk		=> xCLK,
+		wrclk		=> xCLK_COMs,
 		wrreq		=> TX_DATA_RDY,
 		q			=> TX_FIFO_Q,
 		rdempty	=> TX_FIFO_EMPTY,
@@ -179,13 +199,13 @@ tx_fifo0 : tx_fifo
 
 
 -- Pick a default code based on link status
-process(xCLK, xCLR_ALL)
+process(xCLK_COMs, xCLR_ALL)
 variable i : integer range 5 downto 0;	
 begin
 	if xCLR_ALL = '1' then
 		STATUS_CODE <= K28_1;
 		i := 0;
-	elsif rising_edge(xCLK) then
+	elsif rising_edge(xCLK_COMs) then
 		if (LINK_STATE /= UP) then
 			STATUS_CODE <= K28_1;
 			i := 0;
@@ -206,12 +226,12 @@ end process;
 
 
 
-process(xCLK, xCLR_ALL)
+process(xCLK_COMs, xCLR_ALL)
 begin
 	if xCLR_ALL = '1' then
 		TX_STATE <= RESET;
 		TX_FIFO_rdreq <= '0';
-	elsif rising_edge(xCLK) then
+	elsif rising_edge(xCLK_COMs) then
 		case TX_STATE is
 			when RESET =>
 				TX_STATE <= READY;
@@ -248,7 +268,7 @@ end process;
 tx_enc : encoder_8b10b
 	GENERIC MAP( METHOD => 1 )
 	PORT MAP(
-		clk => xCLK,
+		clk => xCLK_COMs,
 		rst => xCLR_ALL,
 		kin_ena => kin_ena,		-- Data in is a special code, not all are legal.	
 		ein_ena => ein_ena,		-- Data (or code) input enable
@@ -266,11 +286,11 @@ tx_enc : encoder_8b10b
 uart0 : uart
 	GENERIC map 
 	(	BITS => 10,
-		CLK_HZ	=> 40000000,
+		CLK_HZ	=> 160000000,
 		BAUD => 10000000)
 	PORT map
 	(
-		clk => xCLK,
+		clk => xCLK_COMs,
 		rst => xCLR_ALL,
 		tx_data => TX_DATA10,
 		tx_data_valid => eout_val,
@@ -287,7 +307,7 @@ rx_dec0 : decoder_8b10b
 		KERR => 1,
 		METHOD => 1)
 	PORT MAP(
-		clk => xCLK,
+		clk => xCLK_COMs,
 		rst => xCLR_ALL,
 		din_ena => rx_data_fresh,		-- 10b data ready
 		din_dat => RX_DATA10(9 downto 0),		-- 10b data input
@@ -303,7 +323,7 @@ rx_dec0 : decoder_8b10b
 
 
 --Check if Link is disconnected
-process(xCLK)
+process(xCLK_COMs)
 variable counter 	: integer range 200000000 downto 0;
 variable dff1,dff2,dff3		: std_logic;
 variable edge		: std_logic;
@@ -315,7 +335,7 @@ begin
 		edge		:= dff2 xor dff3;
 		counter	:= 0;
 		LINK_STATE <= DOWN;
-	elsif rising_edge(xCLK) then
+	elsif rising_edge(xCLK_COMs) then
 		edge 	:= dff2 xor dff3;
 		dff3  := dff2;
 		dff2	:= dff1;
@@ -361,28 +381,28 @@ REMOTE_VALID <= '1' when LINK_STATE = UP else '0';
 --signal RX_STATE		: RX_STATE_TYPE;
 
 -- pick output  RESET, DATA_READY, WAITING
-process(xCLK, xCLR_ALL)
+process(xCLK_COMs, xCLR_ALL)
 	variable temp_data : std_logic_vector(7 downto 0) := (others => '0');
 begin
 	if xCLR_ALL = '1' then
 		RX_STATE 		<= RESET;
 		RX_ERROR 		<= '0';
-		RX_DATA_RDY		<= '0';
-		RX_DATA 			<= (others => '0');
+		data_out_rdy	<= '0';
+		data_out16 			<= (others => '0');
 		temp_data		:= (others => '0');
 		REMOTE_LINK_STATE <= DOWN;
-	elsif rising_edge(xCLK) then
+	elsif rising_edge(xCLK_COMs) then
 		case RX_STATE is
 			when RESET =>
 				RX_ERROR 		<= '0';
-				RX_DATA_RDY		<= '0';
-				RX_DATA 			<= (others => '0');
+				data_out_rdy		<= '0';
+				data_out16 			<= (others => '0');
 				temp_data		:= (others => '0');
 				RX_state 		<= WAITING;
 			when WAITING =>
 				RX_ERROR <= '0';
-				RX_DATA_RDY <= '0';
-				RX_DATA <= (others => '0');
+				data_out_rdy <= '0';
+				data_out16 <= (others => '0');
 				if dout_kerr = '1' then
 					RX_STATE <= ERROR;
 				elsif dout_val = '1' then
@@ -406,8 +426,8 @@ begin
 				if dout_kerr = '1' then
 					RX_STATE <= ERROR;
 				elsif dout_val = '1' then
-					RX_DATA <= dout_dat & temp_data;
-					RX_DATA_RDY <= '1';
+					data_out16 <= dout_dat & temp_data;
+					data_out_rdy <= '1';
 					RX_STATE <= WAITING;
 				end if;
 			when ERROR =>
@@ -419,7 +439,21 @@ begin
 	end if;
 end process;
 		
+rx_fifo_inst : rx_fifo PORT MAP (
+		aclr	 => xCLR_ALL,
+		data	 => data_out16,
+		rdclk	 => xCLK,
+		rdreq	 => not rx_fifo_empty,
+		wrclk	 => xCLK_COMs,
+		wrreq	 => data_out_rdy,
+		q	 => RX_DATA,
+		rdempty	 => rx_fifo_empty,
+		wrfull	 => open
+	);
 
+
+RX_DATA_RDY <= not rx_fifo_empty;
+		
 dout_error <= dout_kerr or dout_rderr;
 
 

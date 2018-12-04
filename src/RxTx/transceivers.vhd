@@ -23,7 +23,7 @@ entity transceivers is
 		xALIGN_SUCCESS 	: out	std_logic;  --successfully aligned
 		
 		xCLK					: in	std_logic;	--system clock
-		
+		xCLK_COMs			: in  std_logic;  --clock for communications
 		xRX_LVDS_DATA		: in	std_logic_vector(1 downto 0); --serdes data received (2x)
 		xRX_LVDS_CLK		: in	std_logic;  --bytealigned clk for serdes data received
 		xTX_LVDS_DATA		: out	std_logic;                    --serdes data transmitted
@@ -101,6 +101,7 @@ signal RX_DATA_RDY				:  std_logic;
 component lvds_transceivers
 	port (
 		xCLK 				:  IN  STD_LOGIC;
+		xCLK_COMs		:  IN  STD_LOGIC;
 		xCLR_ALL 		:  IN  STD_LOGIC;
 		RX_LVDS_DATA 	:  IN  STD_LOGIC;
 		TX_DATA 			:  IN  STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -301,6 +302,7 @@ end process;
 xlvds_transceivers : lvds_transceivers
 port map(
 			xCLK 				=>		xCLK,
+			xCLK_COMs		=>		xCLK_COMs,
 			xCLR_ALL			=>		xCLR_ALL,
 			RX_LVDS_DATA	=>		xRX_LVDS_DATA(0),
 			TX_DATA			=>		TX_DATA,
