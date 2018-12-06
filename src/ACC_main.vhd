@@ -103,21 +103,12 @@ component Clock_Manager
 		CLK_SYS_4x	: 	out	std_logic;
 		CLK_SYS		:  out	std_logic; 
 		
-		CLK_RX 		: 	out std_logic_vector(7 downto 0);
-		CLK_RX_LOCKED 			:  out	std_logic;
-		CLK_RX_PHASE_EN 		:  in		std_logic;
-		CLK_RX_PHASE_UPDN 	:  in 	std_logic;
-		CLK_RX_PHASE_SEL 		:  in  std_logic_vector(4 downto 0);
-		CLK_RX_PHASE_DONE 	:  out 	std_logic;
-		
 		CLK_1MHz		:  out	std_logic;
 		CLK_1Hz		:  out	std_logic;
 		CLK_10Hz		:  out	std_logic;
 		CLK_1kHz		:	out	std_logic;
 		
-		fpgaPLLlock :	out	std_logic;
-		fpgaPLL2lock :	out	std_logic;
-		fpgaPLL3lock :	out	std_logic);
+		fpgaPLLlock :	out	std_logic);
 
 end component;
 
@@ -227,12 +218,6 @@ xCLOCKS : entity work.Clock_Manager(Structural)
 		PLL_reset	=>	'0',
 		CLK_SYS_4x	=> clock_sys4x, 		
 		CLK_SYS		=> clock_sys,
-		CLK_RX 					=> open,
-		CLK_RX_LOCKED 			=> open,
-		CLK_RX_PHASE_EN 		=> '0',
-		CLK_RX_PHASE_UPDN 	=> '0',
-		CLK_RX_PHASE_SEL 		=> "00000",
-		CLK_RX_PHASE_DONE 	=> open,
 		CLK_1MHz		=> clock_1MHz,		
 		CLK_1Hz		=> xclk_1Hz,
 		CLK_10Hz		=> xclk_10Hz,

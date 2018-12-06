@@ -28,21 +28,12 @@ entity Clock_Manager is
 		CLK_SYS_4x	: 	out	std_logic;
 		CLK_SYS		:  out	std_logic; 
 		
-		CLK_RX 		: 	out std_logic_vector(7 downto 0);
-		CLK_RX_LOCKED 			:  out	std_logic;
-		CLK_RX_PHASE_EN 		:  in		std_logic;
-		CLK_RX_PHASE_UPDN 	:  in 	std_logic;
-		CLK_RX_PHASE_SEL 		:  in  std_logic_vector(4 downto 0);
-		CLK_RX_PHASE_DONE 	:  out 	std_logic;
-		
 		CLK_1MHz		:  out	std_logic;
 		CLK_1Hz		:  out	std_logic;
 		CLK_10Hz		:  out	std_logic;
 		CLK_1kHz		:	out	std_logic;
 		
-		fpgaPLLlock :	out	std_logic;
-		fpgaPLL2lock :	out	std_logic;
-		fpgaPLL3lock :	out	std_logic);
+		fpgaPLLlock :	out	std_logic);
 
 end Clock_Manager;
 
