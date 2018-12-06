@@ -113,6 +113,7 @@ COMPONENT uart
 		tx_data			:	 IN STD_LOGIC_VECTOR(BITS-1 DOWNTO 0);
 		tx_data_valid	:	 IN STD_LOGIC;
 		tx_data_ack		:	 OUT STD_LOGIC;
+		tx_ready			:  OUT STD_LOGIC;
 		txd				:	 OUT STD_LOGIC;
 		rx_data			:	 OUT STD_LOGIC_VECTOR(BITS-1 DOWNTO 0);
 		rx_data_fresh	:	 OUT STD_LOGIC;
@@ -163,15 +164,14 @@ signal TX_DATA10						: 	std_logic_vector(9 downto 0);
 signal TX_RDreg						: std_logic;
 signal RX_RDreg						: std_logic;
 
-signal uart_txd						: std_logic;
-
-TYPE TX_STATE_TYPE is (RESET, READY, UART_BUSY);
+TYPE TX_STATE_TYPE is (RESET, READY, UART_WAIT, UART_BUSY);
 signal TX_STATE		: TX_STATE_TYPE;
 
 TYPE RX_STATE_TYPE is (RESET, WAITING, WAITING_MSB, ERROR);
 signal RX_STATE		: RX_STATE_TYPE;
 
 signal tx_data_ack	:  std_logic;		-- data acknowledge from the UART
+signal tx_ready			:  std_logic;
 signal rx_data_fresh :  std_logic;		-- new data from the UART
 
 --signal rx_clk_buf		:  std_logic;
@@ -241,24 +241,28 @@ begin
 				TX_FIFO_rdreq <= '0';
 			when READY =>
 				if TX_FIFO_EMPTY = '0' then  -- clear FIFO is top priority
-					TX_STATE <= UART_BUSY;
+					TX_STATE <= UART_WAIT;
 					ein_dat <= TX_FIFO_Q;
 					TX_FIFO_rdreq <= '1';
 					ein_ena <= '1';
 					kin_ena <= '0';
 				else  -- just send the status code
-					TX_STATE <= UART_BUSY;
+					TX_STATE <= UART_WAIT;
 					ein_dat <= STATUS_CODE;
 					ein_ena <= '1';
 					kin_ena <= '1';
 				end if;
-			when UART_BUSY =>
+			when UART_WAIT =>
 				TX_FIFO_rdreq <= '0';
 				ein_ena <= '0';
 				kin_ena <= '0';
 				if tx_data_ack = '1' then
-					TX_STATE <= READY;
+					TX_STATE <= UART_BUSY;
 				end if;
+			when UART_BUSY =>
+			if tx_ready = '1'then
+				TX_STATE <= READY;
+			end if;
 			when OTHERS =>
 				TX_STATE <= RESET;
 		end case;
@@ -295,7 +299,8 @@ uart0 : uart
 		tx_data => TX_DATA10,
 		tx_data_valid => eout_val,
 		tx_data_ack	=> tx_data_ack,
-		txd => uart_txd,
+		tx_ready	=> tx_ready,
+		txd => TX_LVDS_DATA,
 		rx_data => RX_DATA10,
 		rx_data_fresh => rx_data_fresh,
 		rxd => RX_LVDS_DATA
@@ -323,7 +328,7 @@ rx_dec0 : decoder_8b10b
 
 
 --Check if Link is disconnected
-process(xCLK_COMs)
+process(xCLR_ALL, xCLK_COMs)
 variable counter 	: integer range 200000000 downto 0;
 variable dff1,dff2,dff3		: std_logic;
 variable edge		: std_logic;
@@ -346,31 +351,21 @@ begin
 					counter := 0;
 					LINK_STATE <= CHECKING;
 				end if;
-			when CHECKING =>
-				if dout_val = '1' then
+			when others =>
+				if dout_val = '1' and dout_kerr = '0' then
 					counter := 0;
 					LINK_STATE <= UP;
+				elsif dout_kerr = '1' or dout_rderr = '1' then
+					counter := 0;
+					LINK_STATE <= ERROR;
 				else
 					counter := counter + 1;
-					if counter > 125000000 then -- check if we're past timeout
+					if counter > 160000000 then -- check if we're past timeout
 						LINK_STATE <= DOWN;
 						counter := 0;
 					end if;
 				end if;
-			when UP =>
-				if dout_val = '1' then
-					counter := 0;
-				else
-					counter := counter + 1;
-					if counter > 125000000 then
-						LINK_STATE <= CHECKING;
-						counter := 0;
-					end if;
-				end if;
-			when others =>
-				LINK_STATE <= DOWN;
 		end case;
-		LINK_STATE <= DOWN;
 	end if;
 end process;
 
@@ -413,6 +408,8 @@ begin
 							REMOTE_LINK_STATE <= CHECKING;
 						elsif dout_dat = K28_5 then
 							REMOTE_LINK_STATE <= UP;
+						elsif dout_dat = K27_7 then
+							REMOTE_LINK_STATE <= ERROR;
 						end if;
 						RX_STATE <= WAITING;
 					else
