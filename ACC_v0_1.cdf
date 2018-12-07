@@ -1,4 +1,4 @@
-/* Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition */
+/* Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition */
 JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
