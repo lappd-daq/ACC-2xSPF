@@ -74,10 +74,10 @@ signal RX_ALIGN_BITSLIP			:	std_logic_vector(1 downto 0);
 signal RX_DATA						:	std_logic_vector(15 downto 0);
 signal CHECK_WORD_1				:	std_logic_vector(7 downto 0);
 signal CHECK_WORD_2				:	std_logic_vector(7 downto 0);
-signal TX_DATA						: 	std_logic_vector(7 downto 0);
 signal ALIGN_SUCCESS				:  std_logic;
 signal FE_ALIGN_SUCCESS		:  std_logic;
 signal GOOD_DATA					:  std_logic_vector(7 downto 0);
+signal GOOD_DATA_WRREQ		:  std_logic;
 
 signal INSTRUCT_READY			:	std_logic;
 
@@ -148,6 +148,7 @@ begin
 		INSTRUCT_READY <= '0';
 		i := 0;
 		GOOD_DATA <= (others=>'0');
+		GOOD_DATA_WRREQ <= '0';
 		SEND_CC_INSTRUCT_STATE <= IDLE;
 		
 	elsif rising_edge(xCLK) then
@@ -156,6 +157,7 @@ begin
 			case SEND_CC_INSTRUCT_STATE is			
 				when IDLE =>
 					i := 0;
+					GOOD_DATA_WRREQ <= '0';
 					INSTRUCT_READY <= '0';
 					--if xCC_INSTRUCT_RDY = '1' then
 					SEND_CC_INSTRUCT_STATE <= SEND_START_WORD;       
@@ -164,26 +166,33 @@ begin
 				--send 32 bit word 8 bits at a time	
 				when SEND_START_WORD =>
 					GOOD_DATA <= STARTWORD_8a;
+					GOOD_DATA_WRREQ <= '1';
 					--SEND_CC_INSTRUCT_STATE <= CATCH0;
 					SEND_CC_INSTRUCT_STATE <= SEND_START_WORD_2;
 				when SEND_START_WORD_2 =>
 					GOOD_DATA <= STARTWORD_8b;
+					GOOD_DATA_WRREQ <= '1';
 					SEND_CC_INSTRUCT_STATE <= CATCH0;
 				when CATCH0 =>
 					GOOD_DATA <= xCC_INSTRUCTION(31 downto 24);
+					GOOD_DATA_WRREQ <= '1';
 					SEND_CC_INSTRUCT_STATE <= CATCH1;
 				when CATCH1 =>
 					GOOD_DATA <= xCC_INSTRUCTION(23 downto 16);
+					GOOD_DATA_WRREQ <= '1';
 					SEND_CC_INSTRUCT_STATE <= CATCH2;
 				when CATCH2 =>
 					GOOD_DATA <= xCC_INSTRUCTION(15 downto 8);  
+					GOOD_DATA_WRREQ <= '1';
 					SEND_CC_INSTRUCT_STATE <= CATCH3;
 				when CATCH3 =>
 					GOOD_DATA <= xCC_INSTRUCTION(7 downto 0);
+					GOOD_DATA_WRREQ <= '1';
 					SEND_CC_INSTRUCT_STATE <= READY;
 					
 				when READY =>
-					GOOD_DATA <= K28_5;
+					GOOD_DATA <= (others => '0');
+					GOOD_DATA_WRREQ <= '0';
 					INSTRUCT_READY <= '1';
 					--i := i + 1;
 					--if i = 10 then
@@ -305,8 +314,8 @@ port map(
 			xCLK_COMs		=>		xCLK_COMs,
 			xCLR_ALL			=>		xCLR_ALL,
 			RX_LVDS_DATA	=>		xRX_LVDS_DATA(0),
-			TX_DATA			=>		TX_DATA,
-			TX_DATA_RDY 	=>		'0',
+			TX_DATA			=>		GOOD_DATA,
+			TX_DATA_RDY 	=>		GOOD_DATA_WRREQ,
 			REMOTE_UP 		=>    open,
 			REMOTE_VALID 	=>    ALIGN_SUCCESS,
 			TX_BUF_FULL 	=>    TX_BUF_FULL,

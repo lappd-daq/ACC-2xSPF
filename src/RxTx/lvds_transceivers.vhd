@@ -188,9 +188,9 @@ tx_fifo0 : tx_fifo
 	(
 		aclr		=> xCLR_All,
 		data		=> TX_DATA,
-		rdclk		=> xCLK,
+		rdclk		=> xCLK_COMs,
 		rdreq		=> TX_FIFO_rdreq,
-		wrclk		=> xCLK_COMs,
+		wrclk		=> xCLK,
 		wrreq		=> TX_DATA_RDY,
 		q			=> TX_FIFO_Q,
 		rdempty	=> TX_FIFO_EMPTY,
@@ -227,11 +227,16 @@ end process;
 
 
 process(xCLK_COMs, xCLR_ALL)
+variable last_code		:  std_logic_vector(7 downto 0);
+variable timer				:  integer range 2000000 downto 0;
 begin
 	if xCLR_ALL = '1' then
 		TX_STATE <= RESET;
 		TX_FIFO_rdreq <= '0';
+		last_code := (others => '0');
+		timer := 0;
 	elsif rising_edge(xCLK_COMs) then
+		timer := timer + 1;
 		case TX_STATE is
 			when RESET =>
 				TX_STATE <= READY;
@@ -239,18 +244,22 @@ begin
 				kin_ena <= '0';
 				ein_ena <= '0';
 				TX_FIFO_rdreq <= '0';
+				last_code := (others => '0');
+				timer := 0;
 			when READY =>
-				if TX_FIFO_EMPTY = '0' then  -- clear FIFO is top priority
+				if (last_code /= STATUS_CODE) or (timer > 16000) then -- send new status code is top priority
+					TX_STATE <= UART_WAIT;
+					ein_dat <= STATUS_CODE;
+					last_code := STATUS_CODE;
+					ein_ena <= '1';
+					kin_ena <= '1';
+					timer := 0;
+				elsif TX_FIFO_EMPTY = '0' then  -- if FIFO is not empty
 					TX_STATE <= UART_WAIT;
 					ein_dat <= TX_FIFO_Q;
 					TX_FIFO_rdreq <= '1';
 					ein_ena <= '1';
 					kin_ena <= '0';
-				else  -- just send the status code
-					TX_STATE <= UART_WAIT;
-					ein_dat <= STATUS_CODE;
-					ein_ena <= '1';
-					kin_ena <= '1';
 				end if;
 			when UART_WAIT =>
 				TX_FIFO_rdreq <= '0';
