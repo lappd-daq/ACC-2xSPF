@@ -113,7 +113,7 @@ COMPONENT uart
 		tx_data			:	 IN STD_LOGIC_VECTOR(BITS-1 DOWNTO 0);
 		tx_data_valid	:	 IN STD_LOGIC;
 		tx_data_ack		:	 OUT STD_LOGIC;
-		tx_ready			:  OUT STD_LOGIC;
+		tx_ready			:	 OUT STD_LOGIC;
 		txd				:	 OUT STD_LOGIC;
 		rx_data			:	 OUT STD_LOGIC_VECTOR(BITS-1 DOWNTO 0);
 		rx_data_fresh	:	 OUT STD_LOGIC;
@@ -200,27 +200,20 @@ tx_fifo0 : tx_fifo
 
 -- Pick a default code based on link status
 process(xCLK_COMs, xCLR_ALL)
-variable i : integer range 5 downto 0;	
 begin
 	if xCLR_ALL = '1' then
 		STATUS_CODE <= K28_1;
-		i := 0;
 	elsif rising_edge(xCLK_COMs) then
-		if (LINK_STATE /= UP) then
-			STATUS_CODE <= K28_1;
-			i := 0;
-		else 		-- link is up
-			if dout_error = '1' then  -- but decoder doesn't see valid data
+		case LINK_STATE is
+			when DOWN =>
+				STATUS_CODE <= K28_1;
+			when CHECKING =>
 				STATUS_CODE <= K28_7;
-				i := 0;
-			else -- link is up and data is valid
-				if i < 5 then
-					i := i + 1;
-				else
-					STATUS_CODE <= K28_5;
-				end if;
-			end if;
-		end if;
+			when UP =>
+				STATUS_CODE <= K28_5;
+			when others => -- ERROR
+				STATUS_CODE <= K27_7;
+		end case;
 	end if;
 end process;
 
@@ -361,12 +354,14 @@ begin
 					LINK_STATE <= CHECKING;
 				end if;
 			when others =>
-				if dout_val = '1' and dout_kerr = '0' then
-					counter := 0;
-					LINK_STATE <= UP;
-				elsif dout_kerr = '1' or dout_rderr = '1' then
-					counter := 0;
-					LINK_STATE <= ERROR;
+				if dout_val = '1' then
+					if dout_kerr = '0' then
+						counter := 0;
+						LINK_STATE <= UP;
+					else
+						counter := 0;
+						LINK_STATE <= ERROR;
+					end if;
 				else
 					counter := counter + 1;
 					if counter > 160000000 then -- check if we're past timeout
@@ -407,10 +402,10 @@ begin
 				RX_ERROR <= '0';
 				data_out_rdy <= '0';
 				data_out16 <= (others => '0');
-				if dout_kerr = '1' then
-					RX_STATE <= ERROR;
-				elsif dout_val = '1' then
-					if dout_k = '1' then
+				if dout_val = '1' then
+					if dout_kerr = '1' then
+						RX_STATE <= ERROR;
+					elsif dout_k = '1' then
 						if dout_dat = K28_1 then
 							REMOTE_LINK_STATE <= DOWN;
 						elsif dout_dat = K28_7 then

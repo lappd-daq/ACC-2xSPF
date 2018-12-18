@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Fri Dec 07 10:57:57 2018
+Analysis & Synthesis Status : Successful - Tue Dec 18 09:46:46 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : ACC_v0_1
 Top-level Entity Name : ACC_top_v0_1
 Family : Arria V
 Logic utilization (in ALMs) : N/A
-Total registers : 5452
+Total registers : 5445
 Total pins : 222
 Total virtual pins : 0
-Total block memory bits : 733,184
+Total block memory bits : 985,088
 Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

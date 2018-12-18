@@ -2,84 +2,84 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'USB_IFCLK'
-Slack : -5.305
-TNS   : -153.441
-
 Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.846
-TNS   : -357.558
+Slack : -6.460
+TNS   : -631.756
+
+Type  : Slow 1100mV 85C Model Setup 'USB_IFCLK'
+Slack : -3.425
+TNS   : -96.869
 
 Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.902
+Slack : 1.011
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'altera_reserved_tck'
-Slack : 10.718
+Slack : 11.297
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 996.204
+Slack : 996.279
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.186
+Slack : 0.187
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'USB_IFCLK'
-Slack : 0.190
+Slack : 0.253
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.260
+Slack : 0.272
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.286
+Slack : 0.281
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.320
+Slack : 0.466
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.830
-TNS   : -1534.485
+Slack : -6.672
+TNS   : -2632.977
 
 Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -3.580
-TNS   : -42.669
+Slack : -5.259
+TNS   : -60.400
 
 Type  : Slow 1100mV 85C Model Recovery 'USB_IFCLK'
-Slack : 3.688
+Slack : 9.351
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 31.346
+Slack : 31.584
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.489
+Slack : 995.212
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.361
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 1.153
+Slack : 0.583
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'USB_IFCLK'
-Slack : 1.434
+Slack : 0.964
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.479
+Slack : 1.207
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 1.299
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 1.790
+Slack : 2.538
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -87,7 +87,7 @@ Slack : 1.562
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 2.115
+Slack : 2.110
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCKIN'
@@ -95,7 +95,7 @@ Slack : 3.981
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.549
+Slack : 9.540
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
@@ -103,43 +103,43 @@ Slack : 11.481
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.515
+Slack : 15.449
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.319
+Slack : 499.308
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'USB_IFCLK'
-Slack : -5.004
-TNS   : -144.736
-
 Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.542
-TNS   : -322.690
+Slack : -6.151
+TNS   : -603.721
+
+Type  : Slow 1100mV 0C Model Setup 'USB_IFCLK'
+Slack : -3.168
+TNS   : -89.836
 
 Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.998
+Slack : 1.111
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'altera_reserved_tck'
-Slack : 11.007
+Slack : 11.584
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 996.118
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.210
+Slack : 996.340
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
 Slack : 0.228
 TNS   : 0.000
 
+Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 0.237
+TNS   : 0.000
+
 Type  : Slow 1100mV 0C Model Hold 'USB_IFCLK'
-Slack : 0.230
+Slack : 0.258
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
@@ -147,47 +147,47 @@ Slack : 0.260
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.334
+Slack : 0.404
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -3.506
-TNS   : -1396.545
+Slack : -6.348
+TNS   : -2516.754
 
 Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -3.249
-TNS   : -38.544
+Slack : -4.972
+TNS   : -57.280
 
 Type  : Slow 1100mV 0C Model Recovery 'USB_IFCLK'
-Slack : 4.066
+Slack : 9.535
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 31.467
+Slack : 31.696
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.638
+Slack : 995.506
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.333
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.962
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.185
+Slack : 0.547
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'USB_IFCLK'
-Slack : 1.340
+Slack : 0.882
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 1.121
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 1.198
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 1.653
+Slack : 2.357
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -195,7 +195,7 @@ Slack : 1.562
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 2.125
+Slack : 2.116
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCKIN'
@@ -203,51 +203,47 @@ Slack : 3.989
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.541
+Slack : 9.522
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 11.478
+Slack : 11.476
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.507
+Slack : 15.441
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.299
+Slack : 499.288
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Setup 'USB_IFCLK'
-Slack : -3.818
-TNS   : -109.938
-
 Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -2.404
-TNS   : -186.499
+Slack : -3.660
+TNS   : -359.065
+
+Type  : Fast 1100mV 85C Model Setup 'USB_IFCLK'
+Slack : -2.721
+TNS   : -76.782
 
 Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.766
+Slack : 1.759
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'altera_reserved_tck'
-Slack : 13.185
+Slack : 13.369
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.875
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.138
+Slack : 997.752
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.148
+Slack : 0.147
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'USB_IFCLK'
-Slack : 0.149
+Slack : 0.162
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
@@ -255,47 +251,51 @@ Slack : 0.168
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.182
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.249
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -2.194
-TNS   : -874.100
+Slack : -3.921
+TNS   : -1533.052
 
 Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -2.147
-TNS   : -25.417
+Slack : -3.110
+TNS   : -35.767
 
 Type  : Fast 1100mV 85C Model Recovery 'USB_IFCLK'
-Slack : 5.861
+Slack : 9.777
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 31.908
+Slack : 32.147
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 998.381
+Slack : 996.633
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.145
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 0.216
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.368
+Slack : 0.324
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'USB_IFCLK'
-Slack : 0.982
+Slack : 0.581
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 0.785
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 0.841
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 1.090
+Slack : 1.633
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -303,7 +303,7 @@ Slack : 1.562
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 2.211
+Slack : 2.204
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCKIN'
@@ -311,99 +311,99 @@ Slack : 3.968
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.372
+Slack : 9.435
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 11.575
+Slack : 11.576
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.205
+Slack : 15.095
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.551
+Slack : 499.548
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Setup 'USB_IFCLK'
-Slack : -3.650
-TNS   : -105.259
-
 Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -1.871
-TNS   : -142.348
+Slack : -3.512
+TNS   : -347.150
+
+Type  : Fast 1100mV 0C Model Setup 'USB_IFCLK'
+Slack : -2.236
+TNS   : -62.957
 
 Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 1.901
+Slack : 1.912
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'altera_reserved_tck'
-Slack : 13.569
+Slack : 13.756
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 997.950
+Slack : 997.895
 TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -0.030
-TNS   : -0.515
 
 Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.118
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.134
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'USB_IFCLK'
-Slack : 0.155
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.171
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -1.707
-TNS   : -673.212
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : -1.636
-TNS   : -19.318
-
-Type  : Fast 1100mV 0C Model Recovery 'USB_IFCLK'
-Slack : 6.197
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 32.059
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 998.558
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : -0.018
-TNS   : -0.018
-
-Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 0.065
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
 Slack : 0.130
 TNS   : 0.000
 
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 0.135
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'USB_IFCLK'
+Slack : 0.149
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
+Slack : 0.165
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.214
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : -3.734
+TNS   : -1470.426
+
+Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : -2.956
+TNS   : -34.062
+
+Type  : Fast 1100mV 0C Model Recovery 'USB_IFCLK'
+Slack : 10.059
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 32.265
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
+Slack : 997.036
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.285
+TNS   : 0.000
+
 Type  : Fast 1100mV 0C Model Removal 'USB_IFCLK'
-Slack : 0.882
+Slack : 0.535
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
+Slack : 0.697
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
+Slack : 0.742
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 0.992
+Slack : 1.458
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|general[0].gpll~FRACTIONAL_PLL_O_VCOPH0'
@@ -411,7 +411,7 @@ Slack : 1.562
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[2]'
-Slack : 2.216
+Slack : 2.212
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCKIN'
@@ -419,19 +419,19 @@ Slack : 3.968
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'USB_IFCLK'
-Slack : 9.367
+Slack : 9.459
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[0]'
-Slack : 11.578
+Slack : 11.575
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 15.245
+Slack : 15.158
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|pll_block_0002:pll_block_inst|altera_pll:altera_pll_i|outclk_wire[1]'
-Slack : 499.547
+Slack : 499.543
 TNS   : 0.000
 
 ------------------------------------------------------------

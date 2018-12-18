@@ -1,16 +1,16 @@
-Fitter Status : Successful - Fri Dec 07 11:02:35 2018
+Fitter Status : Successful - Tue Dec 18 09:50:41 2018
 Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 Revision Name : ACC_v0_1
 Top-level Entity Name : ACC_top_v0_1
 Family : Arria V
 Device : 5AGXFB5H4F35C4
 Timing Models : Final
-Logic utilization (in ALMs) : 2,892 / 158,500 ( 2 % )
-Total registers : 5452
+Logic utilization (in ALMs) : 2,973 / 158,500 ( 2 % )
+Total registers : 5445
 Total pins : 287 / 656 ( 44 % )
 Total virtual pins : 0
-Total block memory bits : 733,184 / 21,032,960 ( 3 % )
-Total RAM Blocks : 97 / 2,054 ( 5 % )
+Total block memory bits : 985,088 / 21,032,960 ( 5 % )
+Total RAM Blocks : 132 / 2,054 ( 6 % )
 Total DSP Blocks : 0 / 1,092 ( 0 % )
 Total HSSI RX PCSs : 0 / 24 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 24 ( 0 % )

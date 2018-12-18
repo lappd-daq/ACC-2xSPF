@@ -64,8 +64,12 @@ begin
 	CLK_1kHz	<=	xCLK_1kHz;
 
 	xPLL_BLOCK : pll_block
-		port map(INCLK0, PLL_reset, CLK_SYS, 
-					xCLK_1MHz, CLK_SYS_4x, fpgaPLLlock);
+		port map(refclk 	=> INCLK0, 
+					rst		=> PLL_reset, 
+					outclk_0	=> CLK_SYS, 
+					outclk_1	=> xCLK_1MHz, 
+					outclk_2	=> CLK_SYS_4x, 
+					locked	=> fpgaPLLlock);
 	
 
 	xCLK_GEN_1kHz : Slow_Clocks
