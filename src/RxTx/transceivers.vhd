@@ -138,6 +138,8 @@ xCC_SEND_TRIGGER	<= xTRIGGER;
 xCATCH_PKT     	<= START_WRITE; 
 
 
+-- FIXME This is a mess.  xCC_INSTRUCT_RDY should only need to be high for one clock cycle.
+-- The FIFO could could be modified to accept the 32-bit commands, and insert the headers as needed.
 
 -- process to send data to ACDC
 process(xCLK, xCC_INSTRUCT_RDY, xCLR_ALL)
@@ -204,6 +206,7 @@ begin
 	end if;
 end process;
 
+-- FIXME Falling edge?  Why?
 --look for start/stop word to write lvds data to CC ram.
 process(WRITE_CLOCK, xCLR_ALL, xDONE, xSOFT_RESET)
 begin
@@ -277,7 +280,7 @@ begin
 					WRITE_ADDRESS_TEMP <= (others=>'0');
 			end case;
 		end if;				
-	elsif falling_edge(WRITE_CLOCK) then -- No idea why this is being done.
+	elsif falling_edge(WRITE_CLOCK) then -- FIXME No idea why this is being done.
 		if START_WRITE = '1' and STOP_WRITE = '0' then
 			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
 			WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;
