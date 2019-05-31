@@ -206,25 +206,7 @@ begin
 	end if;
 end process;
 
--- FIXME Falling edge?  Why?
---look for start/stop word to write lvds data to CC ram.
-process(WRITE_CLOCK, xCLR_ALL, xDONE, xSOFT_RESET)
-begin
-	if xCLR_ALL = '1' or xDONE = '1' or xSOFT_RESET = '1' then
-		START_WRITE <= '0';
-		STOP_WRITE	<= '0';
-	elsif falling_edge(WRITE_CLOCK) then
-		if ALIGN_SUCCESS = '1' and RX_DATA_RDY = '1' then -- this is all very strange.
-			CHECK_RX_DATA <= RX_DATA;
-			if CHECK_RX_DATA = STARTWORD then
-				START_WRITE <= '1';
-			elsif CHECK_RX_DATA = ENDWORD then
-				STOP_WRITE <= '1';
-			end if;
-		end if;
-	end if;
-end process;
-
+-- Gotta love these async signals as part of the normal operation of the state machine...
 process(WRITE_CLOCK, xCLR_ALL, ALIGN_SUCCESS, xSOFT_RESET, xDONE)
 begin
 	if xCLR_ALL ='1'  or ALIGN_SUCCESS = '0' or 
@@ -252,19 +234,17 @@ begin
 --		LVDS_GET_DATA_STATE <= MESS_IDLE;
 	
 	elsif rising_edge(WRITE_CLOCK) then
-		if START_WRITE = '1' and RX_DATA_RDY = '1' then
+				----  RX_DATA_RDY = '1'
 			case LVDS_GET_DATA_STATE is
-				
 				when MESS_IDLE =>
-					WRITE_ENABLE_TEMP <= '1';
-					LVDS_GET_DATA_STATE <= GET_DATA;
-					
+					if RX_DATA = STARTWORD then
+						LVDS_GET_DATA_STATE <= GET_DATA;
 				when GET_DATA =>
 					RX_DATA_TO_RAM <= RX_DATA;
 					WRITE_COUNT		<= WRITE_COUNT + 1;
 					WRITE_ADDRESS_TEMP <= WRITE_ADDRESS_TEMP + 1;
 					--if STOP_WRITE = '1' or WRITE_COUNT > 4094 then
-					if WRITE_COUNT > 7998 then
+					if WRITE_COUNT > 7998 or RX_DATA = ENDWORD then
 						WRITE_ENABLE_TEMP <= '0';
 						LAST_WRITE_ADDRESS <= WRITE_ADDRESS_TEMP;
 						LVDS_GET_DATA_STATE<= MESS_END;

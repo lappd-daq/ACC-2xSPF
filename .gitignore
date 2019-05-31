@@ -7,3 +7,4 @@ smart.log
 *.sof
 *.pof
 db
+incremental_db
