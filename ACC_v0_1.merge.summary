@@ -1,13 +1,13 @@
-Partition Merge Status : Successful - Thu May 12 16:56:37 2016
-Quartus Prime Version : 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+Partition Merge Status : Successful - Fri May 31 13:37:34 2019
+Quartus Prime Version : 16.0.0 Build 211 04/27/2016 SJ Standard Edition
 Revision Name : ACC_v0_1
 Top-level Entity Name : ACC_top_v0_1
 Family : Arria V
-Logic utilization (in ALMs) : 3,433 / 158,500 ( 2 % )
-Total registers : 5283
+Logic utilization (in ALMs) : 3,765 / 158,500 ( 2 % )
+Total registers : 5681
 Total pins : 287 / 656 ( 44 % )
 Total virtual pins : 0
-Total block memory bits : 755,712 / 21,032,960 ( 4 % )
+Total block memory bits : 786,432 / 21,032,960 ( 4 % )
 Total DSP Blocks : 0 / 1,092 ( 0 % )
 Total HSSI RX PCSs : 0 / 24 ( 0 % )
 Total HSSI PMA RX Deserializers : 0 / 24 ( 0 % )
