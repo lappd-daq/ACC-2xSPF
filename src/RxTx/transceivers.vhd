@@ -239,6 +239,7 @@ begin
 				when MESS_IDLE =>
 					if RX_DATA = STARTWORD then
 						LVDS_GET_DATA_STATE <= GET_DATA;
+					end if;
 				when GET_DATA =>
 					RX_DATA_TO_RAM <= RX_DATA;
 					WRITE_COUNT		<= WRITE_COUNT + 1;
@@ -258,8 +259,7 @@ begin
 					
 				when GND_STATE =>
 					WRITE_ADDRESS_TEMP <= (others=>'0');
-			end case;
-		end if;				
+			end case;			
 	elsif falling_edge(WRITE_CLOCK) then -- FIXME No idea why this is being done.
 		if START_WRITE = '1' and STOP_WRITE = '0' then
 			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
