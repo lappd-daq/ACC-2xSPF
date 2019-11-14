@@ -41,7 +41,7 @@ set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:00:37  MARCH 09, 2016
 set_global_assignment -name FAMILY "Arria V"
 set_global_assignment -name DEVICE 5AGXFB5H4F35C4
 set_global_assignment -name TOP_LEVEL_ENTITY ACC_top_v0_1
-set_global_assignment -name LAST_QUARTUS_VERSION "18.0.0 Standard Edition"
+set_global_assignment -name LAST_QUARTUS_VERSION "18.1.0 Standard Edition"
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name STRATIXV_CONFIGURATION_SCHEME "ACTIVE SERIAL X1"
@@ -835,14 +835,9 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -s
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to uart_20communications|vcc -section_id uart_20communications
@@ -851,7 +846,6 @@ set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to uart_20communications|vcc -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=16384" -section_id uart_20communications
@@ -1349,15 +1343,10 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id usb_20coms
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id usb_20coms
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLK" -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to uart_20communications|gnd -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=16384" -section_id uart_20communications
@@ -1539,21 +1528,6 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[8]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[9]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|sample_now" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.READING" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.RECOVER" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.STOP" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.WAITING" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xALIGN_INFO[0]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xALIGN_INFO[1]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xALIGN_INFO[2]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLR_ALL" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xDONE" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xRAM_RD_EN" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xSOFT_RESET" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xTRIGGER" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[0]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[1]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[2]" -section_id uart_20communications
@@ -1732,28 +1706,56 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[8]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[9]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|sample_now" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.READING" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.RECOVER" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.STOP" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|state.WAITING" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xALIGN_INFO[0]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xALIGN_INFO[1]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xALIGN_INFO[2]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLR_ALL" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xDONE" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xRAM_RD_EN" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xSOFT_RESET" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xTRIGGER" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=194" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=194" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=194" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=610" -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLR_ALL" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xDONE" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xRAM_RD_EN" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xSOFT_RESET" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xTRIGGER" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "ACC_main:inst|xDCin_1[0]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "ACC_main:inst|xDCin_1[1]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "ACC_main:inst|xDCin_1[2]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "ACC_main:inst|xDCin_1[3]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "ACC_main:inst|xDCin_2[0]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "ACC_main:inst|xDCin_2[1]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "ACC_main:inst|xDCin_2[2]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "ACC_main:inst|xDCin_2[3]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLR_ALL" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xDONE" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xRAM_RD_EN" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xSOFT_RESET" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xTRIGGER" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "ACC_main:inst|xDCin_1[0]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "ACC_main:inst|xDCin_1[1]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "ACC_main:inst|xDCin_1[2]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "ACC_main:inst|xDCin_1[3]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "ACC_main:inst|xDCin_2[0]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "ACC_main:inst|xDCin_2[1]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "ACC_main:inst|xDCin_2[2]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[194] -to "ACC_main:inst|xDCin_2[3]" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=195" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=195" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=195" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=613" -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to uart_20communications|gnd -section_id uart_20communications
 set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

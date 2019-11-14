@@ -4,12 +4,12 @@
  kind="lvds_rx_clockbuffer"
  version="1.0"
  fabric="QSYS">
- <!-- Format version 18.0 614 (Future versions may contain additional information.) -->
- <!-- 2019.09.28.18:04:13 -->
+ <!-- Format version 18.1 625 (Future versions may contain additional information.) -->
+ <!-- 2019.10.26.18:13:23 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1569711853</value>
+  <value>1572131603</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -69,6 +69,6 @@
   <visible>true</visible>
   <valid>true</valid>
  </parameter>
- <reportVersion>18.0 614</reportVersion>
+ <reportVersion>18.1 625</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>
