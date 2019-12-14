@@ -132,7 +132,9 @@ begin
 
 xALIGN_INFO       <= ALIGN_SUCCESS & ALIGN_SUCCESS & ALIGN_SUCCESS;
 xALIGN_SUCCESS 	<= ALIGN_SUCCESS;
-WRITE_CLOCK			<= xCLK;
+--WRITE_CLOCK			<= xCLK; --EJO edit 12/14/19
+WRITE_CLOCK			<= xCLK_COMs; --EJO edit 12/14/19
+
 xRAM_FULL_FLAG		<= RAM_FULL_FLAG;
 xCC_SEND_TRIGGER	<= xTRIGGER;
 xCATCH_PKT     	<= START_WRITE; 
@@ -209,8 +211,7 @@ end process;
 -- Gotta love these async signals as part of the normal operation of the state machine...
 process(WRITE_CLOCK, xCLR_ALL, ALIGN_SUCCESS, xSOFT_RESET, xDONE)
 begin
-	if xCLR_ALL ='1'  or ALIGN_SUCCESS = '0' or 
-		xSOFT_RESET = '1' or xDONE = '1' then
+	if xCLR_ALL ='1' then
 		
 		WRITE_ENABLE_TEMP <= '0';
 		WRITE_ENABLE		<= '0';
@@ -232,39 +233,63 @@ begin
 --		RX_DATA_TO_RAM		<= (others=>'0');
 --		RAM_FULL_FLAG		<=	RAM_FULL_FLAG;
 --		LVDS_GET_DATA_STATE <= MESS_IDLE;
+
+	elsif rising_edge(WRITE_CLOCK) and (xDONE = '1' or ALIGN_SUCCESS = '0' or xSOFT_RESET = '1') then
+		WRITE_ENABLE_TEMP <= '0';
+		WRITE_ENABLE		<= '0';
+		WRITE_COUNT			<= (others=>'0');
+		WRITE_ADDRESS_TEMP<= (others=>'0');
+		WRITE_ADDRESS		<= (others=>'0');
+		LAST_WRITE_ADDRESS<= (others=>'0');
+		RX_DATA_TO_RAM		<= (others=>'0');
+		RAM_FULL_FLAG		<=	(others=>'0');
+		LVDS_GET_DATA_STATE <= MESS_IDLE;
 	
 	elsif rising_edge(WRITE_CLOCK) then
-				----  RX_DATA_RDY = '1'
+
 			case LVDS_GET_DATA_STATE is
 				when MESS_IDLE =>
-					if RX_DATA = STARTWORD then
+					WRITE_ENABLE   <= '0';
+					--if RX_DATA = STARTWORD then
+					if RX_DATA_RDY = '1' then
 						LVDS_GET_DATA_STATE <= GET_DATA;
+					else
+						LVDS_GET_DATA_STATE <= MESS_IDLE;
 					end if;
+				
 				when GET_DATA =>
 					RX_DATA_TO_RAM <= RX_DATA;
 					WRITE_COUNT		<= WRITE_COUNT + 1;
-					WRITE_ADDRESS_TEMP <= WRITE_ADDRESS_TEMP + 1;
+					WRITE_ENABLE   <= '1';
+					WRITE_ADDRESS <= WRITE_ADDRESS + 1;
 					--if STOP_WRITE = '1' or WRITE_COUNT > 4094 then
 					if WRITE_COUNT > 7998 or RX_DATA = ENDWORD then
-						WRITE_ENABLE_TEMP <= '0';
-						LAST_WRITE_ADDRESS <= WRITE_ADDRESS_TEMP;
+						WRITE_ENABLE <= '0';
+						LAST_WRITE_ADDRESS <= WRITE_ADDRESS; 
 						LVDS_GET_DATA_STATE<= MESS_END;
+						
+					else
+						LVDS_GET_DATA_STATE <= MESS_IDLE;
 					end if;
 				
 				when MESS_END =>
+					WRITE_ENABLE   <= '0';
 					for i in num_rx_rams-1 downto 0 loop
 						RAM_FULL_FLAG(i) <= RAM_FULL_FLAG(i) or xRAM_SELECT_WR(i);
 					end loop;
 					LVDS_GET_DATA_STATE<= GND_STATE;
 					
 				when GND_STATE =>
-					WRITE_ADDRESS_TEMP <= (others=>'0');
+					WRITE_ENABLE   <= '0';
+					WRITE_ADDRESS <= (others=>'0');
+
 			end case;			
-	elsif falling_edge(WRITE_CLOCK) then -- FIXME No idea why this is being done.
-		if START_WRITE = '1' and STOP_WRITE = '0' then
-			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
-			WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;
-		end if;
+			
+--	elsif falling_edge(WRITE_CLOCK) then -- FIXME No idea why this is being done.
+--		if START_WRITE = '1' and STOP_WRITE = '0' then
+--			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
+--			WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;
+--		end if;
 	end if;
 end process;
 

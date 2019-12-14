@@ -823,533 +823,8 @@ set_global_assignment -name QIP_FILE src/RxTx/tx_fifo.qip
 set_global_assignment -name QIP_FILE src/RxTx/rx_fifo.qip
 set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id uart_20communications
 set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|locked" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|locked" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334529" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to uart_20communications|vcc -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=16384" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=4" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id uart_20communications
-set_global_assignment -name SLD_NODE_CREATOR_ID 110 -section_id usb_20coms
-set_global_assignment -name SLD_NODE_ENTITY_NAME sld_signaltap -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "usbWrapperACC:inst2|IFCLK" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "usbWrapperACC:inst2|CC_INSTRUCTION[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "usbWrapperACC:inst2|CC_INSTRUCTION[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "usbWrapperACC:inst2|CC_INSTRUCTION[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "usbWrapperACC:inst2|CC_INSTRUCTION[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[4] -to "usbWrapperACC:inst2|CC_INSTRUCTION[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[5] -to "usbWrapperACC:inst2|CC_INSTRUCTION[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[6] -to "usbWrapperACC:inst2|CC_INSTRUCTION[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[7] -to "usbWrapperACC:inst2|CC_INSTRUCTION[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[8] -to "usbWrapperACC:inst2|CC_INSTRUCTION[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[9] -to "usbWrapperACC:inst2|CC_INSTRUCTION[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[10] -to "usbWrapperACC:inst2|CC_INSTRUCTION[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[11] -to "usbWrapperACC:inst2|CC_INSTRUCTION[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[12] -to "usbWrapperACC:inst2|CC_INSTRUCTION[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[13] -to "usbWrapperACC:inst2|CC_INSTRUCTION[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[14] -to "usbWrapperACC:inst2|CC_INSTRUCTION[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[15] -to "usbWrapperACC:inst2|CC_INSTRUCTION[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[16] -to "usbWrapperACC:inst2|CC_INSTRUCTION[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[17] -to "usbWrapperACC:inst2|CC_INSTRUCTION[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[18] -to "usbWrapperACC:inst2|CC_INSTRUCTION[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[19] -to "usbWrapperACC:inst2|CC_INSTRUCTION[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[20] -to "usbWrapperACC:inst2|CC_INSTRUCTION[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[21] -to "usbWrapperACC:inst2|CC_INSTRUCTION[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[22] -to "usbWrapperACC:inst2|CC_INSTRUCTION[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[23] -to "usbWrapperACC:inst2|CC_INSTRUCTION[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[24] -to "usbWrapperACC:inst2|CC_INSTRUCTION[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[25] -to "usbWrapperACC:inst2|CC_INSTRUCTION[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[26] -to "usbWrapperACC:inst2|CC_INSTRUCTION[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[27] -to "usbWrapperACC:inst2|CC_INSTRUCTION[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[28] -to "usbWrapperACC:inst2|CC_INSTRUCTION[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[29] -to "usbWrapperACC:inst2|CC_INSTRUCTION[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[30] -to "usbWrapperACC:inst2|CC_INSTRUCTION[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[31] -to "usbWrapperACC:inst2|CC_INSTRUCTION[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[32] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[33] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[34] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[35] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[36] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[37] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[38] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[39] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[40] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[41] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[42] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[43] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[44] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[45] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[46] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[47] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[48] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[49] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[50] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[51] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[52] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[53] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[54] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[55] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[56] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[57] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[58] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[59] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[60] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[61] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[62] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[63] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[64] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[65] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[66] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[67] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[68] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[69] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[70] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[71] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[72] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[73] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[74] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[75] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[76] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[77] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[78] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[79] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[80] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[81] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[82] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[83] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[84] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[85] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[86] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[87] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[88] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[89] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[90] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[91] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[92] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[93] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[94] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[95] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[96] -to "usbWrapperACC:inst2|CC_INSTRUCT_RDY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[97] -to "usbWrapperACC:inst2|CC_INSTRUCT_RDY_GOOD" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[98] -to "usbWrapperACC:inst2|CC_READ_MODE[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[99] -to "usbWrapperACC:inst2|CC_READ_MODE[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[100] -to "usbWrapperACC:inst2|CC_READ_MODE[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[101] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[102] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[103] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[104] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[105] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[106] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[107] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[108] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[109] -to "usbWrapperACC:inst2|cc_only_instruct_rdy" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[110] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_CLOSE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[111] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_GND_STATE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[112] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_HDR_END" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[113] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_HDR_START" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[114] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_INIT" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[115] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO1" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[116] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO2" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[117] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO3" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[118] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO4" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[119] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO5" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[120] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO6" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[121] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO7" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[122] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO8" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[123] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO9" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[124] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.ADC" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[125] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.DC_END" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[126] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.GND_STATE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[127] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.HDR_END" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[128] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.HDR_START" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[129] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO1" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[130] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO2" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[131] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO3" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[132] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO4" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[133] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO5" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[134] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INIT" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[135] -to "usbWrapperACC:inst2|packetUSB:xMESS|read_out_cc_buffer_flag" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[136] -to "usbWrapperACC:inst2|packetUSB:xMESS|xCC_ONLY_START" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[137] -to "usbWrapperACC:inst2|read_cc_buffer" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[138] -to "usbWrapperACC:inst2|ready_for_cc_instruct" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[139] -to "usbWrapperACC:inst2|ready_for_instruct" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[140] -to "usbWrapperACC:inst2|reset_from_usb" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[141] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|STARTRD" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[142] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[143] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[144] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[145] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[146] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[147] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[148] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[149] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[150] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[151] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[152] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[153] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[154] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[155] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[156] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[157] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[158] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_DONE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[159] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_FLAGA" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[160] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_FLAGB" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[161] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_FLAGC" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[162] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[163] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[164] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[165] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[166] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[167] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[168] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[169] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[170] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[171] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[172] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[173] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[174] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCT_RDY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[195] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_RBUSY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[196] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_SLWR" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[197] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_START_WR" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[198] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_WBUSY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[199] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.IDLE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[200] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.RCHECK" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[201] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.RD_DONE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[202] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.STATE1" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[203] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.STATE2" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[204] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.STATE3" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[205] -to "usbWrapperACC:inst2|xSOFT_TRIG[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[206] -to "usbWrapperACC:inst2|xSOFT_TRIG[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[207] -to "usbWrapperACC:inst2|xSOFT_TRIG[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[208] -to "usbWrapperACC:inst2|xSOFT_TRIG[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[209] -to "usbWrapperACC:inst2|xSOFT_TRIG[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[210] -to "usbWrapperACC:inst2|xSOFT_TRIG[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[211] -to "usbWrapperACC:inst2|xSOFT_TRIG[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[212] -to "usbWrapperACC:inst2|xSOFT_TRIG[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "usbWrapperACC:inst2|CC_INSTRUCTION[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "usbWrapperACC:inst2|CC_INSTRUCTION[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "usbWrapperACC:inst2|CC_INSTRUCTION[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "usbWrapperACC:inst2|CC_INSTRUCTION[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[4] -to "usbWrapperACC:inst2|CC_INSTRUCTION[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[5] -to "usbWrapperACC:inst2|CC_INSTRUCTION[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[6] -to "usbWrapperACC:inst2|CC_INSTRUCTION[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[7] -to "usbWrapperACC:inst2|CC_INSTRUCTION[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[8] -to "usbWrapperACC:inst2|CC_INSTRUCTION[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[9] -to "usbWrapperACC:inst2|CC_INSTRUCTION[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[10] -to "usbWrapperACC:inst2|CC_INSTRUCTION[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[11] -to "usbWrapperACC:inst2|CC_INSTRUCTION[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[12] -to "usbWrapperACC:inst2|CC_INSTRUCTION[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[13] -to "usbWrapperACC:inst2|CC_INSTRUCTION[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[14] -to "usbWrapperACC:inst2|CC_INSTRUCTION[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[15] -to "usbWrapperACC:inst2|CC_INSTRUCTION[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[16] -to "usbWrapperACC:inst2|CC_INSTRUCTION[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[17] -to "usbWrapperACC:inst2|CC_INSTRUCTION[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[18] -to "usbWrapperACC:inst2|CC_INSTRUCTION[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[19] -to "usbWrapperACC:inst2|CC_INSTRUCTION[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[20] -to "usbWrapperACC:inst2|CC_INSTRUCTION[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[21] -to "usbWrapperACC:inst2|CC_INSTRUCTION[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[22] -to "usbWrapperACC:inst2|CC_INSTRUCTION[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[23] -to "usbWrapperACC:inst2|CC_INSTRUCTION[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[24] -to "usbWrapperACC:inst2|CC_INSTRUCTION[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[25] -to "usbWrapperACC:inst2|CC_INSTRUCTION[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[26] -to "usbWrapperACC:inst2|CC_INSTRUCTION[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[27] -to "usbWrapperACC:inst2|CC_INSTRUCTION[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[28] -to "usbWrapperACC:inst2|CC_INSTRUCTION[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[29] -to "usbWrapperACC:inst2|CC_INSTRUCTION[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[30] -to "usbWrapperACC:inst2|CC_INSTRUCTION[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[31] -to "usbWrapperACC:inst2|CC_INSTRUCTION[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[32] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[33] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[34] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[35] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[36] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[37] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[38] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[39] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[40] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[41] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[42] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[43] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[44] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[45] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[46] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[47] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[48] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[49] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[50] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[51] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[52] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[53] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[54] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[55] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[56] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[57] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[58] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[59] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[60] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[61] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[62] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[63] -to "usbWrapperACC:inst2|CC_INSTRUCTION_GOOD[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[64] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[65] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[66] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[67] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[68] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[69] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[70] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[71] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[72] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[73] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[74] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[75] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[76] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[77] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[78] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[79] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[80] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[81] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[82] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[83] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[84] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[85] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[86] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[87] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[88] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[89] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[90] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[91] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[92] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[93] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[94] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[95] -to "usbWrapperACC:inst2|CC_INSTRUCTION_tmp[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[96] -to "usbWrapperACC:inst2|CC_INSTRUCT_RDY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[97] -to "usbWrapperACC:inst2|CC_INSTRUCT_RDY_GOOD" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[98] -to "usbWrapperACC:inst2|CC_READ_MODE[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[99] -to "usbWrapperACC:inst2|CC_READ_MODE[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[100] -to "usbWrapperACC:inst2|CC_READ_MODE[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[101] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[102] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[103] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[104] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[105] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[106] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[107] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[108] -to "usbWrapperACC:inst2|SOFT_TRIG_MASK[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[109] -to "usbWrapperACC:inst2|cc_only_instruct_rdy" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[110] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_CLOSE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[111] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_GND_STATE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[112] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_HDR_END" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[113] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_HDR_START" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[114] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.CC_INIT" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[115] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO1" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[116] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO2" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[117] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO3" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[118] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO4" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[119] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO5" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[120] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO6" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[121] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO7" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[122] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO8" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[123] -to "usbWrapperACC:inst2|packetUSB:xMESS|CC_STATE.INFO9" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[124] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.ADC" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[125] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.DC_END" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[126] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.GND_STATE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[127] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.HDR_END" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[128] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.HDR_START" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[129] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO1" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[130] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO2" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[131] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO3" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[132] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO4" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[133] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INFO5" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[134] -to "usbWrapperACC:inst2|packetUSB:xMESS|STATE.INIT" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[135] -to "usbWrapperACC:inst2|packetUSB:xMESS|read_out_cc_buffer_flag" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[136] -to "usbWrapperACC:inst2|packetUSB:xMESS|xCC_ONLY_START" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[137] -to "usbWrapperACC:inst2|read_cc_buffer" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[138] -to "usbWrapperACC:inst2|ready_for_cc_instruct" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[139] -to "usbWrapperACC:inst2|ready_for_instruct" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[140] -to "usbWrapperACC:inst2|reset_from_usb" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[141] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|STARTRD" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[142] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[143] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[144] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[145] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[146] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[147] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[148] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[149] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[150] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[151] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[152] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[153] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[154] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[155] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[156] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[157] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_BUS[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[158] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_DONE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[159] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_FLAGA" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[160] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_FLAGB" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[161] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_FLAGC" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[162] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[163] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[10]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[164] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[11]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[165] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[12]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[166] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[13]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[167] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[14]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[168] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[15]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[169] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[16]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[170] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[17]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[171] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[18]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[172] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[19]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[173] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[174] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[20]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[21]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[22]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[23]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[24]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[25]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[26]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[27]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[182] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[28]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[183] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[29]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[184] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[185] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[30]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[186] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[31]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[187] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[188] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[189] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[190] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[7]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[8]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCTION[9]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[194] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_INSTRUCT_RDY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[195] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_RBUSY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[196] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_SLWR" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[197] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_START_WR" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[198] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|USB_WBUSY" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[199] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.IDLE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[200] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.RCHECK" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[201] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.RD_DONE" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[202] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.STATE1" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[203] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.STATE2" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[204] -to "usbWrapperACC:inst2|usb_32bit:xUSB_32bit|write_state.STATE3" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[205] -to "usbWrapperACC:inst2|xSOFT_TRIG[0]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[206] -to "usbWrapperACC:inst2|xSOFT_TRIG[1]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[207] -to "usbWrapperACC:inst2|xSOFT_TRIG[2]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[208] -to "usbWrapperACC:inst2|xSOFT_TRIG[3]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[209] -to "usbWrapperACC:inst2|xSOFT_TRIG[4]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[210] -to "usbWrapperACC:inst2|xSOFT_TRIG[5]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[211] -to "usbWrapperACC:inst2|xSOFT_TRIG[6]" -section_id usb_20coms
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[212] -to "usbWrapperACC:inst2|xSOFT_TRIG[7]" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=213" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=213" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=213" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334528" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=663" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=1024" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to usb_20coms|gnd -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to usb_20coms|vcc -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to usb_20coms|gnd -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=4096" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id usb_20coms
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id usb_20coms
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to uart_20communications|vcc -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_clk -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLK" -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to uart_20communications|gnd -section_id uart_20communications
-set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=16384" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[0] -to "ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|locked" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[1] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[0]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[2] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[1]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[3] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[2]" -section_id uart_20communications
@@ -1528,6 +1003,23 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[175
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[176] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[8]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[177] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[9]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[178] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|sample_now" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLR_ALL" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xDONE" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xRAM_RD_EN" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xSOFT_RESET" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xTRIGGER" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "ACC_main:inst|xDCin_1[0]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "ACC_main:inst|xDCin_1[1]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "ACC_main:inst|xDCin_1[2]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "ACC_main:inst|xDCin_1[3]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "ACC_main:inst|xDCin_2[0]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "ACC_main:inst|xDCin_2[1]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "ACC_main:inst|xDCin_2[2]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "ACC_main:inst|xDCin_2[3]" -section_id uart_20communications
+set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[0] -to "ACC_main:inst|Clock_Manager:xCLOCKS|pll_block:xPLL_BLOCK|locked" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[1] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[0]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[2] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[1]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[3] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|GOOD_DATA[2]" -section_id uart_20communications
@@ -1706,24 +1198,6 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[175] -
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[176] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[8]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[177] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|rx_shift[9]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[178] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|lvds_transceivers:xlvds_transceivers|uart:uart0|uart_rx:urx|sample_now" -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to uart_20communications|gnd -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[182] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCLR_ALL" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[183] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xDONE" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[184] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xRAM_RD_EN" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[185] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xSOFT_RESET" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[186] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xTRIGGER" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[187] -to "ACC_main:inst|xDCin_1[0]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[188] -to "ACC_main:inst|xDCin_1[1]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[189] -to "ACC_main:inst|xDCin_1[2]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[190] -to "ACC_main:inst|xDCin_1[3]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[191] -to "ACC_main:inst|xDCin_2[0]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[192] -to "ACC_main:inst|xDCin_2[1]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[193] -to "ACC_main:inst|xDCin_2[2]" -section_id uart_20communications
-set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_trigger_in[194] -to "ACC_main:inst|xDCin_2[3]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[179] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCATCH_PKT" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[180] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_INSTRUCT_RDY" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[181] -to "ACC_main:inst|transceivers:\\ACDCintercom0:0:xTRANSCEIVERS|xCC_SEND_TRIGGER" -section_id uart_20communications
@@ -1740,22 +1214,62 @@ set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[191] -
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[192] -to "ACC_main:inst|xDCin_2[1]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[193] -to "ACC_main:inst|xDCin_2[2]" -section_id uart_20communications
 set_instance_assignment -name CONNECT_TO_SLD_NODE_ENTITY_PORT acq_data_in[194] -to "ACC_main:inst|xDCin_2[3]" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_BLOCK_TYPE=AUTO" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_DATA_BITS=195" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_BITS=195" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_BITS=195" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_NODE_INFO=805334529" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_POWER_UP_TRIGGER=0" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" -section_id uart_20communications
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INVERSION_MASK_LENGTH=613" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SEGMENT_SIZE=16384" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ATTRIBUTE_MEM_MODE=OFF" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_FLOW_USE_GENERATED=0" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_STATE_BITS=11" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_BUFFER_FULL_STOP=1" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_CURRENT_RESOURCE_WIDTH=1" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_INCREMENTAL_ROUTING=1" -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[0] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[1] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[2] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[3] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[4] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[5] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[6] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[7] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[8] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[9] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[10] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[11] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[12] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[13] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[14] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[15] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[16] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[17] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[18] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[19] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[20] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[21] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[22] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[23] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[24] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[25] -to uart_20communications|vcc -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[26] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[27] -to uart_20communications|gnd -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[28] -to uart_20communications|vcc -section_id uart_20communications
 set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[29] -to uart_20communications|gnd -section_id uart_20communications
-set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[30] -to uart_20communications|gnd -section_id uart_20communications
+set_instance_assignment -name POST_FIT_CONNECT_TO_SLD_NODE_ENTITY_PORT crc[31] -to uart_20communications|vcc -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL=1" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_SAMPLE_DEPTH=16384" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_IN_ENABLED=0" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_PIPELINE=0" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_RAM_PIPELINE=4" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_COUNTER_PIPELINE=0" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ADVANCED_TRIGGER_ENTITY=basic,1," -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIPELINE=1" -section_id uart_20communications
+set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id uart_20communications
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name SLD_FILE db/tapUSB_auto_stripped.stp

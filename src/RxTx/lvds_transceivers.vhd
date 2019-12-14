@@ -179,6 +179,8 @@ signal rx_data_fresh :  std_logic;		-- new data from the UART
 -- rx fifo signals
 signal data_out_rdy		:	STD_LOGIC;
 signal data_out16			:	STD_LOGIC_VECTOR(15 downto 0);
+signal data_out16_reg	:	STD_LOGIC_VECTOR(15 downto 0);
+
 signal rx_fifo_empty		:	STD_LOGIC;
 
 BEGIN 
@@ -388,6 +390,7 @@ begin
 		RX_ERROR 		<= '0';
 		data_out_rdy	<= '0';
 		data_out16 			<= (others => '0');
+		data_out16_reg		<= (others=> '0');
 		temp_data		:= (others => '0');
 		REMOTE_LINK_STATE <= DOWN;
 	elsif rising_edge(xCLK_COMs) then
@@ -396,12 +399,14 @@ begin
 				RX_ERROR 		<= '0';
 				data_out_rdy		<= '0';
 				data_out16 			<= (others => '0');
+				data_out16_reg    <= (others => '0');
 				temp_data		:= (others => '0');
 				RX_state 		<= WAITING;
 			when WAITING =>
 				RX_ERROR <= '0';
 				data_out_rdy <= '0';
 				data_out16 <= (others => '0');
+				data_out16_reg <= data_out16_reg;
 				if dout_val = '1' then
 					if dout_kerr = '1' then
 						RX_STATE <= ERROR;
@@ -428,6 +433,7 @@ begin
 					RX_STATE <= ERROR;
 				elsif dout_val = '1' then
 					data_out16 <= dout_dat & temp_data;
+					data_out16_reg <= dout_dat & temp_data; --holds value
 					data_out_rdy <= '1';
 					RX_STATE <= WAITING;
 				end if;
@@ -439,22 +445,29 @@ begin
 		end case;
 	end if;
 end process;
-		
-rx_fifo_inst : rx_fifo PORT MAP (
-		aclr	 => xCLR_ALL,
-		data	 => data_out16,
-		rdclk	 => xCLK,
-		rdreq	 => not rx_fifo_empty,
-		wrclk	 => xCLK_COMs,
-		wrreq	 => data_out_rdy,
-		q	 => RX_DATA,
-		rdempty	 => rx_fifo_empty,
-		wrfull	 => open
-	);
+	
+--EJO edit 12/14/19
+--I don't think we need the fifo just to send data to RAM (which is just a more interactive FIFO),
+--so, just write data_out16 directly to RAM
+
+--rx_fifo_inst : rx_fifo PORT MAP (
+--		aclr	 => xCLR_ALL,
+--		data	 => data_out16,
+--		rdclk	 => xCLK,
+--		rdreq	 => not rx_fifo_empty,
+--		wrclk	 => xCLK_COMs,
+--		wrreq	 => data_out_rdy,
+--		q	 => RX_DATA,
+--		rdempty	 => rx_fifo_empty,
+--		wrfull	 => open
+--	);
 
 
-RX_DATA_RDY <= not rx_fifo_empty;
+--RX_DATA_RDY <= not rx_fifo_empty; --
 		
+RX_DATA_RDY <= data_out_rdy;
+RX_DATA <= data_out16_reg;
+
 dout_error <= dout_kerr or dout_rderr;
 
 
