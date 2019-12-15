@@ -92,9 +92,6 @@ signal WRITE_ADDRESS				:	std_logic_vector(transceiver_mem_depth-1 downto 0);
 signal WRITE_ADDRESS_TEMP		:	std_logic_vector(transceiver_mem_depth-1 downto 0);
 signal LAST_WRITE_ADDRESS		:	std_logic_vector(transceiver_mem_depth-1 downto 0); 
 
-signal START_WRITE				:	std_logic;
-signal STOP_WRITE					:	std_logic;
-
 signal TX_BUF_FULL				:  std_logic;
 signal RX_DATA_RDY				:  std_logic;
 
@@ -137,7 +134,7 @@ WRITE_CLOCK			<= xCLK_COMs; --EJO edit 12/14/19
 
 xRAM_FULL_FLAG		<= RAM_FULL_FLAG;
 xCC_SEND_TRIGGER	<= xTRIGGER;
-xCATCH_PKT     	<= START_WRITE; 
+--xCATCH_PKT     	<= START_WRITE; 
 
 
 -- FIXME This is a mess.  xCC_INSTRUCT_RDY should only need to be high for one clock cycle.
@@ -208,11 +205,12 @@ begin
 	end if;
 end process;
 
--- Gotta love these async signals as part of the normal operation of the state machine...
-process(WRITE_CLOCK, xCLR_ALL, ALIGN_SUCCESS, xSOFT_RESET, xDONE)
+--//------------------------------------------------------------------------------------
+proc_rx_data: process(WRITE_CLOCK, xCLR_ALL, ALIGN_SUCCESS, xSOFT_RESET, xDONE)
 begin
 	if xCLR_ALL ='1' then
 		
+		xCATCH_PKT			<= '0';
 		WRITE_ENABLE_TEMP <= '0';
 		WRITE_ENABLE		<= '0';
 		WRITE_COUNT			<= (others=>'0');
@@ -223,18 +221,12 @@ begin
 		RAM_FULL_FLAG		<=	(others=>'0');
 		LVDS_GET_DATA_STATE <= MESS_IDLE;
 	
---	elsif xDONE = '1'then
---		WRITE_ENABLE_TEMP <= '0';
---		WRITE_ENABLE		<= '0';
---		WRITE_COUNT			<= (others=>'0');
---		WRITE_ADDRESS_TEMP<= (others=>'0');
---		WRITE_ADDRESS		<= (others=>'0');
---		LAST_WRITE_ADDRESS<= (others=>'0');
---		RX_DATA_TO_RAM		<= (others=>'0');
---		RAM_FULL_FLAG		<=	RAM_FULL_FLAG;
---		LVDS_GET_DATA_STATE <= MESS_IDLE;
-
+	--the conditional signals here (xDONE, etc) are on a different clock, eventually need to be flag synced to WRITE_CLOCK
+	-- however, WRITE_CLOCK is now assigned to the fastest clock [160MHz, as of 12/14/2019], so no chance of missing 
+	-- these signals [though still will raise timing errors]
 	elsif rising_edge(WRITE_CLOCK) and (xDONE = '1' or ALIGN_SUCCESS = '0' or xSOFT_RESET = '1') then
+		
+		xCATCH_PKT			<= '0';
 		WRITE_ENABLE_TEMP <= '0';
 		WRITE_ENABLE		<= '0';
 		WRITE_COUNT			<= (others=>'0');
@@ -249,8 +241,15 @@ begin
 
 			case LVDS_GET_DATA_STATE is
 				when MESS_IDLE =>
+					xCATCH_PKT		<= xCATCH_PKT;
+					
 					WRITE_ENABLE   <= '0';
-					--if RX_DATA = STARTWORD then
+					WRITE_COUNT <= WRITE_COUNT;
+					WRITE_ADDRESS <= WRITE_ADDRESS;
+
+					RX_DATA_TO_RAM <= RX_DATA_TO_RAM;
+					
+					-- RX_DATA_RDY is flag from lvds_transceivers data-parallelization process
 					if RX_DATA_RDY = '1' then
 						LVDS_GET_DATA_STATE <= GET_DATA;
 					else
@@ -258,11 +257,22 @@ begin
 					end if;
 				
 				when GET_DATA =>
-					RX_DATA_TO_RAM <= RX_DATA;
-					WRITE_COUNT		<= WRITE_COUNT + 1;
+					xCATCH_PKT		<= '1'; 	--this signal used to be 'START_WRITE', some flag that
+													-- was went high while data was being written to RAM. 
+													-- Don't recall why/how this was used in sw...maybe just in case there
+													-- was a USB read while data was being written, so sw could wait until
+													-- the data was fully written and not save a corrupted event?
+													--
+													-- UPDATE: looking at old CC firmware, I think the sw probably looked 
+													-- for both xCATCH_PKT = '1' and RAM_FULL = '1' to indicate that
+													-- good data from a trigger was available to read. should confirm.
+					
+					RX_DATA_TO_RAM <= RX_DATA; -- assign data to RAM input bus here
+					
 					WRITE_ENABLE   <= '1';
+					WRITE_COUNT		<= WRITE_COUNT + 1;
 					WRITE_ADDRESS <= WRITE_ADDRESS + 1;
-					--if STOP_WRITE = '1' or WRITE_COUNT > 4094 then
+
 					if WRITE_COUNT > 7998 or RX_DATA = ENDWORD then
 						WRITE_ENABLE <= '0';
 						LAST_WRITE_ADDRESS <= WRITE_ADDRESS; 
@@ -273,23 +283,33 @@ begin
 					end if;
 				
 				when MESS_END =>
+					xCATCH_PKT		<= '1';
+					
 					WRITE_ENABLE   <= '0';
+					WRITE_COUNT <= WRITE_COUNT;
+					WRITE_ADDRESS <= WRITE_ADDRESS;
+					
+					RX_DATA_TO_RAM		<= x"5757"; --made up error code, should never see this data
+					
+					--I don' know why there are multiple RAMs, maybe something was meant
+					--to be implemented at some point. Clearly the full control necessary
+					--for this is not here yet. If still readout issues, we should remove this complication
+					--and go back to a single RAM per ACDC
 					for i in num_rx_rams-1 downto 0 loop
 						RAM_FULL_FLAG(i) <= RAM_FULL_FLAG(i) or xRAM_SELECT_WR(i);
 					end loop;
 					LVDS_GET_DATA_STATE<= GND_STATE;
 					
 				when GND_STATE =>
+					xCATCH_PKT		<= '1';
 					WRITE_ENABLE   <= '0';
 					WRITE_ADDRESS <= (others=>'0');
+					WRITE_COUNT <= WRITE_COUNT;
+					
+					RX_DATA_TO_RAM		<= (others=>'0');
 
 			end case;			
 			
---	elsif falling_edge(WRITE_CLOCK) then -- FIXME No idea why this is being done.
---		if START_WRITE = '1' and STOP_WRITE = '0' then
---			WRITE_ADDRESS 	<= WRITE_ADDRESS_TEMP;
---			WRITE_ENABLE 	<= WRITE_ENABLE_TEMP;
---		end if;
 	end if;
 end process;
 
