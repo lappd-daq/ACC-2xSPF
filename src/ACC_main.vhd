@@ -93,7 +93,7 @@ architecture Behavioral of	ACC_main is
 
 component Clock_Manager
 	Port(
-		Reset			:  in		std_logic;
+		Reset_clks	:  in		std_logic;
 		INCLK0		:	in		std_logic;
 		INCLK1		:  in		std_logic;
 		INCLK2		:	in		std_logic;
@@ -190,7 +190,7 @@ xCatchDCpkt <= packet_from_fe_rec;
 
 xCLOCKS : entity work.Clock_Manager(Structural)
 	port map(
-		Reset			=> reset_global,
+		Reset_clks	=> reset_global,
 		INCLK0		=> xclk_in_0,
 		INCLK1		=> xclk_in_1,
 		INCLK2		=> xclk_in_2,

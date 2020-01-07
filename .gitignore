@@ -8,3 +8,4 @@ smart.log
 *.pof
 db
 incremental_db
+simulation

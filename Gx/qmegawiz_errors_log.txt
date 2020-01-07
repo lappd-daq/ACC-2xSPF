@@ -1,0 +1,16 @@
+
+
+C:/Users/tompkins/Desktop/InputFPGA1_12_20_12/Rx_4.vhd
+
+Dec 20 02PM:14:43>: File C:/Users/tompkins/Desktop/InputFPGA1_12_20_12/Gx/Gx/Tx4_6Gbps.vhd does not exist.
+Do you want to create the file?
+
+C:/Users/tompkins/Desktop/InputFPGA1_12_20_12/Rx_4.vhd
+
+Dec 20 02PM:16:22>: File C:/Users/tompkins/Desktop/InputFPGA1_12_20_12/Gx/Gx/Tx4_6Gbps.vhd does not exist.
+Do you want to create the file?
+
+C:/Users/tompkins/Desktop/InputFPGA1_12_20_12/Rx_4.vhd
+
+Dec 20 02PM:17:09>: File C:/Users/tompkins/Desktop/InputFPGA1_12_20_12/Gx/Gx/Tx4_6Gbps.vhd does not exist.
+Do you want to create the file?

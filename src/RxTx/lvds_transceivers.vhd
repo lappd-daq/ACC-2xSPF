@@ -223,7 +223,7 @@ end process;
 
 process(xCLK_COMs, xCLR_ALL)
 variable last_code		:  std_logic_vector(7 downto 0);
-variable timer				:  integer range 2000000 downto 0;
+variable timer				:  integer range 2000000 downto 0 := 0;
 begin
 	if xCLR_ALL = '1' then
 		TX_STATE <= RESET;
@@ -333,7 +333,7 @@ rx_dec0 : decoder_8b10b
 
 --Check if Link is disconnected
 process(xCLR_ALL, xCLK_COMs)
-variable counter 	: integer range 200000000 downto 0;
+variable counter 	: integer range 200000000 downto 0 := 0;
 variable dff1,dff2,dff3		: std_logic;
 variable edge		: std_logic;
 begin

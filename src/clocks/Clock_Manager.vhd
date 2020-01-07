@@ -18,7 +18,7 @@ use ieee.std_logic_unsigned.all;
 
 entity Clock_Manager is
 	Port(
-		Reset			:  in		std_logic;
+		Reset_clks	:  in		std_logic;
 		INCLK0		:	in		std_logic;
 		INCLK1		:  in		std_logic;
 		INCLK2		:	in		std_logic;
@@ -52,7 +52,7 @@ architecture Structural of Clock_Manager is
 	
 	component Slow_Clocks
 		generic(clk_divide_by   : integer := 500);
-		port( IN_CLK, Reset		: in	std_logic;
+		port( IN_CLK, Reset_clks: in	std_logic;
 				OUT_CLK				: out	std_logic);
 	end component;	
 	
@@ -74,15 +74,15 @@ begin
 
 	xCLK_GEN_1kHz : Slow_Clocks
 		generic map(clk_divide_by => 500)
-		port map(xCLK_1MHz, Reset, xCLK_1kHz);
+		port map(xCLK_1MHz, Reset_clks, xCLK_1kHz);
 
 	xCLK_GEN_1Hz : Slow_Clocks
 		generic map(clk_divide_by => 50000)
-		port map(xCLK_1MHz, Reset, xCLK_10Hz);
+		port map(xCLK_1MHz, Reset_clks, xCLK_10Hz);
 
 	xCLK_GEN_10Hz : Slow_Clocks
 		generic map(clk_divide_by => 500000)
-		port map(xCLK_1MHz, Reset, xCLK_1Hz);
+		port map(xCLK_1MHz, Reset_clks, xCLK_1Hz);
 		
 end Structural;
 

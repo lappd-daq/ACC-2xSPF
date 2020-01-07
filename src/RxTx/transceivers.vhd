@@ -84,6 +84,7 @@ signal INSTRUCT_READY			:	std_logic;
 signal WRITE_CLOCK				:	std_logic;
 signal WRITE_ENABLE				:	std_logic;
 signal WRITE_ENABLE_TEMP		:	std_logic;
+signal CATCH_PKT_TEMP			:	std_logic;
 signal RAM_FULL_FLAG				:	std_logic_vector(num_rx_rams-1 downto 0);
 signal CHECK_RX_DATA				:	std_logic_vector(transceiver_mem_width-1 downto 0);
 signal RX_DATA_TO_RAM			:	std_logic_vector(transceiver_mem_width-1 downto 0);
@@ -211,6 +212,7 @@ begin
 	if xCLR_ALL ='1' then
 		
 		xCATCH_PKT			<= '0';
+		CATCH_PKT_TEMP		<= '0';
 		WRITE_ENABLE_TEMP <= '0';
 		WRITE_ENABLE		<= '0';
 		WRITE_COUNT			<= (others=>'0');
@@ -227,6 +229,7 @@ begin
 	elsif rising_edge(WRITE_CLOCK) and (xDONE = '1' or ALIGN_SUCCESS = '0' or xSOFT_RESET = '1') then
 		
 		xCATCH_PKT			<= '0';
+		CATCH_PKT_TEMP		<= '0';
 		WRITE_ENABLE_TEMP <= '0';
 		WRITE_ENABLE		<= '0';
 		WRITE_COUNT			<= (others=>'0');
@@ -241,7 +244,7 @@ begin
 
 			case LVDS_GET_DATA_STATE is
 				when MESS_IDLE =>
-					xCATCH_PKT		<= xCATCH_PKT;
+					xCATCH_PKT		<= CATCH_PKT_TEMP;
 					
 					WRITE_ENABLE   <= '0';
 					WRITE_COUNT <= WRITE_COUNT;
@@ -267,6 +270,7 @@ begin
 													-- for both xCATCH_PKT = '1' and RAM_FULL = '1' to indicate that
 													-- good data from a trigger was available to read. should confirm.
 					
+					CATCH_PKT_TEMP		<= '1';
 					RX_DATA_TO_RAM <= RX_DATA; -- assign data to RAM input bus here
 					
 					WRITE_ENABLE   <= '1';
@@ -284,6 +288,7 @@ begin
 				
 				when MESS_END =>
 					xCATCH_PKT		<= '1';
+					CATCH_PKT_TEMP		<= '1';
 					
 					WRITE_ENABLE   <= '0';
 					WRITE_COUNT <= WRITE_COUNT;
@@ -302,6 +307,7 @@ begin
 					
 				when GND_STATE =>
 					xCATCH_PKT		<= '1';
+					CATCH_PKT_TEMP		<= '1';
 					WRITE_ENABLE   <= '0';
 					WRITE_ADDRESS <= (others=>'0');
 					WRITE_COUNT <= WRITE_COUNT;

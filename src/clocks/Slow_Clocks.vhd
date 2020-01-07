@@ -20,8 +20,8 @@ use ieee.std_logic_unsigned.all;
 entity Slow_Clocks is
 	generic (clk_divide_by : integer := 500);  -- default output is 1kHz
 	
-	port(		IN_CLK	:	in		std_logic;  --nominally 1MHz
-				Reset		:	in		std_logic;	--active hi
+	port(		IN_CLK		:	in		std_logic;  --nominally 1MHz
+				Reset_clks	:	in		std_logic;	--active hi
 								
 				
 				OUT_CLK	: 	out	std_logic);
@@ -41,7 +41,7 @@ begin
 	variable i: integer range clk_divide_by downto 0 := 0;
 	begin
 		
-		if	Reset = '1' then
+		if	Reset_clks = '1' then
 			xOUT_CLK		<= '0';
 			i 				:=  0;
 			xCLK_STATE	<= CLK_HI;

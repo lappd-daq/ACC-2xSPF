@@ -1,0 +1,190 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "symbol" (version "1.2"))
+(symbol
+	(rect 64 64 344 464)
+	(text "GxBlock" (rect 5 0 52 14)(font "Arial" (font_size 8)))
+	(text "inst" (rect 24 376 41 388)(font "Arial" ))
+	(port
+		(pt 0 48)
+		(input)
+		(text "phy_mgmt_clk2" (rect 0 0 87 14)(font "Arial" (font_size 8)))
+		(text "phy_mgmt_clk2" (rect 21 43 108 57)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "phy_mgmt_clk_reset2" (rect 0 0 123 14)(font "Arial" (font_size 8)))
+		(text "phy_mgmt_clk_reset2" (rect 21 75 144 89)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "phy_mgmt_read2" (rect 0 0 97 14)(font "Arial" (font_size 8)))
+		(text "phy_mgmt_read2" (rect 21 107 118 121)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "phy_mgmt_write2" (rect 0 0 101 14)(font "Arial" (font_size 8)))
+		(text "phy_mgmt_write2" (rect 21 139 122 153)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 224)
+		(input)
+		(text "qsfp1_in[3..0]" (rect 0 0 77 14)(font "Arial" (font_size 8)))
+		(text "qsfp1_in[3..0]" (rect 21 219 98 233)(font "Arial" (font_size 8)))
+		(line (pt 0 224)(pt 16 224)(line_width 3))
+	)
+	(port
+		(pt 0 256)
+		(input)
+		(text "qsfpout_int[127..0]" (rect 0 0 106 14)(font "Arial" (font_size 8)))
+		(text "qsfpout_int[127..0]" (rect 21 251 127 265)(font "Arial" (font_size 8)))
+		(line (pt 0 256)(pt 16 256)(line_width 3))
+	)
+	(port
+		(pt 0 272)
+		(input)
+		(text "ctrlbitsqsfp_out[15..0]" (rect 0 0 123 14)(font "Arial" (font_size 8)))
+		(text "ctrlbitsqsfp_out[15..0]" (rect 21 267 144 281)(font "Arial" (font_size 8)))
+		(line (pt 0 272)(pt 16 272)(line_width 3))
+	)
+	(port
+		(pt 0 288)
+		(input)
+		(text "master_clock" (rect 0 0 75 14)(font "Arial" (font_size 8)))
+		(text "master_clock" (rect 21 283 96 297)(font "Arial" (font_size 8)))
+		(line (pt 0 288)(pt 16 288))
+	)
+	(port
+		(pt 0 304)
+		(input)
+		(text "master_clear" (rect 0 0 74 14)(font "Arial" (font_size 8)))
+		(text "master_clear" (rect 21 299 95 313)(font "Arial" (font_size 8)))
+		(line (pt 0 304)(pt 16 304))
+	)
+	(port
+		(pt 0 320)
+		(input)
+		(text "master_writeena" (rect 0 0 96 14)(font "Arial" (font_size 8)))
+		(text "master_writeena" (rect 21 315 117 329)(font "Arial" (font_size 8)))
+		(line (pt 0 320)(pt 16 320))
+	)
+	(port
+		(pt 0 336)
+		(input)
+		(text "master_readena" (rect 0 0 93 14)(font "Arial" (font_size 8)))
+		(text "master_readena" (rect 21 331 114 345)(font "Arial" (font_size 8)))
+		(line (pt 0 336)(pt 16 336))
+	)
+	(port
+		(pt 0 176)
+		(input)
+		(text "pll_ref_clk1" (rect 24 168 88 182)(font "Arial" (font_size 8)))
+		(text "pll_ref_clk1" (rect 24 168 88 182)(font "Arial" (font_size 8)))
+		(line (pt 0 176)(pt 16 176))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "qsfpchan1[35..0]" (rect 0 0 96 14)(font "Arial" (font_size 8)))
+		(text "qsfpchan1[35..0]" (rect 163 43 259 57)(font "Arial" (font_size 8)))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
+	)
+	(port
+		(pt 280 64)
+		(output)
+		(text "qsfpchan2[35..0]" (rect 0 0 96 14)(font "Arial" (font_size 8)))
+		(text "qsfpchan2[35..0]" (rect 163 59 259 73)(font "Arial" (font_size 8)))
+		(line (pt 280 64)(pt 264 64)(line_width 3))
+	)
+	(port
+		(pt 280 96)
+		(output)
+		(text "qsfpchan3[35..0]" (rect 0 0 96 14)(font "Arial" (font_size 8)))
+		(text "qsfpchan3[35..0]" (rect 163 91 259 105)(font "Arial" (font_size 8)))
+		(line (pt 280 96)(pt 264 96)(line_width 3))
+	)
+	(port
+		(pt 280 112)
+		(output)
+		(text "qsfpchan4[35..0]" (rect 0 0 96 14)(font "Arial" (font_size 8)))
+		(text "qsfpchan4[35..0]" (rect 163 107 259 121)(font "Arial" (font_size 8)))
+		(line (pt 280 112)(pt 264 112)(line_width 3))
+	)
+	(port
+		(pt 280 144)
+		(output)
+		(text "qsfp_out[3..0]" (rect 0 0 79 14)(font "Arial" (font_size 8)))
+		(text "qsfp_out[3..0]" (rect 180 139 259 153)(font "Arial" (font_size 8)))
+		(line (pt 280 144)(pt 264 144)(line_width 3))
+	)
+	(port
+		(pt 280 176)
+		(output)
+		(text "pll_locked2" (rect 0 0 62 14)(font "Arial" (font_size 8)))
+		(text "pll_locked2" (rect 197 171 259 185)(font "Arial" (font_size 8)))
+		(line (pt 280 176)(pt 264 176))
+	)
+	(port
+		(pt 280 192)
+		(output)
+		(text "txqsfp_clkout[3..0]" (rect 0 0 105 14)(font "Arial" (font_size 8)))
+		(text "txqsfp_clkout[3..0]" (rect 154 187 259 201)(font "Arial" (font_size 8)))
+		(line (pt 280 192)(pt 264 192)(line_width 3))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "tx_ready" (rect 0 0 50 14)(font "Arial" (font_size 8)))
+		(text "tx_ready" (rect 205 27 255 41)(font "Arial" (font_size 8)))
+		(line (pt 280 32)(pt 264 32))
+	)
+	(port
+		(pt 280 240)
+		(output)
+		(text "rx_ready" (rect 229 216 280 230)(font "Arial" (font_size 8)))
+		(text "rx_ready" (rect 192 232 243 246)(font "Arial" (font_size 8)))
+		(line (pt 280 240)(pt 264 240))
+	)
+	(port
+		(pt 280 224)
+		(output)
+		(text "rx_qsfp_parallel_data[127..0]" (rect 229 200 395 214)(font "Arial" (font_size 8)))
+		(text "rx_qsfp_parallel_data[127..0]" (rect 104 216 270 230)(font "Arial" (font_size 8)))
+		(line (pt 280 224)(pt 264 224))
+	)
+	(port
+		(pt 280 208)
+		(output)
+		(text "rx_qsfp_clkout[3..0]" (rect 229 200 342 214)(font "Arial" (font_size 8)))
+		(text "rx_qsfp_clkout[3..0]" (rect 128 200 241 214)(font "Arial" (font_size 8)))
+		(line (pt 280 208)(pt 264 208))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 384))
+	)
+)

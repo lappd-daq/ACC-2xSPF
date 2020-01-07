@@ -342,7 +342,7 @@ architecture behavioral of usbWrapperACC is
 	end process;
 	
 	process(IFCLK, ALIGN_LVDS_FROM_SOFTWARE)
-	variable i : integer range 100000002 downto 0 := 0;
+	variable i : integer range 10000002 downto 0 := 0;
 		begin
 			if rising_edge(IFCLK) and ALIGN_LVDS_FROM_SOFTWARE = '0' then
 				i := 0;
@@ -352,7 +352,7 @@ architecture behavioral of usbWrapperACC is
 				case ALIGN_LVDS_STATE is
 					when RESETT =>
 						i:=i+1;
-						if i > 100000000 then
+						if i > 10000000 then
 							i := 0;
 							ALIGN_LVDS_STATE <= RELAXT;
 						end if;
@@ -781,9 +781,9 @@ end process;
 						when x"C" =>
 							CC_READ_MODE <= USB_INSTRUCTION(2 downto 0);
 							if USB_INSTRUCTION(4) = '1' then
-								TRIG_MODE <= CC_INSTRUCTION(3);
-								TRIG_DELAY  (6 downto 0) <= CC_INSTRUCTION(11 downto 5);
-								SET_TRIG_SOURCE (2 downto 0) <= CC_INSTRUCTION(14 downto 12);
+								TRIG_MODE <= USB_INSTRUCTION(3);
+								TRIG_DELAY  (6 downto 0) <= USB_INSTRUCTION(11 downto 5);
+								SET_TRIG_SOURCE (2 downto 0) <= USB_INSTRUCTION(14 downto 12);
 							end if;
 	
 							if delay > 10 then

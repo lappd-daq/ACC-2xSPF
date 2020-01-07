@@ -505,7 +505,7 @@ end process;
 	--sync commands between ACC boards:
 	-----
 	process(xCLK_SYS, ready_for_cc_instruct, reset_from_usb)
-	variable i : integer range 100002 downto 0;	
+	variable i : integer range 100002 downto 0 := 0;	
 	begin
 		if reset_from_usb = '1' then 
 			done_with_cc_only_instruction <= '0';
@@ -610,7 +610,7 @@ end process;
 	end process;
 	-----
 	process(xCLK_SYS, CC_SYNC_IN_REG, reset_from_usb)
-	variable i : integer range 50 downto 0;	
+	variable i : integer range 50 downto 0 := 0;	
 	begin
 		if reset_from_usb = '1' then 
 			CC_INSTRUCTION_GOOD 	<= (others=>'0');
@@ -930,7 +930,7 @@ end process;
 
 --reset USB block upon plugging-in
 proc_reset_usb : process(WAKEUP, IFCLK, xCLR_ALL) 
-	variable i: integer range 0 to 1440000000 :=0;
+	variable i: integer range 0 to 1440000000 := 0;
 	begin
 		if xCLR_ALL = '1' then
 			i := 0;
