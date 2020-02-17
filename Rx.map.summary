@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Jan 07 12:03:16 2020
+Analysis & Synthesis Status : Successful - Sun Feb 16 19:19:04 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : Rx
 Top-level Entity Name : Rx
 Family : Arria V
 Logic utilization (in ALMs) : N/A
-Total registers : 2610
+Total registers : 2611
 Total pins : 259
 Total virtual pins : 0
 Total block memory bits : 525,312

@@ -31,6 +31,7 @@ port(
 	xAUX_TRIG_1				:  in		std_logic;
 	xAUX_TRIG_2_DC			:	in		std_logic;
 	xAUX_TRIG_3_DC			: 	in		std_logic;
+	XACDC_WAITING			: 	in 	std_logic;
 	
 	xEVENT_AND_TIME_RESET:	in   	std_logic;
 	
@@ -196,11 +197,11 @@ begin
 		when "00" =>
 			INTERNAL_TRIGGER <= xEXT_TRIGGER;
 		when "01" => 
-			INTERNAL_TRIGGER <= AUX_TRIG_1;
+			INTERNAL_TRIGGER <= xEXT_TRIGGER;
 		when "10" => 
-			INTERNAL_TRIGGER <= '0';		
+			INTERNAL_TRIGGER <= xEXT_TRIGGER;		
 		when "11" => 
-			INTERNAL_TRIGGER <= '0';
+			INTERNAL_TRIGGER <= xEXT_TRIGGER;
 		when others=>
 			INTERNAL_TRIGGER <= xEXT_TRIGGER;
 	end case;
@@ -215,18 +216,22 @@ begin
 		end case;
 end process;
 	
+	
 ---This process latches the external trigger signal on its rising edge	
-process(xCLR_ALL, xEXT_TRIGGER, FIRMWARE_RESET, xMODE)
+--Evan changed this 6/1/2019 to very simply look at the SMA external trigger
+-- and if the USB commands have told us to have xext_trig_valid and "wait for sys"
+--then it should send a trigger signal to the ACDCs. 
+process(INTERNAL_TRIGGER, xEXT_TRIG_VALID)
 begin  
-	if xCLR_ALL = '1' or FIRMWARE_RESET = '1' or xMODE = '0' then
+	if xEXT_TRIG_VALID = '0' or xACDC_WAITING = '0' then
 		---
 		LATCHED_TRIG <= '0';
-		---
-	elsif rising_edge(INTERNAL_TRIGGER) and xMODE = '1' and xEXT_TRIG_VALID = '1'
-		and (USE_BEAM_ON = '0' or (USE_BEAM_ON = '1' and xAUX_TRIG_2_DC = '1')) then
+		
+	elsif rising_edge(INTERNAL_TRIGGER) and xEXT_TRIG_VALID = '1' and xACDC_WAITING = '1' then
 		---
 		LATCHED_TRIG <= '1';
 		---
+	
 	end if;
 end process;
 ---This process registers the latched signal w.r.t. fast clock.		

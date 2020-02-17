@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Jan 07 12:12:59 2020
+Fitter Status : Successful - Sun Feb 16 19:25:53 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Standard Edition
 Revision Name : Rx
 Top-level Entity Name : Rx
 Family : Arria V
 Device : 5AGXFB5H4F35C4
 Timing Models : Final
-Logic utilization (in ALMs) : 2,504 / 158,500 ( 2 % )
-Total registers : 2992
+Logic utilization (in ALMs) : 2,501 / 158,500 ( 2 % )
+Total registers : 2990
 Total pins : 330 / 656 ( 50 % )
 Total virtual pins : 0
 Total block memory bits : 525,312 / 21,032,960 ( 2 % )

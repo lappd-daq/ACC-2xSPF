@@ -81,7 +81,8 @@ entity usbWrapperACC is
 		xWAKEUP_USB				:  out   std_logic;
 		xCC_SYNC_OUT			:  out	std_logic;
 		xTRIG_VALID				: 	out	std_logic;
-	   xSOFT_TRIG_BIN			:  out	std_logic_vector(2 downto 0));
+	   xSOFT_TRIG_BIN			:  out	std_logic_vector(2 downto 0);
+		xWAIT_FOR_SYS			:	out	std_logic);
 
 		
 end usbWrapperACC;
@@ -148,6 +149,8 @@ architecture behavioral of usbWrapperACC is
 	signal SOFT_TRIG					: std_logic;
 	signal SOFT_TRIG_TMP				: std_logic;
 	signal SOFT_TRIG_GOOD			: std_logic;
+	
+	signal WAIT_FOR_SYS 				: std_logic;
 	
 	signal SOFT_TRIG_MASK			: std_logic_vector(num_front_end_boards-1 downto 0);
 	signal SOFT_TRIG_MASK_TMP		: std_logic_vector(num_front_end_boards-1 downto 0);
@@ -223,6 +226,7 @@ architecture behavioral of usbWrapperACC is
 	xHARD_RESET       <= HARD_RESET;
 	xCC_SYNC_OUT		<= CC_SYNC_REG;
 	xTRIG_VALID			<= trig_valid;
+	XWAIT_FOR_SYS 		<= WAIT_FOR_SYS;
 	
 	--reset_from_usb		<= xCLR_ALL;
 	
@@ -916,6 +920,15 @@ end process;
 						when others =>
 							CC_INSTRUCTION <= USB_INSTRUCTION;
 							CC_INSTRUCT_RDY<= '1';
+							
+							--helps to know if the ACDC is waiting for 
+							--a sys signal, this gets passed over to triggerAndTime.
+							--(15 downto 12 flags if this is the lo vs hi cmd. wait for sys
+							-- comes on lo command)
+							if USB_INSTRUCTION(19 downto 16) = x"7" and USB_INSTRUCTION(15 downto 12) = x"0" then
+								WAIT_FOR_SYS <= USB_INSTRUCTION(1);
+							end if;
+							
 							if delay > 8 then
 								delay := 0;
 								state <= st1_WAIT;
