@@ -77,7 +77,7 @@ end architecture rtl; -- of pll_block
 -- Retrieval info: 	<generic name="device" value="5AGTFC7H3F35I3" />
 -- Retrieval info: 	<generic name="gui_device_speed_grade" value="1" />
 -- Retrieval info: 	<generic name="gui_pll_mode" value="Integer-N PLL" />
--- Retrieval info: 	<generic name="gui_reference_clock_frequency" value="125.0" />
+-- Retrieval info: 	<generic name="gui_reference_clock_frequency" value="25.0" />
 -- Retrieval info: 	<generic name="gui_channel_spacing" value="0.0" />
 -- Retrieval info: 	<generic name="gui_operation_mode" value="normal" />
 -- Retrieval info: 	<generic name="gui_feedback_clock" value="Global Clock" />

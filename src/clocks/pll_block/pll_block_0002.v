@@ -22,7 +22,7 @@ module  pll_block_0002(
 
 	altera_pll #(
 		.fractional_vco_multiplier("false"),
-		.reference_clock_frequency("125.0 MHz"),
+		.reference_clock_frequency("25.0 MHz"),
 		.operation_mode("normal"),
 		.number_of_clocks(3),
 		.output_clock_frequency0("40.000000 MHz"),
